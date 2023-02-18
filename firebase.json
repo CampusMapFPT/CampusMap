@@ -1,0 +1,6 @@
+{
+  "hosting": {
+    "site": "campus-map-exclusive",
+    "public": "out"
+  }
+}
