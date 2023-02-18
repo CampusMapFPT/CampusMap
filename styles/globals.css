@@ -46,13 +46,25 @@ a {
 }
 
 @font-face {
-  font-family: Balgin;
+  font-family: Balgin-Light;
   font-weight: 400;
-  src: url("/public/fonts/Balgin/balgin-regular.otf");
+  src: url("public/fonts/Balgin/BalginLight.ttf");
+}
+
+@font-face {
+  font-family: Balgin-Regular;
+  font-weight: 400;
+  src: url("public/fonts/Balgin/BalginRegular.ttf");
+}
+
+@font-face {
+  font-family: Balgin-SemiBold;
+  font-weight: 400;
+  src: url("public/fonts/Balgin/BalginSemiBold.TTF");
 }
 
 @font-face {
   font-family: Balgin-Bold;
   font-weight: 400;
-  src: url("/public/fonts/Balgin/balgin-bold.otf");
+  src: url("public/fonts/Balgin/BalginBold.TTF");
 }

@@ -54,10 +54,10 @@ const Blog = () => {
 
   return (
     <>
-      <Flex direction={"column"} p="25px" gap={2}>
+      <Flex direction={"column"} p="25px" gap={5}>
         {BlogList.map((blog) => {
           return (
-            <NextLink key={blog.title} href="/home" passHref>
+            <NextLink key={blog.title} href="/blogdetail" passHref>
               <Link>
                 <Flex justifyContent={"space-between"} gap={3}>
                   <Flex alignItems={"center"} h="1.2rem">
@@ -68,7 +68,6 @@ const Blog = () => {
                       h="5px"
                     />
                   </Flex>
-
                   <Text color="#04408C" fontSize={"14px"}>
                     {blog.title}
                   </Text>

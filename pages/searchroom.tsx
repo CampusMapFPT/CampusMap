@@ -1,18 +1,18 @@
 import React from "react";
 import { Box, Container } from "@chakra-ui/react";
 import NavigationBar from "components/sections/navbar";
-import Blog from "components/blog";
 import AuthCheck from "components/authentication/AuthCheck";
+import SearchRoom from "components/room/searchroom";
 
-function BlogPage() {
+function SearchRoomPage() {
   return (
     <Box maxW={"mobile"} h="812px" padding="0" fontFamily="campus">
       <AuthCheck>
-        <NavigationBar title={"Blogs"} />
-        <Blog />
+        <NavigationBar title={"Room List"} />
+        <SearchRoom />
       </AuthCheck>
     </Box>
   );
 }
 
-export default BlogPage;
+export default SearchRoomPage;

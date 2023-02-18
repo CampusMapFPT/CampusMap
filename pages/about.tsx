@@ -4,15 +4,15 @@ import NavigationBar from "components/sections/navbar";
 import Blog from "components/blog";
 import AuthCheck from "components/authentication/AuthCheck";
 
-function BlogPage() {
+function AboutPage() {
   return (
     <Box maxW={"mobile"} h="812px" padding="0" fontFamily="campus">
       <AuthCheck>
-        <NavigationBar title={"Blogs"} />
+        <NavigationBar title={"About Us"} />
         <Blog />
       </AuthCheck>
     </Box>
   );
 }
 
-export default BlogPage;
+export default AboutPage;
