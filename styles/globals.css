@@ -1,10 +1,12 @@
 html,
 body {
-  padding: 0;
+  height: 100%;
   margin: 0;
-  font-family: 'Inter';
+  padding: 0;
 }
-
+#map {
+  height: 100%;
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -14,6 +16,9 @@ a {
   box-sizing: border-box;
 }
 
+#__next {
+  height: 100%;
+}
 @font-face {
   font-family: PoppinsVN;
   font-weight: 400;
@@ -38,4 +43,16 @@ a {
   font-family: PoppinsVN;
   font-weight: 700;
   src: url("/public/fonts/PoppinsVN/PoppinsVN-700.woff2");
+}
+
+@font-face {
+  font-family: Balgin;
+  font-weight: 400;
+  src: url("/public/fonts/Balgin/balgin-regular.otf");
+}
+
+@font-face {
+  font-family: Balgin-Bold;
+  font-weight: 400;
+  src: url("/public/fonts/Balgin/balgin-bold.otf");
 }

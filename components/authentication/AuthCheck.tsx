@@ -9,11 +9,9 @@ import useUserContext from "hooks/useUserContext";
 function AuthCheck({ children }: any) {
   const router = useRouter();
   const toast = useToast();
-  const [idtoken, setIdToken] = useState(null);
   const { user: FbUser, loading } = useAuthContext();
   const { user: currentUser, accessToken } = useUserContext();
   console.log("accessToken", accessToken);
-  console.log("loading", loading);
 
   // console.log(FbUser);
   // useEffect(() => {
@@ -32,7 +30,7 @@ function AuthCheck({ children }: any) {
 
   if (FbUser) {
     return children;
-  } else if (!FbUser) {
+  } else if (!FbUser && !loading) {
     return <Authenticate />;
   } else {
     return <Loading />;

@@ -1,5 +1,5 @@
 import { Flex, Image, Spinner, Text } from "@chakra-ui/react";
-import logo from "../../public/assets/images/logo.png";
+import logo from "../../public/assets/images/backpack.png";
 import React from "react";
 
 function Loading() {
@@ -10,21 +10,22 @@ function Loading() {
       alignItems={"center"}
       height="100vh"
       flexDirection={"column"}
+      bgColor="#3A88EC"
     >
-      <Spinner
+      {/* <Spinner
         thickness="4px"
         speed="0.65s"
         emptyColor="gray.200"
         color="blue.500"
         size="xl"
+      /> */}
+      <Image
+        alt="logo"
+        sx={{ width: "162px", height: "162px" }}
+        src={logo.src}
       />
-      <Flex alignItems={"center"} gap={5}>
-        <Image
-          alt="logo"
-          sx={{ width: "50px", marginLeft: "20px" }}
-          src={logo.src}
-        />
-        <Text fontSize={"2xl"}>Campus Map</Text>
+      <Flex alignItems={"center"} color="white">
+        <Text fontSize={""}>Your data is loading...</Text>
       </Flex>
     </Flex>
   );

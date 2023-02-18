@@ -12,22 +12,16 @@ import {
   Link,
   IconButton,
   Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
   useDisclosure,
   useColorModeValue,
   Stack,
-  Text,
-  Select,
+  useToast,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { HamburgerIcon, CloseIcon, AddIcon } from "@chakra-ui/icons";
 import { useRouter } from "next/router";
 // import useAuthContext from "hooks/useAuthContext";
-// import { logOut } from "../firebase/authentication";
+import { logOut } from "../firebase/authentication";
 
 const Links = [
   { name: "Trang chủ", href: "/" },
@@ -89,30 +83,23 @@ const currentDate = new Date();
 const MainHeader = () => {
   //hooks
   // const { user, loading } = useAuthContext();
+  const toast = useToast();
   const router = useRouter();
   const { isOpen, onOpen, onClose } = useDisclosure();
   //apis
   //states
   //variables
-
-  // const useScrollingUp = () => {
-  //   let prevScroll = window.pageYOffset;
-
-  //   const [scrollingUp, setScrollingUp] = useState(false);
-  //   const handleScroll = () => {
-  //     const currScroll = window.pageYOffset;
-  //     const isScrolled = prevScroll > currScroll;
-  //     setScrollingUp(isScrolled);
-  //     prevScroll = currScroll;
-  //   };
-  //   useEffect(() => {
-  //     on(window, "scroll", handleScroll, { passive: true });
-  //     return () => {
-  //       off(window, "scroll", handleScroll, { passive: true });
-  //     };
-  //   }, []);
-  //   return scrollingUp;
-  // };
+  const handleSignout = async () => {
+    await logOut();
+    await router.push("/authentication");
+    toast({
+      title: `Đã dăng xuất`,
+      status: "success",
+      position: "top-right",
+      isClosable: true,
+      duration: 1000,
+    });
+  };
   return (
     <>
       <Box bg={useColorModeValue("gray.100", "gray.900")} px={4} mb="2rem">
@@ -126,6 +113,7 @@ const MainHeader = () => {
           />
           <HStack spacing={8} alignItems={"center"}>
             <Box>Logo</Box>
+            <Button onClick={() => handleSignout()}>Đăng xuất</Button>
             <HStack
               as={"nav"}
               spacing={4}
@@ -181,41 +169,6 @@ const MainHeader = () => {
         ) : null}
       </Box>
     </>
-    // <Tabs>
-    //   <TabList
-    //     justifyContent={"space-between"}
-    //     alignItems="center"
-    //     py="1rem"
-    //     px={"1rem"}
-    //     mb="2rem"
-    //     position="sticky"
-    //     top="0"
-    //     zIndex={3}
-    //     bg="light"
-    //   >
-    //     {weekday.slice(0, 6).map((day) => (
-    //       <Tab
-    //         key={day.name}
-    //         isDisabled={currentDate.getDay() == day.value ? false : true}
-    //         _selected={{
-    //           color: "primary.main",
-    //           borderColor: "primary.main",
-    //           transform: "translateY(5px)",
-    //         }}
-    //         _hover={{
-    //           boxShadow: "sm",
-    //         }}
-    //       >
-    //         <Text fontSize={"2xl"}>{day.name}</Text>
-    //       </Tab>
-    //     ))}
-
-    //     <CartDrawer
-    //       isCartDisable={isCartDisable}
-    //       arrivedTimeRange={arrivedTimeRange}
-    //     />
-    //   </TabList>
-    // </Tabs>
   );
 };
 

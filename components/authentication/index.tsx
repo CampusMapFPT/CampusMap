@@ -46,8 +46,6 @@ function Authenticate() {
         const user = result.user;
         if (user) {
           try {
-            console.log("user", user.accessToken);
-
             await SetAccessToken(user.accessToken);
             toast({
               title: "Đăng nhập thành công!",

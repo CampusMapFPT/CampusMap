@@ -8,13 +8,13 @@ import theme from "../theme";
 const queryClient = new QueryClient();
 function MyApp({ Component, pageProps }: any) {
   return (
-    // <AuthContextProvider>
-    <ChakraProvider theme={theme}>
-      <QueryClientProvider client={queryClient}>
-        <Component {...pageProps} />
-      </QueryClientProvider>
-    </ChakraProvider>
-    // </AuthContextProvider>
+    <AuthContextProvider>
+      <ChakraProvider theme={theme}>
+        <QueryClientProvider client={queryClient}>
+          <Component {...pageProps} />
+        </QueryClientProvider>
+      </ChakraProvider>
+    </AuthContextProvider>
   );
 }
 

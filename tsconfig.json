@@ -20,10 +20,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./src/*"
+        "src/*"
       ],
       "@/public/*": [
-        "./public/*"
+        "public/*"
       ]
     },
     "incremental": true
@@ -31,10 +31,10 @@
   "exclude": [
     "node_modules"
   ],
-  "include": ["./src/*",
+  "include": ["src",
     "next-env.d.ts",
     "**/*.jsx",
     "**/*.ts",
     "**/*.tsx"
-, "pages/product/[productId].js", "components/Home/MenuList.jsx", "components/nav.jsx", "pages/index.jsx", "pages/index.jsx", "components/Home/MenuHeader.tsx", "components/coorder/index.jsx"  ]
+, "pages/product/[productId].js", "components/home/MenuList.jsx", "components/nav.jsx", "pages/index.jsx", "pages/index.jsx", "components/home/MenuHeader.tsx", "components/coorder/index.jsx"  ]
 }
