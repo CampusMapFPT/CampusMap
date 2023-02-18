@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "@types/node": "^17.0.40",
+    "@types/react": "^18.0.28",
     "@types/react-slick": "^0.23.8",
     "eslint": "^8.17.0",
     "eslint-config-next": "12.1.2",
