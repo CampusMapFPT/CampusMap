@@ -64,6 +64,7 @@ const MainHeader = () => {
         </Flex>
         <Flex alignItems={"center"} justifyContent={"space-between"} px="20px">
           <Box
+            as='button'
             display={"flex"}
             w={"149px"}
             h="50px"
@@ -72,6 +73,8 @@ const MainHeader = () => {
             alignItems={"center"}
             borderRadius="15px"
             boxShadow={"0px 4px 4px 0px #00000040"}
+            onClick={() => router.push("/direction")}
+            
           >
             <Text fontSize={"12px"}>Your location</Text>
           </Box>
