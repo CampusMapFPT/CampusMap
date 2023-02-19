@@ -112,8 +112,8 @@ const MainHeader = () => {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={"center"}>
-            <Box>Logo</Box>
-            <Button onClick={() => handleSignout()}>Đăng xuất</Button>
+            {/* <Box>Logo</Box> */}
+            <Button onClick={() => handleSignout()}>Logout</Button>
             <HStack
               as={"nav"}
               spacing={4}

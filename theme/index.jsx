@@ -26,12 +26,13 @@ const theme = extendTheme({
   },
 
   fonts: {
-    body: "Inter, system-ui, sans-serif",
-    heading: "Inter, Georgia, serif",
-    mono: "Inter, Menlo, monospace",
-    campus: "Balgin, Cabin",
+    body: "Balgin-Regular, system-ui, sans-serif",
+    heading: "Balgin-Regular, Georgia, serif",
+    mono: "Balgin-Regular, Menlo, monospace",
+    campus: "Balgin-Regular, Cabin",
   },
   breakpoints: {
+    mobile: "420px",
     xs: "50px",
     sm: "375px",
     md: "768px",

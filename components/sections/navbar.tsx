@@ -12,7 +12,7 @@ const NavigationBar = ({ title }: NavProps) => {
   return (
     <Flex
       bgColor={"#3A88EC"}
-      height="8rem"
+      height="6rem"
       alignItems={"center"}
       gap={3}
       pl="1rem"

@@ -4,6 +4,7 @@ import {
   Button,
   Flex,
   Image,
+  Link,
   Text,
   useDisclosure,
   useToast,
@@ -56,7 +57,7 @@ const MainHeader = () => {
             color="white"
             onClick={() => handleSignout()}
           >
-            <Text fontSize={"sm"}>Đăng xuất</Text>
+            <Text fontSize={"sm"}>Logout</Text>
           </Button>
         </Flex>
         <Flex alignItems={"center"} justifyContent={"center"}>
@@ -126,7 +127,7 @@ const Home = () => {
       link: "/blogs",
     },
     {
-      title: "About us",
+      title: "About Us",
       icon: AboutIcon.src,
       link: "/about",
     },
@@ -149,72 +150,93 @@ const Home = () => {
     //apis
 
     //variables
+    <>
+      <Box w={"100%"} justifyContent="center" zIndex={2} textColor="#04408C">
+        <MainHeader />
 
-    <Box w={"100%"} justifyContent="center" zIndex={2} textColor="#04408C">
-      <MainHeader />
-
-      <Flex justifyContent={"space-between"} px="30px">
-        {IconButtons.map((button) => {
-          return (
-            <Flex direction={"column"} key={button.title} alignItems="center">
-              <Button
-                display={"flex"}
-                justifyContent="center"
-                alignItems={"center"}
-                w="49px"
-                h="49px"
-                bgColor="#BAD8FF"
-                borderRadius={"50%"}
-                onClick={() => router.push(button.link)}
-              >
-                <Image w="27px" h="27px" alt={button.title} src={button.icon} />
-              </Button>
-              <Text fontSize={"12px"}>{button.title}</Text>
-            </Flex>
-          );
-        })}
-      </Flex>
-      {/* map */}
-      <Flex my="30px">
-        <Box sx={{ height: "217px", width: "100%" }}>
-          <GoogleMapReact
-            bootstrapURLKeys={{ key: process.env.NEXT_PUBLIC_API_KEY }}
-            defaultCenter={center}
-            defaultZoom={zoom}
-          >
-            <Marker lat={40.712776} lng={-74.005974} />
-          </GoogleMapReact>
-        </Box>
-      </Flex>
-
-      {/* <Image py="24px" h={"217px"} w="375px" alt="map" src={DemoMap.src} /> */}
-      <Flex justifyContent={"space-between"} px="20px">
-        <Text fontSize={"16px"} fontFamily="Balgin-Bold">
-          Events
-        </Text>
-        <Button variant={"link"} fontSize="13px">
-          See more
-          <ArrowForwardIcon />
-        </Button>
-      </Flex>
-
-      <Flex justifyContent={"space-between"} pt="14px">
-        {events.map((event) => {
-          return (
-            <Flex
-              key={event.title}
-              flexDirection="column"
-              alignItems={"center"}
+        <Flex justifyContent={"space-between"} px="30px">
+          {IconButtons.map((button) => {
+            return (
+              <Flex direction={"column"} key={button.title} alignItems="center">
+                <Button
+                  display={"flex"}
+                  justifyContent="center"
+                  alignItems={"center"}
+                  w="49px"
+                  h="49px"
+                  bgColor="#BAD8FF"
+                  borderRadius={"50%"}
+                  onClick={() => router.push(button.link)}
+                >
+                  <Image
+                    w="27px"
+                    h="27px"
+                    alt={button.title}
+                    src={button.icon}
+                  />
+                </Button>
+                <Text fontSize={"12px"}>{button.title}</Text>
+              </Flex>
+            );
+          })}
+        </Flex>
+        {/* map */}
+        <Flex my="30px">
+          <Box sx={{ height: "217px", width: "100%" }}>
+            <GoogleMapReact
+              bootstrapURLKeys={{ key: process.env.NEXT_PUBLIC_API_KEY }}
+              defaultCenter={center}
+              defaultZoom={zoom}
             >
-              <Image w="152px" h="152px" alt={event.title} src={event.image} />
-              <Text fontSize={"10px"}>{event.title}</Text>
+              <Marker lat={40.712776} lng={-74.005974} />
+            </GoogleMapReact>
+          </Box>
+        </Flex>
+
+        {/* <Image py="24px" h={"217px"} w="375px" alt="map" src={DemoMap.src} /> */}
+        <Flex justifyContent={"space-between"} px="20px">
+          <Text textColor="#04408C" fontSize={"16px"} fontWeight="600">
+            Events
+          </Text>
+          <Link>
+            <Flex>
+              {" "}
+              <Text lineHeight={"17px"} fontSize="13px" color="#04408C">
+                See more
+              </Text>
+              <ArrowForwardIcon />
             </Flex>
-          );
-        })}
-      </Flex>
-      {/* Footer */}
-      <Box bgColor={"#3A88EC"} w="388px" h="64px"></Box>
-    </Box>
+          </Link>
+        </Flex>
+
+        <Flex
+          justifyContent={"space-between"}
+          pt="14px"
+          mx={{ sm: "6%" }}
+          textColor="#04408C"
+        >
+          {events.map((event) => {
+            return (
+              <Flex
+                key={event.title}
+                flexDirection="column"
+                alignItems={"center"}
+              >
+                <Image
+                  w="152px"
+                  h="152px"
+                  alt={event.title}
+                  src={event.image}
+                />
+                <Text fontSize={"10px"} textTransform="uppercase">
+                  {event.title}
+                </Text>
+              </Flex>
+            );
+          })}
+        </Flex>
+      </Box>
+    </>
   );
 };
 

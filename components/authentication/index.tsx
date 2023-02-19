@@ -117,7 +117,7 @@ function Authenticate() {
             >
               <Flex gap={2} sx={{ alignItems: "center" }}>
                 <FcGoogle />
-                <Text>Đăng nhập với Google</Text>
+                <Text>Login with Google</Text>
               </Flex>
             </Button>
           </Stack>
