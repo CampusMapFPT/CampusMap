@@ -83,7 +83,7 @@ const RoomList = () => {
         </InputGroup>
       </Flex>
 
-      <Flex direction={"column"} p="0px 25px 0px 25px" gap={5} color="#04408C">
+      <Flex direction={"column"} p="0px 25px 0px 25px" gap={2} color="#04408C">
         {rooms.map((room) => {
           return (
             <Flex key={room.name} flexDirection={"column"} py={"1rem"}>

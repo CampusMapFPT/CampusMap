@@ -80,7 +80,7 @@ const SearchRoom = () => {
       <Flex
         direction={"column"}
         px="25px"
-        gap={2}
+        gap={1}
         color="#04408C"
         display={hide ? "none" : "flex"}
       >

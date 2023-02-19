@@ -1,5 +1,6 @@
 import { Box, ChakraProvider } from "@chakra-ui/react";
 import { AuthContextProvider } from "contexts/AuthContext";
+import { GlobalContextProvider } from "contexts/GlobalContext";
 import Fonts from "fonts";
 import { useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
@@ -9,20 +10,22 @@ import theme from "../theme";
 const queryClient = new QueryClient();
 function MyApp({ Component, pageProps }: any) {
   return (
-    <AuthContextProvider>
-      <ChakraProvider theme={theme}>
-        <Fonts />
-        <QueryClientProvider client={queryClient}>
-          <Component {...pageProps} />
-          <Box
-            bgColor={"#3A88EC"}
-            position="relative"
-            top="70px"
-            height="62px"
-          />
-        </QueryClientProvider>
-      </ChakraProvider>
-    </AuthContextProvider>
+    <GlobalContextProvider>
+      <AuthContextProvider>
+        <ChakraProvider theme={theme}>
+          <Fonts />
+          <QueryClientProvider client={queryClient}>
+            <Component {...pageProps} />
+            <Box
+              display={"flex"}
+              height="62px"
+              bgColor={"#3A88EC"}
+              zIndex={99}
+            />
+          </QueryClientProvider>
+        </ChakraProvider>
+      </AuthContextProvider>
+    </GlobalContextProvider>
   );
 }
 

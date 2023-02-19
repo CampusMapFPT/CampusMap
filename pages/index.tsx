@@ -5,10 +5,9 @@ import AuthCheck from "components/authentication/AuthCheck";
 
 function Index() {
   return (
-    <Box maxW={"mobile"} h="712px" fontFamily="campus">
+    <Box maxW={"mobile"} h="812px" fontFamily="campus">
       <AuthCheck>
         <Home />
-        {/* Footer */}
       </AuthCheck>
     </Box>
   );
