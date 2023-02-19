@@ -41,12 +41,12 @@ function Authenticate() {
 
   const LoginWithGoogle = () => {
     signInWithGoogle()
-      .then(async (result) => {
+      .then((result) => {
         console.log("result", result);
         const user = result.user;
         if (user) {
           try {
-            await SetAccessToken(user.accessToken);
+            SetAccessToken(user.accessToken);
             toast({
               title: "Đăng nhập thành công!",
               status: "success",
