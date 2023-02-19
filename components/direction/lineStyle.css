@@ -1,0 +1,52 @@
+/* .map{
+    background-image: url("../assets/image/gfloor.png");
+    display: "static";
+    height: 100%;
+    width: 10   0%;
+    background-size: cover;
+    object-fit: contain;
+
+} */
+
+.n {
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid black;
+    transform: rotate(45deg);
+    animation: mymove 5s infinite;
+  }
+
+  @keyframes mymove {
+    0% {border-right: 20px solid red;}
+    50% {border-right: 20px solid blue;}
+    100% {border-right: 20px solid red;}
+  }
+
+.point {
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+    position: absolute;
+    left: 6rem;
+    top: 34rem;
+    animation: move-animation 5s linear forwards;
+  }
+  
+  @keyframes move-animation {
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(200px, 0px);
+    }
+    75% {
+      transform: translate(200px, -100px);
+    }
+    100%{
+        transform: translate(170px, -130px);
+      }
+  }
+  
+

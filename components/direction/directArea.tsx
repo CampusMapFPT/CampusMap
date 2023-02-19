@@ -4,7 +4,7 @@ import { Image } from '@chakra-ui/react'
 import LocationIcon from '../assets/icon/location.png'
 import DestinationIcon from '../assets/icon/destination.png'
 import GFloor from '../assets/image/gfloor.png'
-
+import { Text } from '@chakra-ui/react'
 
 const arr = [30, 20];
 const Direction = () => {
@@ -45,12 +45,16 @@ const Direction = () => {
             <Box className="" py={6}>
                 <Image src={GFloor.src} top="100px" />
                 <div className="point"></div>
-             
+
             </Box>
         </Stack>
 
         <Box borderWidth={"6px 0 0 0"} mt={6} borderTopColor="#BAD8FF">
-            <Box fontSize='4xl' px={8}> Introduction</Box>
+            <Box fontSize='4xl' margin={"auto 0"} textAlign="center"> Introduction</Box>
+            <Text px={8}>
+                1- Go to the Exit, which is opposite Passio.<br /> 2- Go up to 6th Floor.<br /> 3- Click the Exit icon to go to Floor 6
+            </Text>
+            
         </Box>
     </Box>
 }
