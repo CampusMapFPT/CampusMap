@@ -1,6 +1,4 @@
 import { ReactNode, createContext, useState, useEffect } from "react";
-import { TUser } from "types/user";
-import { string } from "yup";
 
 export type initialStateProps = {
   event: {
@@ -12,7 +10,11 @@ export type initialStateProps = {
     content: string;
     header: string;
   };
+  directionFrom: string;
+  directionTo: string;
   SetEvent: Function;
+  SetDirectionFrom: Function;
+  SetDirectionTo: Function;
 };
 
 const initialState: initialStateProps = {
@@ -25,6 +27,10 @@ const initialState: initialStateProps = {
     content: "",
     header: "",
   },
+  directionTo: "",
+  directionFrom: "",
+  SetDirectionFrom: () => {},
+  SetDirectionTo: () => {},
   SetEvent: () => {},
 };
 
@@ -36,16 +42,34 @@ type UserContextProviderProps = {
 
 function GlobalContextProvider({ children }: UserContextProviderProps) {
   const [event, setEvent] = useState<any | null>(initialState.event);
+  const [directionFrom, setDirectionFrom] = useState<any | null>(
+    initialState.directionFrom
+  );
+  const [directionTo, setDirectionTo] = useState<any | null>(
+    initialState.directionTo
+  );
 
   function SetEvent(event: any) {
     if (event != null) setEvent(event);
     else setEvent(null);
   }
 
+  function SetDirectionFrom(event: any) {
+    if (event != null) setDirectionFrom(event);
+    else setDirectionFrom(null);
+  }
+  function SetDirectionTo(event: any) {
+    if (event != null) setDirectionTo(event);
+    else setDirectionTo(null);
+  }
   return (
     <GlobalContext.Provider
       value={{
         event,
+        directionFrom,
+        directionTo,
+        SetDirectionFrom,
+        SetDirectionTo,
         SetEvent,
       }}
     >

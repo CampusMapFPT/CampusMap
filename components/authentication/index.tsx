@@ -48,7 +48,7 @@ function Authenticate() {
           try {
             SetAccessToken(user.accessToken);
             toast({
-              title: "Đăng nhập thành công!",
+              title: "Login successfully!",
               status: "success",
               position: "top-right",
               isClosable: true,
@@ -58,7 +58,7 @@ function Authenticate() {
             router.push("/");
           } catch (error) {
             toast({
-              title: "Có lỗi xảy ra!",
+              title: "Error!",
               status: "error",
               position: "top-right",
               isClosable: true,
@@ -70,7 +70,7 @@ function Authenticate() {
       .catch((error) => {
         console.log(error);
         toast({
-          title: "Đăng nhập thất bại",
+          title: "Login failed",
           status: "error",
           position: "top-right",
           isClosable: true,

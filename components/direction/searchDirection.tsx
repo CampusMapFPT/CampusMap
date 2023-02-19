@@ -17,9 +17,11 @@ import DestinationIcon from "../assets/icon/destination.png";
 import GFloor from "../assets/image/gfloor.png";
 import { Text } from "@chakra-ui/react";
 import useGlobalContext from "hooks/useGlobalContext";
-
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 const arr = [30, 20];
-const Direction = () => {
+const SearchDirection = () => {
+  const router = useRouter();
   const globalContext = useGlobalContext();
   return (
     <Box className="map">
@@ -88,24 +90,17 @@ const Direction = () => {
             </MenuItem>
           </MenuList>
         </Menu>
-        <Box className="" py={6}>
-          <Image src={GFloor.src} top="100px" />
-          <div className="point"></div>
-        </Box>
+        <Flex pt={"2rem"} w="100%" minH="3rem">
+          <Button
+            w="100%"
+            minH="3rem"
+            onClick={() => router.push("/direction/result")}
+          >
+            Direct
+          </Button>
+        </Flex>
       </Stack>
-
-      <Box borderWidth={"6px 0 0 0"} mt={6} borderTopColor="#BAD8FF">
-        <Box fontSize="4xl" margin={"auto 0"} textAlign="center">
-          {" "}
-          Introduction
-        </Box>
-        <Text px={8}>
-          1- Go to the Exit, which is opposite Passio.
-          <br /> 2- Go up to 6th Floor.
-          <br /> 3- Click the Exit icon to go to Floor 6
-        </Text>
-      </Box>
     </Box>
   );
 };
-export default Direction;
+export default SearchDirection;

@@ -42,7 +42,7 @@ const MainHeader = () => {
     await logOut();
     await router.push("/authentication");
     toast({
-      title: `Đã dăng xuất`,
+      title: `Has sign out`,
       status: "success",
       position: "top-right",
       isClosable: true,
@@ -94,6 +94,7 @@ const MainHeader = () => {
             alignItems={"center"}
             borderRadius="15px"
             boxShadow={"0px 4px 4px 0px #00000040"}
+            onClick={() => router.push("/direction")}
           >
             <Text fontSize={"12px"}>Your destination</Text>
           </Box>
