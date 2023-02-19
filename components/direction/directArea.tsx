@@ -45,7 +45,6 @@ const Direction = () => {
             <Box className="" py={6}>
                 <Image src={GFloor.src} top="100px" />
                 <div className="point"></div>
-
             </Box>
         </Stack>
 
@@ -54,7 +53,7 @@ const Direction = () => {
             <Text px={8}>
                 1- Go to the Exit, which is opposite Passio.<br /> 2- Go up to 6th Floor.<br /> 3- Click the Exit icon to go to Floor 6
             </Text>
-            
+
         </Box>
     </Box>
 }

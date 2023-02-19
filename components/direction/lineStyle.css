@@ -26,11 +26,14 @@
 
 .point {
     width: 20px;
-    height: 20px;
-    background-color: blue;
+    height: 50px;
+    /* background-color: blue; */
+    background-size: cover;
+    object-fit: contain;
+    background-image: url("../assets/image/student.png");
     position: absolute;
     left: 6rem;
-    top: 34rem;
+    top: 32rem;
     animation: move-animation 5s linear forwards;
   }
   
@@ -45,7 +48,7 @@
       transform: translate(200px, -100px);
     }
     100%{
-        transform: translate(170px, -130px);
+        transform: translate(170px, -150px);
       }
   }
   
