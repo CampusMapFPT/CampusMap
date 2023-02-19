@@ -24,14 +24,17 @@
     100% {border-right: 20px solid red;}
   }
 
-.point {
+  .point {
     width: 20px;
-    height: 20px;
-    background-color: blue;
+    height: 50px;
+    /* background-color: blue; */
+    background-size: cover;
+    object-fit: contain;
+    background-image: url("../assets/image/student.png");
     position: absolute;
     left: 6rem;
-    top: 34rem;
-    animation: move-animation 5s linear infinite;
+    top: 30rem;
+    animation: move-animation 5s linear forwards;
   }
   
   @keyframes move-animation {
