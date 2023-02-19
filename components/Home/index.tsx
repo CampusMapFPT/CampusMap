@@ -5,6 +5,11 @@ import {
   Flex,
   Image,
   Link,
+  Menu,
+  MenuButton,
+  MenuGroup,
+  MenuItem,
+  MenuList,
   Text,
   useDisclosure,
   useToast,
@@ -15,11 +20,13 @@ import DemoMap from "public/assets/images/demomap.png";
 import EventIcon from "public/assets/images/event.svg";
 import FeedBackIcon from "public/assets/images/feedback.svg";
 import RoomListIcon from "public/assets/images/roomlist.svg";
-import AboutIcon from "public/assets/images/aboutus.svg";
+import CalendarIcon from "public/assets/images/calendar.svg";
 import EventBanner1 from "public/assets/images/event1.png";
 import EventBanner2 from "public/assets/images/event2.png";
 import DscBigImg from "public/assets/images/dscbig.png";
 import Astronaut from "public/assets/images/astronaut.png";
+import RingImg from "public/assets/images/ringbell.png";
+import UserImg from "public/assets/images/user.png";
 //components
 //hooks
 import GoogleMapReact from "google-map-react";
@@ -53,15 +60,25 @@ const MainHeader = () => {
   return (
     <>
       <Box bgColor={"#3A88EC"} height="169px" mb="2rem">
-        <Flex justifyContent={"flex-end"}>
-          <Button
+        <Flex justifyContent={"space-between"}>
+          <Menu>
+            <MenuButton pt={4} as={Button} colorScheme="#3A88EC">
+              <Image alt={"user"} src={UserImg.src} color="white" />
+            </MenuButton>
+            <MenuList>
+              <MenuGroup>
+                <MenuItem onClick={() => handleSignout()}>Sign Out</MenuItem>
+              </MenuGroup>
+            </MenuList>
+          </Menu>
+
+          <Image
+            alt={"ring"}
             p={2}
-            variant={"link"}
+            src={RingImg.src}
             color="white"
-            onClick={() => handleSignout()}
-          >
-            <Text fontSize={"sm"}>Logout</Text>
-          </Button>
+            onClick={() => router.push("/notification")}
+          />
         </Flex>
         <Flex alignItems={"center"} justifyContent={"center"}>
           <Image alt="fpt" src={FptLogo.src} />
@@ -121,6 +138,11 @@ const Home = () => {
       link: "/rooms",
     },
     {
+      title: "Weekly Timetables",
+      icon: CalendarIcon.src,
+      link: "/timetables",
+    },
+    {
       title: "Events",
       icon: EventIcon.src,
       link: "/events",
@@ -129,11 +151,6 @@ const Home = () => {
       title: "Blog",
       icon: FeedBackIcon.src,
       link: "/blogs",
-    },
-    {
-      title: "About Us",
-      icon: AboutIcon.src,
-      link: "/about",
     },
   ];
 

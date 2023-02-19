@@ -48,9 +48,9 @@ const SearchDirection = () => {
           </MenuButton>
           <MenuList>
             <MenuItem
-              onClick={() => globalContext.SetDirectionFrom("Trong Dong Lobby")}
+              onClick={() => globalContext.SetDirectionFrom("Room 404")}
             >
-              Trong Dong Lobby
+              Room 404
             </MenuItem>
             <MenuItem
               onClick={() => globalContext.SetDirectionFrom("Passio Coffee")}

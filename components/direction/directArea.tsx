@@ -46,9 +46,9 @@ const Direction = () => {
           </MenuButton>
           <MenuList>
             <MenuItem
-              onClick={() => globalContext.SetDirectionFrom("Trong Dong Lobby")}
+              onClick={() => globalContext.SetDirectionFrom("Room 404")}
             >
-              Trong Dong Lobby
+              Room 404
             </MenuItem>
             <MenuItem
               onClick={() => globalContext.SetDirectionFrom("Passio Coffee")}
@@ -100,9 +100,9 @@ const Direction = () => {
           Introduction
         </Box>
         <Text px={8}>
-          1- Go to the Exit, which is opposite Passio.
-          <br /> 2- Go up to 6th Floor.
-          <br /> 3- Click the Exit icon to go to Floor 6
+          1- Go to the Trong Dong, which closes Main Entrance.
+          <br /> 2- Turn left and going on about 20m.
+          <br /> 3- Turn left and you will arrive.
         </Text>
       </Box>
     </Box>
