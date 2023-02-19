@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import "../components/assets/css/font.css";
 import theme from "../theme";
+import '../components/direction/lineStyle.css'
 
 const queryClient = new QueryClient();
 function MyApp({ Component, pageProps }: any) {

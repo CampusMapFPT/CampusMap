@@ -4,10 +4,11 @@ import { Image } from '@chakra-ui/react'
 import LocationIcon from '../assets/icon/location.png'
 import DestinationIcon from '../assets/icon/destination.png'
 import GFloor from '../assets/image/gfloor.png'
+import { Text } from '@chakra-ui/react'
 
-
+const arr = [30, 20];
 const Direction = () => {
-    return <div>
+    return <Box className="map" >
         <Stack px={8} mt={6} gap={1}>
             <Menu >
                 <Box color={"#04408C"} fontSize={17}>Choose your location</Box>
@@ -41,51 +42,20 @@ const Direction = () => {
                     <MenuItem>Attend a Workshop</MenuItem>
                 </MenuList>
             </Menu>
-            <Box py={6}>
-                <Grid
-                    h='200px'
-                    templateRows='repeat(6, 1fr)'
-                    templateColumns='repeat(6 , 1fr)'
-                    gap={4}
-                >
-                    <GridItem colSpan={1} bg='papayawhip' />
-                    <GridItem colSpan={1} bg='papayawhip' />
-                    <GridItem colSpan={1} bg='tomato' />
-                    <GridItem colSpan={1} bg='tomato' />
-                    <GridItem colSpan={1} bg='papayawhip' />
-                    <GridItem colSpan={1} bg='papayawhip' />
-                    <GridItem colSpan={1} bg='tomato' />
-                    <GridItem colSpan={1} bg='tomato' />
-                    <GridItem colSpan={1} bg='papayawhip' />
-                    <GridItem colSpan={1} bg='papayawhip' />
-                    <GridItem colSpan={1} bg='tomato' />
-                    <GridItem colSpan={1} bg='papayawhip' />
-                    <GridItem colSpan={1} bg='tomato' />
-                    <GridItem colSpan={1} bg='papayawhip' />
-                    <GridItem colSpan={1} bg='papayawhip' />
-                    <GridItem colSpan={1} bg='papayawhip' />
-                    <GridItem colSpan={1} bg='papayawhip' />
-                    <GridItem colSpan={1} bg='tomato' />
-                    <GridItem colSpan={1} bg='tomato' />
-                    <GridItem colSpan={1} bg='papayawhip' />
-                    <GridItem colSpan={1} bg='papayawhip' />
-                    <GridItem colSpan={1} bg='papayawhip' />
-                    <GridItem colSpan={1} bg='papayawhip' />
-                    <GridItem colSpan={1} bg='tomato' />
-                    <GridItem colSpan={1} bg='tomato' />
-                    <GridItem colSpan={1} bg='tomato' />
-                    <GridItem colSpan={1} bg='tomato' />
-                    <GridItem colSpan={1} bg='tomato' />
-                    <GridItem colSpan={1} bg='tomato    ' />
-                    <GridItem className="n1" colSpan={1} bg='tomato' />
-                    {/* bg='tomato' */}
-                </Grid>
-                <Image src={GFloor.src} />
+            <Box className="" py={6}>
+                <Image src={GFloor.src} top="100px" />
+                <div className="point"></div>
+
             </Box>
         </Stack>
+
         <Box borderWidth={"6px 0 0 0"} mt={6} borderTopColor="#BAD8FF">
-            <Box fontSize='4xl' px={8}> Introduction</Box>
+            <Box fontSize='4xl' margin={"auto 0"} textAlign="center"> Introduction</Box>
+            <Text px={8}>
+                1- Go to the Exit, which is opposite Passio.<br /> 2- Go up to 6th Floor.<br /> 3- Click the Exit icon to go to Floor 6
+            </Text>
+            
         </Box>
-    </div>
+    </Box>
 }
 export default Direction;
