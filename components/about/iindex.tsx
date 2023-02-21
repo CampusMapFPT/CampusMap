@@ -1,7 +1,13 @@
-import { Box, Button, Flex, Image, Link, Text } from "@chakra-ui/react";
-import AstronautImg from "public/assets/images/astronaut.png";
-import LangCocImg from "public/assets/images/langcoc.png";
-import DscImg from "public/assets/images/dsc.png";
+import {
+  Box,
+  Button,
+  Flex,
+  Image,
+  Link,
+  Text,
+  Textarea,
+} from "@chakra-ui/react";
+import FptImg from "public/assets/images/fptcolor.png";
 
 import { useState } from "react";
 import { useRouter } from "next/router";
@@ -11,141 +17,69 @@ const AboutUs = () => {
   const globalContext = useGlobalContext();
 
   return (
-    <>
+    <Flex
+      textColor={"#04408C"}
+      h="512px"
+      flexDirection="column"
+      alignItems={"center"}
+      p={5}
+    >
       <Image
         alt={"event img"}
-        width={"100%"}
-        height="254px"
-        src={AstronautImg.src}
+        width={"94px"}
+        height="42px"
+        src={FptImg.src}
         zIndex={"1"}
       />
-      <Flex
-        direction={"column"}
-        p="25px"
-        borderTopRadius={"30px"}
-        borderTop="solid"
-        borderTopWidth={"5px"}
-        gap={2}
-        color="#04408C"
-        position={"relative"}
-        bottom="5rem"
-        bgColor={"white"}
-        zIndex={"2"}
-      >
-        <Text fontSize={"18px"} fontFamily="Balgin-Regular" fontWeight={500}>
-          HACKATHON
+      <Flex flexDirection={"column"} alignItems="center">
+        <Text fontWeight={600} fontSize="30px">
+          Campus Map
         </Text>
-        <Flex gap={3}>
-          <Flex alignItems={"center"} h="1.2rem">
-            <Box borderRadius={"100%"} bgColor="#04408C" w="5px" h="5px" />
-          </Flex>
-
-          <Text color="#04408C" fontSize={"14px"}>
-            Feb 18 - 19.
+        <Text
+          pl={"2.5rem"}
+          alignSelf={"flex-start"}
+          fontWeight={600}
+          fontSize={"20px"}
+        >
+          Feedback
+        </Text>
+        <Textarea
+          w="313px"
+          h="193px"
+          placeholder="Write your feedback"
+          size="xl"
+        ></Textarea>
+        <Button
+          mt={5}
+          alignSelf={"center"}
+          w="114px"
+          h="38px"
+          bgColor={"#04408C"}
+          borderRadius="72px"
+        >
+          <Text fontWeight={600} fontSize="24px" textColor={"white"}>
+            Submit
           </Text>
-        </Flex>
-        <Flex gap={3}>
-          <Flex alignItems={"center"} h="1.2rem">
-            <Box borderRadius={"100%"} bgColor="#04408C" w="5px" h="5px" />
-          </Flex>
-
-          <Text color="#04408C" fontSize={"14px"}>
-            Entrepreneurial coding competition.
+        </Button>
+        <Flex flexDirection={"column"} alignItems="center" gap={5} p={"1.5rem"}>
+          <Text lineHeight={"18px"} fontSize={"13px"}>
+            The application is developed and operated by: Nguyen Cong Danh, Le
+            Thanh Dat, Huynh Minh Duc, Duong Tuan Minh, Do Thi Thanh Quyen,
+            Nguyen Quy Thanh Tam, Mai Thu Thuy, Le Hieu Trung, Pham Ngoc Nhat
+            Vy.  
           </Text>
-        </Flex>{" "}
-        <Flex flexDirection={"column"}>
-          <Flex gap={2} pt={"1rem"}>
-            <Image w={"152px"} h="152px" src={DscImg.src} alt="event banner" />
-            <Flex flexDirection={"column"}>
-              <Text pb={2} fontSize={"15px"}>
-                DSC SHOWCASE
-              </Text>
-              <Flex gap={3}>
-                <Flex alignItems={"center"} h="1.2rem">
-                  <Box
-                    borderRadius={"100%"}
-                    bgColor="#04408C"
-                    w="3px"
-                    h="3px"
-                  />
-                </Flex>
-                <Text
-                  fontFamily={"Balgin-Light"}
-                  color="#04408C"
-                  fontSize={"14px"}
-                >
-                  Jan 5 - 7.
-                </Text>
-              </Flex>
-              <Flex gap={3}>
-                <Flex alignItems={"center"} h="1.2rem">
-                  <Box
-                    borderRadius={"100%"}
-                    bgColor="#04408C"
-                    w="3px"
-                    h="3px"
-                  />
-                </Flex>
-                <Text
-                  fontFamily={"Balgin-Light"}
-                  color="#04408C"
-                  fontSize={"14px"}
-                >
-                  Showcase product of Game, Web, AI
-                </Text>
-              </Flex>
-            </Flex>
-          </Flex>
-          <Flex gap={2} pt={"1rem"}>
-            <Image
-              w={"152px"}
-              h="152px"
-              src={LangCocImg.src}
-              alt="event banner"
-            />
-            <Flex flexDirection={"column"}>
-              <Text pb={2} fontSize={"15px"}>
-                HOI XUAN LANG COC
-              </Text>
-              <Flex gap={3}>
-                <Flex alignItems={"center"} h="1.2rem">
-                  <Box
-                    borderRadius={"100%"}
-                    bgColor="#04408C"
-                    w="3px"
-                    h="3px"
-                  />
-                </Flex>
-                <Text
-                  fontFamily={"Balgin-Light"}
-                  color="#04408C"
-                  fontSize={"14px"}
-                >
-                  Jan 7.
-                </Text>
-              </Flex>
-              <Flex gap={3}>
-                <Flex alignItems={"center"} h="1.2rem">
-                  <Box
-                    borderRadius={"100%"}
-                    bgColor="#04408C"
-                    w="3px"
-                    h="3px"
-                  />
-                </Flex>
-                <Text
-                  fontFamily={"Balgin-Light"}
-                  color="#04408C"
-                  fontSize={"14px"}
-                >
-                  Lunar New Year Festival
-                </Text>
-              </Flex>
-            </Flex>
-          </Flex>
+          <Flex></Flex>
+          <Text lineHeight={"18px"} fontSize={"13px"}>
+            Based in D1 Street, Saigon Hi-tech Park, Long Thanh My Ward, Thu Duc
+            City, Ho Chi Minh City
+          </Text>
+          <Flex></Flex>
+          <Text lineHeight={"18px"} fontSize={"13px"}>
+            Contact us: Email: campusmap@gmail.com Telephone: 079753499741
+          </Text>
         </Flex>
       </Flex>
-    </>
+    </Flex>
   );
 };
 

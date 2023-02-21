@@ -20,7 +20,7 @@ import DemoMap from "public/assets/images/demomap.png";
 import EventIcon from "public/assets/images/event.svg";
 import FeedBackIcon from "public/assets/images/feedback.svg";
 import RoomListIcon from "public/assets/images/roomlist.svg";
-import CalendarIcon from "public/assets/images/calendar.svg";
+import AboutIcon from "public/assets/images/aboutus.svg";
 import EventBanner1 from "public/assets/images/event1.png";
 import EventBanner2 from "public/assets/images/event2.png";
 import DscBigImg from "public/assets/images/dscbig.png";
@@ -138,11 +138,6 @@ const Home = () => {
       link: "/rooms",
     },
     {
-      title: "Weekly Timetables",
-      icon: CalendarIcon.src,
-      link: "/timetables",
-    },
-    {
       title: "Events",
       icon: EventIcon.src,
       link: "/events",
@@ -151,6 +146,11 @@ const Home = () => {
       title: "Blog",
       icon: FeedBackIcon.src,
       link: "/blogs",
+    },
+    {
+      title: "About Us",
+      icon: AboutIcon.src,
+      link: "/about",
     },
   ];
 

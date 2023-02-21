@@ -34,7 +34,7 @@
     position: absolute;
     left: 6rem;
     top: 30rem;
-    animation: move-animation 5s linear forwards;
+    animation: move-animation 5s linear infinite;
   }
   
   @keyframes move-animation {
