@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "start": "next start",
+    "start": "next build && next start",
     "lint": "next lint",
     "build": "next build && next export ",
     "type-check": "tsc"
@@ -16,11 +16,12 @@
     "@emotion/styled": "^11",
     "@hookform/resolvers": "^2.9.1",
     "axios": "^0.26.1",
-    "firebase": "^9.10.0",
+    "firebase": "^9.18.0",
     "firebase-cli": "^1.2.0",
     "firebase-tools": "^10.6.0",
-    "framer-motion": "^6.3.10",
+    "framer-motion": "^6.5.1",
     "google-map-react": "^2.2.0",
+    "jsrmvi": "^1.0.0",
     "next": "12.1.2",
     "next-auth": "^4.10.3",
     "react": "17.0.2",

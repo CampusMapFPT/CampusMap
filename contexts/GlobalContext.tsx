@@ -10,8 +10,8 @@ export type initialStateProps = {
     content: string;
     header: string;
   };
-  directionFrom: string;
-  directionTo: string;
+  directionFrom: any;
+  directionTo: any;
   SetEvent: Function;
   SetDirectionFrom: Function;
   SetDirectionTo: Function;
@@ -27,11 +27,11 @@ const initialState: initialStateProps = {
     content: "",
     header: "",
   },
-  directionTo: "",
-  directionFrom: "",
-  SetDirectionFrom: () => {},
-  SetDirectionTo: () => {},
-  SetEvent: () => {},
+  directionTo: {},
+  directionFrom: {},
+  SetDirectionFrom: () => { },
+  SetDirectionTo: () => { },
+  SetEvent: () => { },
 };
 
 const GlobalContext = createContext(initialState);

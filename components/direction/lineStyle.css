@@ -8,48 +8,79 @@
 
 } */
 
-.n {
-    width: 0;
-    height: 0;
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    border-right: 20px solid black;
-    transform: rotate(45deg);
-    animation: mymove 5s infinite;
-  }
+.locationList {
+    overflow-y: scroll;
+}
 
-  @keyframes mymove {
-    0% {border-right: 20px solid red;}
-    50% {border-right: 20px solid blue;}
-    100% {border-right: 20px solid red;}
-  }
+.locationList::-webkit-scrollbar {
+    width: 10px;
+}
 
-  .point {
-    width: 20px;
-    height: 50px;
-    /* background-color: blue; */
-    background-size: cover;
-    object-fit: contain;
-    background-image: url("../assets/image/student.png");
+.locationList::-webkit-scrollbar-track {
+    background-color: #EFEFEF;
+    border-radius: 20px;
+}
+
+.locationList::-webkit-scrollbar-thumb {
+    background-color: #3A88EC;
+    min-height: 40px;
+    border-radius: 20px;
+}
+
+.myMenuList {
+    width: 100%;
+    height: auto;
+}
+
+
+.MapImageContainer {
+    position: relative;
+    width: 95%;
+}
+
+.MapImageContainer .MapImage {
+    width: 100%;
+    z-index: 6;
+}
+
+.MapImageContainer .moving-student {
     position: absolute;
-    left: 6rem;
-    top: 30rem;
-    animation: move-animation 5s linear infinite;
-  }
-  
-  @keyframes move-animation {
-    0% {
-      transform: translate(0, 0);
-    }
-    25% {
-      transform: translate(200px, 0px);
-    }
-    75% {
-      transform: translate(200px, -100px);
-    }
-    100%{
-        transform: translate(170px, -130px);
-      }
-  }
-  
+    width: 4%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
 
+.MapImageContainer svg {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 8;
+}
+
+.MapImageContainer svg path {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill-opacity: 0;
+}
+
+.instruction-container {
+    position: relative;
+}
+
+.instruction-container .nextFloorBtn {
+    position: absolute;
+    top: 30px;
+    right: 0%;
+    transform: translate(0%, -50%);
+}
+
+.instruction-container .prevFloorBtn {
+    position: absolute;
+    top: 30px;
+    left: 0%;
+    transform: translate(0%, -50%);
+}
