@@ -1,34 +1,70 @@
-[debug] [2023-04-02T09:06:50.193Z] ----------------------------------------------------------------------
-[debug] [2023-04-02T09:06:50.195Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\doixu\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
-[debug] [2023-04-02T09:06:50.196Z] CLI Version:   11.19.0
-[debug] [2023-04-02T09:06:50.196Z] Platform:      win32
-[debug] [2023-04-02T09:06:50.196Z] Node Version:  v16.18.0
-[debug] [2023-04-02T09:06:50.197Z] Time:          Sun Apr 02 2023 16:06:50 GMT+0700 (Indochina Time)
-[debug] [2023-04-02T09:06:50.197Z] ----------------------------------------------------------------------
+[debug] [2023-04-02T15:08:34.535Z] ----------------------------------------------------------------------
+[debug] [2023-04-02T15:08:34.538Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\doixu\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-04-02T15:08:34.538Z] CLI Version:   11.19.0
+[debug] [2023-04-02T15:08:34.538Z] Platform:      win32
+[debug] [2023-04-02T15:08:34.539Z] Node Version:  v16.18.0
+[debug] [2023-04-02T15:08:34.540Z] Time:          Sun Apr 02 2023 22:08:34 GMT+0700 (Indochina Time)
+[debug] [2023-04-02T15:08:34.540Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2023-04-02T09:06:50.267Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2023-04-02T09:06:50.267Z] > authorizing via signed-in user (datlt.mdc@gmail.com)
-[debug] [2023-04-02T09:06:50.267Z] [iam] checking project campus-map-5c6de for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
-[debug] [2023-04-02T09:06:50.269Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/campus-map-5c6de:testIamPermissions [none]
-[debug] [2023-04-02T09:06:50.270Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/campus-map-5c6de:testIamPermissions x-goog-quota-user=projects/campus-map-5c6de
-[debug] [2023-04-02T09:06:50.270Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/campus-map-5c6de:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2023-04-02T09:06:51.465Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/campus-map-5c6de:testIamPermissions 200
-[debug] [2023-04-02T09:06:51.465Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/campus-map-5c6de:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2023-04-02T09:06:51.466Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/campus-map-5c6de/serviceAccounts/campus-map-5c6de@appspot.gserviceaccount.com:testIamPermissions [none]
-[debug] [2023-04-02T09:06:51.466Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/campus-map-5c6de/serviceAccounts/campus-map-5c6de@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
-[debug] [2023-04-02T09:06:52.483Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/campus-map-5c6de/serviceAccounts/campus-map-5c6de@appspot.gserviceaccount.com:testIamPermissions 200
-[debug] [2023-04-02T09:06:52.483Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/campus-map-5c6de/serviceAccounts/campus-map-5c6de@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
-[debug] [2023-04-02T09:06:52.484Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/campus-map-5c6de [none]
-[debug] [2023-04-02T09:06:52.927Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/campus-map-5c6de 200
-[debug] [2023-04-02T09:06:52.927Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/campus-map-5c6de {"projectId":"campus-map-5c6de","projectNumber":"973231880120","displayName":"campus-map","name":"projects/campus-map-5c6de","resources":{"hostingSite":"campus-map-5c6de","realtimeDatabaseInstance":"campus-map-5c6de-default-rtdb","storageBucket":"campus-map-5c6de.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_7ab8f61a-1801-4e2b-ae3a-72fcccd8fe68"}
-[debug] [2023-04-02T09:06:58.898Z] defaultcredentials: writing to file C:\Users\doixu\AppData\Roaming\firebase\datlt_mdc_gmail.com_application_default_credentials.json
-[debug] [2023-04-02T09:06:58.901Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/campus-map-5c6de/sites pageToken=&pageSize=10
-[debug] [2023-04-02T09:06:59.692Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/campus-map-5c6de/sites 200
-[debug] [2023-04-02T09:06:59.693Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/campus-map-5c6de/sites {"sites":[{"name":"projects/campus-map-5c6de/sites/campus-map-5c6de","defaultUrl":"https://campus-map-5c6de.web.app","appId":"1:973231880120:web:91ff66803b4fd30c27814d","type":"DEFAULT_SITE"}]}
-[debug] [2023-04-02T09:06:59.693Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:973231880120:web:91ff66803b4fd30c27814d/config [none]
-[debug] [2023-04-02T09:07:01.171Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:973231880120:web:91ff66803b4fd30c27814d/config 200
-[debug] [2023-04-02T09:07:01.171Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:973231880120:web:91ff66803b4fd30c27814d/config {"projectId":"campus-map-5c6de","appId":"1:973231880120:web:91ff66803b4fd30c27814d","databaseURL":"https://campus-map-5c6de-default-rtdb.asia-southeast1.firebasedatabase.app","storageBucket":"campus-map-5c6de.appspot.com","locationId":"us-central","apiKey":"AIzaSyBTIL_PgjKVyjfy84RhO-p3w1bqnfiQK6E","authDomain":"campus-map-5c6de.firebaseapp.com","messagingSenderId":"973231880120"}
-[debug] [2023-04-02T09:07:31.105Z] TypeError: Cannot read properties of null (reading 'toString')
+[debug] [2023-04-02T15:08:34.647Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-04-02T15:08:34.648Z] > authorizing via signed-in user (datlt.mdc@gmail.com)
+[debug] [2023-04-02T15:08:34.648Z] [iam] checking project campus-map-5c6de for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-04-02T15:08:34.652Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/campus-map-5c6de:testIamPermissions [none]
+[debug] [2023-04-02T15:08:34.653Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/campus-map-5c6de:testIamPermissions x-goog-quota-user=projects/campus-map-5c6de
+[debug] [2023-04-02T15:08:34.653Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/campus-map-5c6de:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-04-02T15:08:35.812Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/campus-map-5c6de:testIamPermissions 200
+[debug] [2023-04-02T15:08:35.812Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/campus-map-5c6de:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-04-02T15:08:35.813Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/campus-map-5c6de/serviceAccounts/campus-map-5c6de@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-04-02T15:08:35.813Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/campus-map-5c6de/serviceAccounts/campus-map-5c6de@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-04-02T15:08:36.843Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/campus-map-5c6de/serviceAccounts/campus-map-5c6de@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-04-02T15:08:36.843Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/campus-map-5c6de/serviceAccounts/campus-map-5c6de@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-04-02T15:08:36.844Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/campus-map-5c6de [none]
+[debug] [2023-04-02T15:08:37.258Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/campus-map-5c6de 200
+[debug] [2023-04-02T15:08:37.258Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/campus-map-5c6de {"projectId":"campus-map-5c6de","projectNumber":"973231880120","displayName":"campus-map","name":"projects/campus-map-5c6de","resources":{"hostingSite":"campus-map-5c6de","realtimeDatabaseInstance":"campus-map-5c6de-default-rtdb","storageBucket":"campus-map-5c6de.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_f28d7ecf-6cdb-464f-af06-002258e90433"}
+[debug] [2023-04-02T15:08:46.583Z] defaultcredentials: writing to file C:\Users\doixu\AppData\Roaming\firebase\datlt_mdc_gmail.com_application_default_credentials.json
+[debug] [2023-04-02T15:08:46.590Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/campus-map-5c6de/sites pageToken=&pageSize=10
+[debug] [2023-04-02T15:08:47.447Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/campus-map-5c6de/sites 200
+[debug] [2023-04-02T15:08:47.447Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/campus-map-5c6de/sites {"sites":[{"name":"projects/campus-map-5c6de/sites/campus-map-5c6de","defaultUrl":"https://campus-map-5c6de.web.app","appId":"1:973231880120:web:91ff66803b4fd30c27814d","type":"DEFAULT_SITE"}]}
+[debug] [2023-04-02T15:08:47.448Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:973231880120:web:91ff66803b4fd30c27814d/config [none]
+[debug] [2023-04-02T15:08:48.845Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:973231880120:web:91ff66803b4fd30c27814d/config 200
+[debug] [2023-04-02T15:08:48.845Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:973231880120:web:91ff66803b4fd30c27814d/config {"projectId":"campus-map-5c6de","appId":"1:973231880120:web:91ff66803b4fd30c27814d","databaseURL":"https://campus-map-5c6de-default-rtdb.asia-southeast1.firebasedatabase.app","storageBucket":"campus-map-5c6de.appspot.com","locationId":"us-central","apiKey":"AIzaSyBTIL_PgjKVyjfy84RhO-p3w1bqnfiQK6E","authDomain":"campus-map-5c6de.firebaseapp.com","messagingSenderId":"973231880120"}
+[debug] [2023-04-02T15:09:32.795Z] TypeError: Cannot read properties of null (reading 'toString')
+    at ɵcodegenFunctionsDirectory (C:\Users\doixu\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\next\index.js:220:18)
+    at async prepareFrameworks (C:\Users\doixu\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\index.js:305:84)
+    at async deploy (C:\Users\doixu\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:53:13)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-04-02T15:10:46.050Z] ----------------------------------------------------------------------
+[debug] [2023-04-02T15:10:46.051Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\doixu\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --debug
+[debug] [2023-04-02T15:10:46.052Z] CLI Version:   11.19.0
+[debug] [2023-04-02T15:10:46.052Z] Platform:      win32
+[debug] [2023-04-02T15:10:46.052Z] Node Version:  v16.18.0
+[debug] [2023-04-02T15:10:46.053Z] Time:          Sun Apr 02 2023 22:10:46 GMT+0700 (Indochina Time)
+[debug] [2023-04-02T15:10:46.053Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-04-02T15:10:46.124Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-04-02T15:10:46.125Z] > authorizing via signed-in user (datlt.mdc@gmail.com)
+[debug] [2023-04-02T15:10:46.126Z] [iam] checking project campus-map-5c6de for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-04-02T15:10:46.129Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/campus-map-5c6de:testIamPermissions [none]
+[debug] [2023-04-02T15:10:46.130Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/campus-map-5c6de:testIamPermissions x-goog-quota-user=projects/campus-map-5c6de
+[debug] [2023-04-02T15:10:46.130Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/campus-map-5c6de:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-04-02T15:10:48.210Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/campus-map-5c6de:testIamPermissions 200
+[debug] [2023-04-02T15:10:48.211Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/campus-map-5c6de:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-04-02T15:10:48.212Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/campus-map-5c6de/serviceAccounts/campus-map-5c6de@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-04-02T15:10:48.212Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/campus-map-5c6de/serviceAccounts/campus-map-5c6de@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-04-02T15:10:49.327Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/campus-map-5c6de/serviceAccounts/campus-map-5c6de@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-04-02T15:10:49.328Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/campus-map-5c6de/serviceAccounts/campus-map-5c6de@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-04-02T15:10:49.329Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/campus-map-5c6de [none]
+[debug] [2023-04-02T15:10:49.751Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/campus-map-5c6de 200
+[debug] [2023-04-02T15:10:49.751Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/campus-map-5c6de {"projectId":"campus-map-5c6de","projectNumber":"973231880120","displayName":"campus-map","name":"projects/campus-map-5c6de","resources":{"hostingSite":"campus-map-5c6de","realtimeDatabaseInstance":"campus-map-5c6de-default-rtdb","storageBucket":"campus-map-5c6de.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_f28d7ecf-6cdb-464f-af06-002258e90433"}
+[debug] [2023-04-02T15:10:56.363Z] defaultcredentials: writing to file C:\Users\doixu\AppData\Roaming\firebase\datlt_mdc_gmail.com_application_default_credentials.json
+[debug] [2023-04-02T15:10:56.367Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/campus-map-5c6de/sites pageToken=&pageSize=10
+[debug] [2023-04-02T15:10:57.157Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/campus-map-5c6de/sites 200
+[debug] [2023-04-02T15:10:57.158Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/campus-map-5c6de/sites {"sites":[{"name":"projects/campus-map-5c6de/sites/campus-map-5c6de","defaultUrl":"https://campus-map-5c6de.web.app","appId":"1:973231880120:web:91ff66803b4fd30c27814d","type":"DEFAULT_SITE"}]}
+[debug] [2023-04-02T15:10:57.159Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:973231880120:web:91ff66803b4fd30c27814d/config [none]
+[debug] [2023-04-02T15:10:58.449Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:973231880120:web:91ff66803b4fd30c27814d/config 200
+[debug] [2023-04-02T15:10:58.449Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:973231880120:web:91ff66803b4fd30c27814d/config {"projectId":"campus-map-5c6de","appId":"1:973231880120:web:91ff66803b4fd30c27814d","databaseURL":"https://campus-map-5c6de-default-rtdb.asia-southeast1.firebasedatabase.app","storageBucket":"campus-map-5c6de.appspot.com","locationId":"us-central","apiKey":"AIzaSyBTIL_PgjKVyjfy84RhO-p3w1bqnfiQK6E","authDomain":"campus-map-5c6de.firebaseapp.com","messagingSenderId":"973231880120"}
+[debug] [2023-04-02T15:11:35.614Z] TypeError: Cannot read properties of null (reading 'toString')
     at ɵcodegenFunctionsDirectory (C:\Users\doixu\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\next\index.js:220:18)
     at async prepareFrameworks (C:\Users\doixu\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\index.js:305:84)
     at async deploy (C:\Users\doixu\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:53:13)

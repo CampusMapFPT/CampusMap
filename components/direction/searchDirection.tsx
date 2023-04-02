@@ -31,7 +31,7 @@ const SearchDirection = () => {
   const [fromInput, setFromInput] = useState("")
   const [toInput, setToInput] = useState("")
 
-  const url = 'https://campusmapapi.azurewebsites.net/api/Room';
+  const url = 'https://localhost:7057/api/Room';
   const { data: roomData, isLoading, isError } = useFetch(url)
 
   const { from: queryFromId, to: queryToId } = router.query
