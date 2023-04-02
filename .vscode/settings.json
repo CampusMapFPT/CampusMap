@@ -1,4 +1,5 @@
 {
     "appService.defaultWebAppToDeploy": "/subscriptions/676cf6d8-2800-439a-a679-af9b49487e4c/resourceGroups/campusmap/providers/Microsoft.Web/sites/campusmapAPI",
-    "appService.deploySubpath": "."
+    "appService.deploySubpath": ".",
+    "typescript.tsdk": "node_modules\\typescript\\lib"
 }
