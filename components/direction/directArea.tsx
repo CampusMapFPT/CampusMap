@@ -46,7 +46,7 @@ const Direction = (props: any) => {
   const [currentFloor, setCurrentFloor] = useState(0)
   const [hasChangeFloor, setHasChangeFloor] = useState(true)
 
-  const roomDirectionUrl = 'https://campusmapapi.azurewebsites.net/api/Room/direction';
+  const roomDirectionUrl = 'https://localhost:7057/api/Room/direction';
   const { data: directionData, isLoading: isLoadingDirection, isError: isErrorDirection }
     = useFetch(`${roomDirectionUrl}?fromLocationId=${globalContext.directionFrom.id}&toLocationId=${globalContext.directionTo.id}`)
 

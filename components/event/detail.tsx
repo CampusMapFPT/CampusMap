@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Image, Link, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import useGlobalContext from "hooks/useGlobalContext";
 import AstronautImg from "public/assets/images/astronaut.png";
 import ClockImg from "public/assets/images/clock.png";

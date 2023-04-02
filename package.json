@@ -7,7 +7,9 @@
     "start": "next build && next start",
     "lint": "next lint",
     "build": "next build && next export ",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.1.7",
@@ -16,10 +18,11 @@
     "@emotion/styled": "^11",
     "@hookform/resolvers": "^2.9.1",
     "axios": "^0.26.1",
-    "firebase": "^9.18.0",
+    "firebase": "^9.19.1",
     "firebase-cli": "^1.2.0",
     "firebase-tools": "^10.6.0",
     "framer-motion": "^6.5.1",
+    "gh-pages": "^5.0.0",
     "google-map-react": "^2.2.0",
     "jsrmvi": "^1.0.0",
     "next": "12.1.2",
@@ -48,5 +51,6 @@
     "eslint": "^8.17.0",
     "eslint-config-next": "12.1.2",
     "typescript": "^4.7.3"
-  }
+  },
+  "homepage": "https://campusmapfpt.github.io/CampusMap"
 }
