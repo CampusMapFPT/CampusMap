@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Container } from "@chakra-ui/react";
-import Home from "../components/home/index";
+import Home from "../components/home/homeIndex";
 
 function Index() {
 
