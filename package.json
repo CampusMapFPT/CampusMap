@@ -6,7 +6,7 @@
     "dev": "next dev",
     "start": "next build && next start",
     "lint": "next lint",
-    "build": "next build && next export ",
+    "build": "next build",
     "type-check": "tsc"
   },
   "dependencies": {
