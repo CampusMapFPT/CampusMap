@@ -14,6 +14,7 @@ import React, {
   useState,
   useCallback,
 } from "react"
+import { createRoot } from "react-dom/client"
 import MenuItemInput from './menuItemInput'
 import { Image } from "@chakra-ui/react";
 import LocationIcon from "../assets/icon/location.png";

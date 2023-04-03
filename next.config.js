@@ -8,6 +8,7 @@ const nextConfig = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
+  experimental: { appDir: true },
   env: {
     NEXT_PUBLIC_BASE_URL: "",
     NEXT_PUBLIC_FIREBASE_API_KEY: "AIzaSyB-A-7ajjyuCE04qlV0hF_c_u9jMQZft2s",

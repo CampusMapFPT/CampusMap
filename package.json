@@ -18,7 +18,7 @@
     "axios": "^0.26.1",
     "firebase": "^9.19.1",
     "firebase-cli": "^1.2.0",
-    "firebase-tools": "^10.6.0",
+    "firebase-tools": "^10.9.2",
     "framer-motion": "^6.5.1",
     "google-map-react": "^2.2.0",
     "jsrmvi": "^1.0.0",
