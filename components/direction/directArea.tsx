@@ -28,6 +28,7 @@ import { IconButton, Text } from "@chakra-ui/react";
 import useFetch from '../../hooks/fetch/useFetch'
 import useGlobalContext from "hooks/useGlobalContext";
 import { MovingLine } from "./movingLine";
+import { API_ROOM_DIRECTION } from "constants/api";
 
 const imageDimension = { x: 2698, y: 1783 }
 
@@ -46,7 +47,7 @@ const Direction = (props: any) => {
   const [currentFloor, setCurrentFloor] = useState(0)
   const [hasChangeFloor, setHasChangeFloor] = useState(true)
 
-  const roomDirectionUrl = 'https://localhost:7057/api/Room/direction';
+  const roomDirectionUrl = API_ROOM_DIRECTION;
   const { data: directionData, isLoading: isLoadingDirection, isError: isErrorDirection }
     = useFetch(`${roomDirectionUrl}?fromLocationId=${globalContext.directionFrom.id}&toLocationId=${globalContext.directionTo.id}`)
 

@@ -24,6 +24,7 @@ import useGlobalContext from "hooks/useGlobalContext";
 import { useRouter } from "next/router";
 import useFetch from '../../hooks/fetch/useFetch'
 import { removeVI, DefaultOption } from 'jsrmvi';
+import { API_ROOM } from '../../constants/api'
 
 const SearchDirection = () => {
   const router = useRouter();
@@ -31,8 +32,7 @@ const SearchDirection = () => {
   const [fromInput, setFromInput] = useState("")
   const [toInput, setToInput] = useState("")
 
-  const url = 'https://localhost:7057/api/Room';
-  const { data: roomData, isLoading, isError } = useFetch(url)
+  const { data: roomData, isLoading, isError } = useFetch(API_ROOM)
   console.log(roomData);
 
 
