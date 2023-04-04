@@ -8,10 +8,10 @@ import EventDetail from "../components/event/detail";
 function EventPage() {
   return (
     <Box maxW={"mobile"} h="812px" padding="0" fontFamily="campus">
-      <AuthCheck>
-        <NavigationBar title={"Sự kiện"} />
-        <EventDetail />
-      </AuthCheck>
+      {/* <AuthCheck> */}
+          <NavigationBar title={"Events"} />
+          <EventDetail />
+      {/* </AuthCheck> */}
     </Box>
   );
 }

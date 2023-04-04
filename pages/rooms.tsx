@@ -7,10 +7,10 @@ import RoomList from "components/room";
 function RoomListPage() {
   return (
     <Box maxW={"mobile"} h="812px" padding="0" fontFamily="campus">
-      <AuthCheck>
-        <NavigationBar title={"Phòng"} />
+      {/* <AuthCheck> */}
+        <NavigationBar title={"Room List"} />
         <RoomList />
-      </AuthCheck>
+      {/* </AuthCheck> */}
     </Box>
   );
 }

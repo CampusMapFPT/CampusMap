@@ -8,10 +8,10 @@ import AuthCheck from "components/authentication/AuthCheck";
 function BlogDetailPage() {
   return (
     <Box maxW={"mobile"} h="812px" padding="0" fontFamily="campus">
-      <AuthCheck>
-        <NavigationBar title={"Blogs"} />
-        <BlogDetail />
-      </AuthCheck>
+      {/* <AuthCheck> */}
+      <NavigationBar title={"Blogs"} />
+      <BlogDetail />
+      {/* </AuthCheck> */}
     </Box>
   );
 }
