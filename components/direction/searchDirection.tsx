@@ -33,18 +33,17 @@ const SearchDirection = (props: any) => {
   const [toInput, setToInput] = useState("")
 
   const { data: roomData, isLoading, isError } = useFetch(API_ROOM)
-  console.log(roomData);
-  console.log(globalContext.directionFrom);
+  const roomList = roomData.result
 
   let roomListFrom = fromInput === ""
-    ? roomData.result
-    : roomData.result.filter((room) =>
+    ? roomList
+    : roomList.filter((room) =>
       removeVI(room.name)
         .includes(removeVI(fromInput)))
 
   let roomListTo = toInput === ""
-    ? roomData.result
-    : roomData.result.filter((room) =>
+    ? roomList
+    : roomList.filter((room) =>
       removeVI(room.name)
         .includes(removeVI(toInput)))
 

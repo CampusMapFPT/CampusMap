@@ -15,7 +15,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 //images and icons
-import FptLogo from "public/assets/images/fptlogo.png";
+import Logo from "public/assets/images/logo-w-slogan.png";
 import DemoMap from "public/assets/images/demomap.png";
 import EventIcon from "public/assets/images/event.svg";
 import FeedBackIcon from "public/assets/images/feedback.svg";
@@ -59,31 +59,13 @@ const MainHeader = () => {
 
   return (
     <>
-      <Box bgColor={"#3A88EC"} height="169px" mb="2rem">
-        <Flex justifyContent={"space-between"}>
-          <Menu>
-            <MenuButton pt={4} as={Button} colorScheme="#3A88EC">
-              <Image alt={"user"} src={UserImg.src} color="white" />
-            </MenuButton>
-            <MenuList>
-              <MenuGroup>
-                <MenuItem onClick={() => handleSignout()}>Sign Out</MenuItem>
-              </MenuGroup>
-            </MenuList>
-          </Menu>
+      <Box bgColor={"#3A88EC"} height="169px" mb="1rem">
 
-          <Image
-            alt={"ring"}
-            p={2}
-            src={RingImg.src}
-            color="white"
-            onClick={() => router.push("/notification")}
-          />
+        <Flex paddingTop='20px'
+          alignItems={"center"} justifyContent={"center"}>
+          <Image alt="fpt" src={Logo.src} width='70%' p='10px 0px' />
         </Flex>
-        <Flex alignItems={"center"} justifyContent={"center"}>
-          <Image alt="fpt" src={FptLogo.src} />
-        </Flex>
-        <Flex alignItems={"center"} justifyContent={"space-between"} px="20px">
+        <Flex alignItems={"center"} justifyContent={"space-between"} p="20px">
           <Box
             as="button"
             display={"flex"}
@@ -96,7 +78,7 @@ const MainHeader = () => {
             boxShadow={"0px 4px 4px 0px #00000040"}
             onClick={() => router.push("/direction")}
           >
-            <Text fontSize={"12px"}>Your location</Text>
+            <Text fontSize={"12px"}>Vị trí của bạn</Text>
           </Box>
           <Box px="11px">
             <ArrowForwardIcon color="#FFDD69" />
@@ -113,7 +95,7 @@ const MainHeader = () => {
             boxShadow={"0px 4px 4px 0px #00000040"}
             onClick={() => router.push("/direction")}
           >
-            <Text fontSize={"12px"}>Your destination</Text>
+            <Text fontSize={"12px"}>Điểm đến</Text>
           </Box>
         </Flex>
       </Box>
@@ -133,12 +115,12 @@ const Home = () => {
 
   const IconButtons = [
     {
-      title: "Room List",
+      title: "Phòng",
       icon: RoomListIcon.src,
       link: "/rooms",
     },
     {
-      title: "Events",
+      title: "Sự kiện",
       icon: EventIcon.src,
       link: "/events",
     },
@@ -148,7 +130,7 @@ const Home = () => {
       link: "/blogs",
     },
     {
-      title: "About Us",
+      title: "Thông tin",
       icon: AboutIcon.src,
       link: "/about",
     },
@@ -220,7 +202,7 @@ const Home = () => {
           })}
         </Flex>
         {/* map */}
-        <Flex my="30px">
+        <Flex my="10px">
           <Box sx={{ height: "217px", width: "100%" }}>
             <GoogleMapReact
               bootstrapURLKeys={{ key: process.env.NEXT_PUBLIC_API_KEY }}
@@ -233,14 +215,14 @@ const Home = () => {
         </Flex>
 
         {/* <Image py="24px" h={"217px"} w="375px" alt="map" src={DemoMap.src} /> */}
-        <Flex justifyContent={"space-between"} px="20px">
+        <Flex justifyContent={"space-between"} px="20px" pt="10px">
           <Text textColor="#04408C" fontSize={"16px"} fontWeight="600">
-            Events
+            Sự kiện
           </Text>
           <Link onClick={() => router.push("/events")}>
             <Flex>
               <Text lineHeight={"17px"} fontSize="13px" color="#04408C">
-                See more
+                Xem thêm
               </Text>
               <ArrowForwardIcon />
             </Flex>
@@ -249,7 +231,7 @@ const Home = () => {
 
         <Flex
           justifyContent={"space-between"}
-          pt="14px"
+          pt="10px"
           mx={{ sm: "6%" }}
           textColor="#04408C"
         >
