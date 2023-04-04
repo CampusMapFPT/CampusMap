@@ -33,6 +33,8 @@ const SearchDirection = () => {
 
   const url = 'https://localhost:7057/api/Room';
   const { data: roomData, isLoading, isError } = useFetch(url)
+  console.log(roomData);
+
 
   const { from: queryFromId, to: queryToId } = router.query
 
