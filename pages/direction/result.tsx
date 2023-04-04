@@ -11,7 +11,7 @@ const DirectionResultPage = () => {
   console.log("query", router.query);
   return (
     <Box maxW={"mobile"} h="812px" padding="0" fontFamily="campus">
-      <NavigationBar title={"Home"} />
+      <NavigationBar title={"Tìm kiếm đường đi"} />
       {/* <Image src={GFloor.src} top="100px"/> */}
 
       <Direction

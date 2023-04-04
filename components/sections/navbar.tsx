@@ -1,5 +1,6 @@
-import { ArrowBackIcon } from "@chakra-ui/icons";
-import { Box, Flex, IconButton, Text } from "@chakra-ui/react";
+import { ArrowBackIcon, } from "@chakra-ui/icons";
+import { Box, Flex, IconButton, Text, Image } from "@chakra-ui/react";
+import Logo from "public/assets/images/logo-w-slogan.png";
 import { useRouter } from "next/router";
 
 type NavProps = {
@@ -24,9 +25,19 @@ const NavigationBar = ({ title }: NavProps) => {
         icon={<ArrowBackIcon color="white" boxSize={5} />}
       />
 
-      <Text textColor={"white"} fontSize={"24px"} lineHeight="34px">
-        {title}
-      </Text>
+      {title === null || title === undefined || title === '' ?
+        <Image
+          alt={"event img"}
+          height="42px"
+          src={Logo.src}
+          zIndex={"1"}
+        />
+        : <Text textColor={"white"} fontSize={"24px"} lineHeight="34px">
+          {title}
+        </Text>
+      }
+
+
     </Flex>
   );
 };

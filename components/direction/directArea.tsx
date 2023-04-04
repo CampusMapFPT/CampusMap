@@ -47,9 +47,10 @@ const Direction = (props: any) => {
   const [currentFloor, setCurrentFloor] = useState(0)
   const [hasChangeFloor, setHasChangeFloor] = useState(true)
 
+  const { fromId, toId, fromLocation, toLocation } = props.locationQuery
   const roomDirectionUrl = API_ROOM_DIRECTION;
   const { data: directionData, isLoading: isLoadingDirection, isError: isErrorDirection }
-    = useFetch(`${roomDirectionUrl}?fromLocationId=${globalContext.directionFrom.id}&toLocationId=${globalContext.directionTo.id}`)
+    = useFetch(`${roomDirectionUrl}?fromLocationId=${fromId}&toLocationId=${toId}`)
 
   const directionGuidesData = directionData.result || []
 
@@ -85,7 +86,7 @@ const Direction = (props: any) => {
             <Flex>
               <Image src={LocationIcon.src} display="block" p="4" />
               <Box opacity={0.5} fontSize={15} p="1" alignSelf={"center"}>
-                {globalContext.directionFrom.name}
+                {fromLocation}
               </Box>
             </Flex>
           </MenuButton>
@@ -101,14 +102,14 @@ const Direction = (props: any) => {
             <Flex>
               <Image src={DestinationIcon.src} display="block" p="4" />
               <Box opacity={0.5} fontSize={15} p="1" alignSelf={"center"}>
-                {globalContext.directionTo.name}
+                {toLocation}
               </Box>
             </Flex>
           </MenuButton>
         </Menu>
 
       </Stack>
-      <Box margin={"40px auto 20px"} className="MapImageContainer">
+      <Box margin={"20px auto 0px"} className="MapImageContainer">
         {
           currentImage &&
           <Image
@@ -128,7 +129,12 @@ const Direction = (props: any) => {
           </>
         }
       </Box>
-      <Box borderWidth={"6px 0 0 0"} mt={6} borderTopColor="#BAD8FF" className="instruction-container">
+
+      <Box
+        borderWidth={"6px 0 0 0"}
+        mt={6}
+        borderTopColor="#BAD8FF"
+        className="instruction-container">
         <IconButton
           className="nextFloorBtn"
           aria-label='Next Floor'
@@ -142,7 +148,7 @@ const Direction = (props: any) => {
           onClick={() => { if (currentIndex > 0) setCurrentIndex(currentIndex - 1) }}
           icon={<ChevronLeftIcon />} />
         <Box fontSize="4xl" margin={"auto 0"} textAlign="center">
-          Instruction
+          Hướng dẫn
         </Box>
         <Box margin={"0 20px"}>
           {isLoadingDirection && <Text px={8}>Đang tải...</Text>}

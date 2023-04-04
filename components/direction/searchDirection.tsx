@@ -26,7 +26,7 @@ import useFetch from '../../hooks/fetch/useFetch'
 import { removeVI, DefaultOption } from 'jsrmvi';
 import { API_ROOM } from '../../constants/api'
 
-const SearchDirection = () => {
+const SearchDirection = (props: any) => {
   const router = useRouter();
   const globalContext = useGlobalContext();
   const [fromInput, setFromInput] = useState("")
@@ -34,9 +34,7 @@ const SearchDirection = () => {
 
   const { data: roomData, isLoading, isError } = useFetch(API_ROOM)
   console.log(roomData);
-
-
-  const { from: queryFromId, to: queryToId } = router.query
+  console.log(globalContext.directionFrom);
 
   let roomListFrom = fromInput === ""
     ? roomData.result
@@ -73,7 +71,7 @@ const SearchDirection = () => {
       <Stack px={8} mt={6} gap={1}>
         <Menu >
           <Box color={"#04408C"} fontSize={17}>
-            Choose your location
+            Chọn vị trí của bạn
           </Box>
           <MenuButton
             as={Button}
@@ -86,7 +84,7 @@ const SearchDirection = () => {
               <Image src={LocationIcon.src} display="block" p="4" />
               <Box opacity={0.5} fontSize={15} p="1" alignSelf={"center"}>
                 {globalContext.directionFrom.name == "" || globalContext.directionFrom.name === undefined
-                  ? "Your location"
+                  ? "Vị trí"
                   : globalContext.directionFrom.name}
               </Box>
             </Flex>
@@ -128,7 +126,7 @@ const SearchDirection = () => {
         </Menu>
         <Menu>
           <Box color={"#04408C"} fontSize={17}>
-            Choose your destination
+            Chọn điểm đến của bạn
           </Box>
           <MenuButton
             as={Button}
@@ -141,7 +139,7 @@ const SearchDirection = () => {
               <Image src={DestinationIcon.src} display="block" p="4" />
               <Box opacity={0.5} fontSize={15} p="1" alignSelf={"center"}>
                 {globalContext.directionTo.name == "" || globalContext.directionTo.name === undefined
-                  ? "Your destination"
+                  ? "Vị trí"
                   : globalContext.directionTo.name}
               </Box>
             </Flex>
@@ -182,19 +180,28 @@ const SearchDirection = () => {
           </MenuList>
         </Menu>
         <Flex pt={"2rem"} w="100%" minH="3rem">
-          <Button
-            w="100%"
-            minH="3rem"
-            onClick={() => router.push({
-              pathname: "/direction/result",
-              query: {
-                from: globalContext.directionFrom.name,
-                to: globalContext.directionTo.name,
-              }
-            })}
-          >
-            Direct
-          </Button>
+          {Object.keys(globalContext.directionFrom).length > 0 && Object.keys(globalContext.directionTo).length > 0 &&
+            <Button
+              w="175px"
+              h="45px"
+              margin="0 auto"
+              borderRadius="72px"
+              background="#04408C"
+              color="#fff"
+              onClick={() => router.push({
+                pathname: "/direction/result",
+                query: {
+                  fromId: globalContext.directionFrom.id,
+                  fromLocation: globalContext.directionFrom.name,
+                  toId: globalContext.directionTo.id,
+                  toLocation: globalContext.directionTo.name,
+                }
+              })}
+            >
+              Dẫn đường
+            </Button>
+          }
+
         </Flex>
       </Stack>
     </Box>

@@ -4,8 +4,11 @@ import {
   Flex,
   Image,
   Link,
+  ListItem,
+  OrderedList,
   Text,
   Textarea,
+  UnorderedList,
 } from "@chakra-ui/react";
 import FptImg from "public/assets/images/fptcolor.png";
 
@@ -35,7 +38,7 @@ const AboutUs = () => {
         <Text fontWeight={600} fontSize="30px">
           Campus Map
         </Text>
-        <Text
+        {/* <Text
           pl={"2.5rem"}
           alignSelf={"flex-start"}
           fontWeight={600}
@@ -60,22 +63,59 @@ const AboutUs = () => {
           <Text fontWeight={600} fontSize="24px" textColor={"white"}>
             Submit
           </Text>
-        </Button>
-        <Flex flexDirection={"column"} alignItems="center" gap={5} p={"1.5rem"}>
+        </Button> */}
+        <Flex flexDirection={"column"} alignItems="left" gap={5} p={"1.5rem"}>
           <Text lineHeight={"18px"} fontSize={"13px"}>
-            The application is developed and operated by: Nguyen Cong Danh, Le
-            Thanh Dat, Huynh Minh Duc, Duong Tuan Minh, Do Thi Thanh Quyen,
-            Nguyen Quy Thanh Tam, Mai Thu Thuy, Le Hieu Trung, Pham Ngoc Nhat
-            Vy.  
+            Sản phẩm được phát triển và vận hành bởi:
+            <UnorderedList>
+              <ListItem>
+                Nguyễn Công Danh
+              </ListItem>
+              <ListItem>
+                Lê Thành Đạt
+              </ListItem>
+              <ListItem>
+                Huỳnh Minh Đức
+              </ListItem>
+              <ListItem>
+                Dương Tuấn Minh
+              </ListItem>
+              <ListItem>
+                Đỗ Thị Thanh Quyên
+              </ListItem>
+              <ListItem>
+                Nguyễn Quý Thanh Tâm
+              </ListItem>
+              <ListItem>
+                Mai Thu Thủy
+              </ListItem>
+              <ListItem>
+                Trần Lê Hiếu Trung
+              </ListItem>
+              <ListItem>
+                Phạm Ngọc Nhật Vy
+              </ListItem>
+            </UnorderedList>
+
           </Text>
           <Flex></Flex>
           <Text lineHeight={"18px"} fontSize={"13px"}>
-            Based in D1 Street, Saigon Hi-tech Park, Long Thanh My Ward, Thu Duc
-            City, Ho Chi Minh City
+            Trụ sở ở Lô E2a-7, Đường D1, Khu Công nghệ cao, P.Long Thạnh Mỹ, Tp. Thủ Đức, TP.HCM.
           </Text>
           <Flex></Flex>
           <Text lineHeight={"18px"} fontSize={"13px"}>
-            Contact us: Email: campusmap@gmail.com Telephone: 079753499741
+            Liên hệ chúng tôi:
+            <UnorderedList>
+              <ListItem>
+                Email: campusmap@gmail.com
+              </ListItem>
+              <ListItem>
+                Fanpage: facebook.com/campusmap.fpt
+              </ListItem>
+              <ListItem>
+                Điện thoại: 0788925011
+              </ListItem>
+            </UnorderedList>
           </Text>
         </Flex>
       </Flex>
