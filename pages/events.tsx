@@ -7,10 +7,11 @@ import Event from "components/event";
 function EventPage() {
   return (
     <Box maxW={"mobile"} h="812px" padding="0" fontFamily="campus">
-      <AuthCheck>
-        <NavigationBar title={"Events"} />
-        <Event />
-      </AuthCheck>
+      {/* <AuthCheck>
+        
+      </AuthCheck> */}
+      <NavigationBar title={"Events"} />
+      <Event />
     </Box>
   );
 }
