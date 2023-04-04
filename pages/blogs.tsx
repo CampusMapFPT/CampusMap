@@ -7,10 +7,8 @@ import AuthCheck from "components/authentication/AuthCheck";
 function BlogPage() {
   return (
     <Box maxW={"mobile"} h="812px" padding="0" fontFamily="campus">
-      <AuthCheck>
-        <NavigationBar title={"Blogs"} />
-        <Blog />
-      </AuthCheck>
+      <NavigationBar title={"Blogs"} />
+      <Blog />
     </Box>
   );
 }
