@@ -120,7 +120,7 @@ const Event = () => {
               fontFamily={"Balgin-Bold"}
               fontSize={selected == "button1" ? "18px" : "14px"}
             >
-              On-going
+              Đang diễn ra
             </Text>
           </Button>
           <Button
@@ -141,7 +141,7 @@ const Event = () => {
               fontWeight={600}
               fontSize={selected != "button1" ? "18px" : "14px"}
             >
-              Future
+              Sắp diễn ra
             </Text>
           </Button>
         </Flex>

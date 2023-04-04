@@ -9,8 +9,8 @@ function EventPage() {
   return (
     <Box maxW={"mobile"} h="812px" padding="0" fontFamily="campus">
       {/* <AuthCheck> */}
-      <NavigationBar title={"Events"} />
-      <EventDetail />
+          <NavigationBar title={"Events"} />
+          <EventDetail />
       {/* </AuthCheck> */}
     </Box>
   );

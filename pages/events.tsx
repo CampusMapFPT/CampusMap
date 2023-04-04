@@ -10,7 +10,7 @@ function EventPage() {
       {/* <AuthCheck>
         
       </AuthCheck> */}
-      <NavigationBar title={"Events"} />
+      <NavigationBar title={"Sự kiện"} />
       <Event />
     </Box>
   );

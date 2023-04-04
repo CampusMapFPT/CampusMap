@@ -8,7 +8,7 @@ function RoomDetailPage() {
   return (
     <Box maxW={"mobile"} h="812px" padding="0" fontFamily="campus">
       {/* <AuthCheck> */}
-      <NavigationBar title={"Room List"} />
+      <NavigationBar title={"Phòng"} />
       <SearchRoom />
       {/* </AuthCheck> */}
     </Box>
