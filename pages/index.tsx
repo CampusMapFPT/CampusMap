@@ -5,7 +5,7 @@ import Home from "../components/home/homeIndex";
 function Index() {
 
   return (
-    <Box w={"mobile"} h="812px" fontFamily="campus">
+    <Box w={"mobile"} fontFamily="campus">
       {/* <AuthCheck>
         
       </AuthCheck> */}

@@ -6,7 +6,7 @@ import SearchRoom from "components/room/searchroom";
 
 function RoomDetailPage() {
   return (
-    <Box maxW={"mobile"} h="812px" padding="0" fontFamily="campus">
+    <Box maxW={"mobile"} padding="0" fontFamily="campus">
       {/* <AuthCheck> */}
       <NavigationBar title={"Phòng"} />
       <SearchRoom />

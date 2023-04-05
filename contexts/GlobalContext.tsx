@@ -12,7 +12,9 @@ export type initialStateProps = {
   };
   directionFrom: any;
   directionTo: any;
+  roomList: any;
   SetEvent: Function;
+  SetRoomList: Function;
   SetDirectionFrom: Function;
   SetDirectionTo: Function;
 };
@@ -29,6 +31,8 @@ const initialState: initialStateProps = {
   },
   directionTo: {},
   directionFrom: {},
+  roomList: null,
+  SetRoomList: () => { },
   SetDirectionFrom: () => { },
   SetDirectionTo: () => { },
   SetEvent: () => { },
@@ -42,16 +46,17 @@ type UserContextProviderProps = {
 
 function GlobalContextProvider({ children }: UserContextProviderProps) {
   const [event, setEvent] = useState<any | null>(initialState.event);
-  const [directionFrom, setDirectionFrom] = useState<any | null>(
-    initialState.directionFrom
-  );
-  const [directionTo, setDirectionTo] = useState<any | null>(
-    initialState.directionTo
-  );
+  const [directionFrom, setDirectionFrom] = useState<any | null>(initialState.directionFrom);
+  const [directionTo, setDirectionTo] = useState<any | null>(initialState.directionTo);
+  const [roomList, setRoomList] = useState<any | null>(initialState.roomList);
 
   function SetEvent(event: any) {
     if (event != null) setEvent(event);
     else setEvent(null);
+  }
+  function SetRoomList(event: any) {
+    if (event != null) setRoomList(event);
+    else setRoomList(null);
   }
 
   function SetDirectionFrom(event: any) {
@@ -68,6 +73,8 @@ function GlobalContextProvider({ children }: UserContextProviderProps) {
         event,
         directionFrom,
         directionTo,
+        roomList,
+        SetRoomList,
         SetDirectionFrom,
         SetDirectionTo,
         SetEvent,
