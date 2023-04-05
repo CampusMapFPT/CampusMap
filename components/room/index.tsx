@@ -2,6 +2,7 @@ import { SearchIcon } from "@chakra-ui/icons";
 import {
   Box,
   Flex,
+  Icon,
   Image,
   Input,
   InputGroup,
@@ -9,58 +10,40 @@ import {
   Link,
   Text,
 } from "@chakra-ui/react";
+import {
+  ChevronRightIcon,
+} from "@chakra-ui/icons";
+import { API_ROOM } from "constants/api";
+import useFetch from "hooks/fetch/useFetch";
 import { useRouter } from "next/router";
-import Room115Image from "public/assets/images/115.png";
-import Room201Image from "public/assets/images/201.png";
-import Room202Image from "public/assets/images/202.png";
-import Room416Image from "public/assets/images/416.png";
-import Room425Image from "public/assets/images/425.png";
-import Room501Image from "public/assets/images/501.png";
 import { useEffect, useState } from "react";
+import { removeVI, DefaultOption } from 'jsrmvi';
+import useGlobalContext from "hooks/useGlobalContext";
 const RoomList = () => {
   const router = useRouter();
-  const [search, SetSearch] = useState("");
-  const rooms = [
-    {
-      name: "Room 115",
-      description: "Infrastucture Management",
-      activeTime: "Open: 7:00 - 11:45 | 12:30 - 5:15",
-      image: Room115Image.src,
-    },
-    {
-      name: "Room 201",
-      description: "Community room and library",
-      activeTime: "Mon-Fri: 8:00 - 18:00 | 8:00 - 12:00",
-      image: Room201Image.src,
-    },
-    {
-      name: "Room 202",
-      description: "Student Service",
-      activeTime: "Open: 7:00 - 11:30 | 13:30 - 4:45",
-      image: Room202Image.src,
-    },
-    {
-      name: "Room 416",
-      description: "Top Hall C",
-      activeTime: "",
-      image: Room416Image.src,
-    },
-    {
-      name: "Room 425",
-      description: "LUK, Innovation Space",
-      activeTime: "",
-      image: Room425Image.src,
-    },
-    {
-      name: "Room 501",
-      description: "LUK, Cinema",
-      activeTime: "",
-      image: Room501Image.src,
-    },
-  ];
+  const globalContext = useGlobalContext()
+  const [searchInput, SetSearchInput] = useState("");
+  const { data: roomData, isLoading, isError } = useFetch(API_ROOM)
+
+  const roomList = globalContext.roomList
   useEffect(() => {
-    if (search === "61") router.push("/searchroom");
-  }, [search]);
+    if (roomData)
+      globalContext.SetRoomList(roomData.result)
+  }, [roomData])
+
+  console.log('search direction - roomlist', roomList);
+  console.log('search direction - roomData', roomData);
+
+  let roomListFilter;
+
+  if (roomList !== null && roomList !== undefined) {
+    roomListFilter = searchInput === ""
+      ? roomList
+      : roomList.filter((room) =>
+        removeVI(room.name)
+          .includes(removeVI(searchInput)))
+  }
+
   return (
     <>
       <Flex justifyContent={"center"} position="relative" bottom={"20px"}>
@@ -72,9 +55,9 @@ const RoomList = () => {
             color="black"
             bgColor={"#FFDD69"}
             type="text"
-            value={search}
+            value={searchInput}
             onChange={(e) => {
-              SetSearch(e.target.value);
+              SetSearchInput(e.target.value);
             }}
             placeholder="Search room"
             boxShadow="0px 4px 4px 0px #00000040"
@@ -84,40 +67,55 @@ const RoomList = () => {
       </Flex>
 
       <Flex direction={"column"} p="0px 25px 0px 25px" gap={2} color="#04408C">
-        {rooms.map((room) => {
-          return (
-            <Flex key={room.name} flexDirection={"column"} py={"1rem"}>
-              <Flex gap={5}>
-                <Image alt={room.name} src={room.image} w="50px" h="63px" />
-                <Flex flexDirection={"column"} justifyContent="center">
-                  <Text
-                    lineHeight={"23px"}
-                    fontSize={"17px"}
-                    fontFamily={"Balgin-Regular"}
-                  >
-                    {room.name}
-                  </Text>
-                  <Text
-                    lineHeight={"20px"}
-                    fontSize={"15px"}
-                    fontFamily={"Balgin-Light"}
-                  >
-                    {room.description}
-                  </Text>
+        {roomListFilter && roomListFilter.length > 0 &&
+          roomListFilter.map((room) => {
+            return (
+              <Flex key={room.id} flexDirection={"column"} py={"1rem"} alignContent={'flex-start'}>
+                <Flex gap={5}
+                  onClick={() => router.push({
+                    pathname: "/direction",
+                    query: {
+                      toId: room.id,
+                      toLocation: room.name,
+                    }
+                  })}>
+                  <Image alt={room.name} src={require(`../../public/assets/images/${room.type}.png`).default.src}
+                    w="50px" h="50px" />
+                  <Flex flexDirection={"column"}
+                    w={'100%'}>
+                    <Flex
+                      flexDirection={"row"}
+                      justifyContent={'space-between'}>
+                      <Text
+                        lineHeight={"23px"}
+                        fontSize={"17px"}
+                        fontFamily={"Balgin-Regular"}
+                      >
+                        {room.name}
+                      </Text>
+                      <ChevronRightIcon boxSize={'20px'} />
+                    </Flex>
+                    <Text
+                      lineHeight={"20px"}
+                      fontSize={"15px"}
+                      fontFamily={"Balgin-Light"}
+                    >
+                      {room.secondName}
+                    </Text>
+                  </Flex>
                 </Flex>
-              </Flex>
 
-              <Text
-                textDecoration={"underline"}
-                lineHeight={"20px"}
-                fontSize={"15px"}
-                fontFamily={"Balgin-Light"}
-              >
-                {room.activeTime}
-              </Text>
-            </Flex>
-          );
-        })}
+                <Text
+                  textDecoration={"underline"}
+                  lineHeight={"20px"}
+                  fontSize={"15px"}
+                  fontFamily={"Balgin-Light"}
+                >
+                  {room.activeTime}
+                </Text>
+              </Flex>
+            );
+          })}
       </Flex>
     </>
   );

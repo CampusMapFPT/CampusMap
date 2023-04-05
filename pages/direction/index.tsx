@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 const DirectionPage = () => {
   const router = useRouter()
   return (
-    <Box maxW={"mobile"} h="812px" padding="0" fontFamily="campus">
+    <Box maxW={"mobile"} padding="0" fontFamily="campus">
       <NavigationBar title={""} />
 
       <SearchDirection

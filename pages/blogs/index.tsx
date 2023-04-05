@@ -1,19 +1,16 @@
 import React from "react";
 import { Box, Container } from "@chakra-ui/react";
 import NavigationBar from "components/sections/navbar";
-
-import BlogDetail from "components/blog/blogdetail";
+import Blog from "components/blog";
 import AuthCheck from "components/authentication/AuthCheck";
 
-function BlogDetailPage() {
+function BlogPage() {
   return (
-    <Box maxW={"mobile"} h="812px" padding="0" fontFamily="campus">
-      {/* <AuthCheck> */}
+    <Box maxW={"mobile"} padding="0" fontFamily="campus">
       <NavigationBar title={"Blogs"} />
-      <BlogDetail />
-      {/* </AuthCheck> */}
+      <Blog />
     </Box>
   );
 }
 
-export default BlogDetailPage;
+export default BlogPage;

@@ -2,6 +2,7 @@ import {
   Box,
   Button,
   Flex,
+  Icon,
   Menu,
   MenuButton,
   MenuDivider,
@@ -13,6 +14,7 @@ import {
 import React, {
   useState,
   useCallback,
+  useEffect,
 } from "react"
 import { createRoot } from "react-dom/client"
 import MenuItemInput from './menuItemInput'
@@ -33,19 +35,31 @@ const SearchDirection = (props: any) => {
   const [toInput, setToInput] = useState("")
 
   const { data: roomData, isLoading, isError } = useFetch(API_ROOM)
-  const roomList = roomData.result
 
-  let roomListFrom = fromInput === ""
-    ? roomList
-    : roomList.filter((room) =>
-      removeVI(room.name)
-        .includes(removeVI(fromInput)))
+  const roomList = globalContext.roomList
+  useEffect(() => {
+    if (roomData)
+      globalContext.SetRoomList(roomData.result)
+  }, [roomData])
+  console.log('search direction - roomlist', roomList);
+  console.log('search direction - roomData', roomData);
 
-  let roomListTo = toInput === ""
-    ? roomList
-    : roomList.filter((room) =>
-      removeVI(room.name)
-        .includes(removeVI(toInput)))
+  let roomListFrom, roomListTo
+
+  if (roomList !== null && roomList !== undefined) {
+    roomListFrom = fromInput === ""
+      ? roomList
+      : roomList.filter((room) =>
+        removeVI(room.name)
+          .includes(removeVI(fromInput)))
+
+    roomListTo = toInput === ""
+      ? roomList
+      : roomList.filter((room) =>
+        removeVI(room.name)
+          .includes(removeVI(toInput)))
+  }
+
 
   const onSearchFromInput = useCallback(
     (
@@ -63,7 +77,8 @@ const SearchDirection = (props: any) => {
     },
     []
   )
-  console.log(globalContext);
+
+  console.log(props);
 
   return (
     <Box className="map">

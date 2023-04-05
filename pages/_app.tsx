@@ -21,10 +21,8 @@ function MyApp({ Component, pageProps }: any) {
             </Container>
 
             <Box
-              position={"fixed"}
-              height="45px"
-              bottom='0'
-              width={'100vw'}
+              display={"flex"}
+              height="62px"
               bgColor={"#3A88EC"}
               zIndex={99}
             />
