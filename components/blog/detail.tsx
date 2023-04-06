@@ -12,7 +12,7 @@ const BlogDetail = () => {
     console.log(blogDetail);
 
     return (
-        <Flex direction={"column"} p="25px" gap={2} color="#04408C">
+        <Flex direction={"column"} p="25px" gap={2} color="#04408C" className="bodyContent">
             {
                 blogDetail &&
                 <>
