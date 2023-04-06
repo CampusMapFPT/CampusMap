@@ -121,7 +121,7 @@ const Event = () => {
           {eventList &&
             eventList.map(event => {
               return (
-                <Flex gap={2} pt={"1rem"} onClick={() => router.push({
+                <Flex gap={2} key={event.id} pt={"1rem"} onClick={() => router.push({
                   pathname: "/events/{id}",
                   query: {
                     id: event.id,
