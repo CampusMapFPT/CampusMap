@@ -2,14 +2,14 @@ import React from "react";
 import { Box, Container, Flex } from "@chakra-ui/react";
 import NavigationBar from "components/sections/navbar";
 import EventDetail from "../../components/events/detail";
-import useHeadContext from "hooks/useHeadContext";
+import Head from "next/head";
 
 function EventPage() {
-    const headContext = useHeadContext();
-    headContext.SetPageTitle('Campus Map - Sự kiện')
-
     return (
         <>
+            <Head>
+                <title>Campus Map - Sự kiện</title>
+            </Head>
             <Box maxW={"mobile"} padding="0" fontFamily="campus" className="header-body">
                 {/* <AuthCheck> */}
                 <NavigationBar title={"Events"} />
