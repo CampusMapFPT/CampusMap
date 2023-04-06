@@ -22,8 +22,6 @@ import React, {
   useEffect,
 } from "react"
 import { MovingStudent } from './movingStudent'
-import LocationIcon from "../assets/icon/location.png";
-import DestinationIcon from "../assets/icon/destination.png";
 import { IconButton, Text } from "@chakra-ui/react";
 import useFetch from '../../hooks/fetch/useFetch'
 import useGlobalContext from "hooks/useGlobalContext";
@@ -74,41 +72,7 @@ const Direction = (props: any) => {
 
   return (
     <Box className="map">
-      <Stack px={8} mt={6} gap={1}>
-        <Menu>
-          <MenuButton
-            as={Button}
-            bgColor={"#FFDD69"}
-            height={"50px"}
-            borderRadius={15}
-            textAlign={"left"}
-          >
-            <Flex>
-              <Image src={LocationIcon.src} display="block" p="4" />
-              <Box opacity={0.5} fontSize={15} p="1" alignSelf={"center"}>
-                {fromLocation}
-              </Box>
-            </Flex>
-          </MenuButton>
-        </Menu>
-        <Menu>
-          <MenuButton
-            as={Button}
-            bgColor={"#FFDD69"}
-            height={"50px"}
-            borderRadius={15}
-            textAlign={"left"}
-          >
-            <Flex>
-              <Image src={DestinationIcon.src} display="block" p="4" />
-              <Box opacity={0.5} fontSize={15} p="1" alignSelf={"center"}>
-                {toLocation}
-              </Box>
-            </Flex>
-          </MenuButton>
-        </Menu>
 
-      </Stack>
       <Box margin={"20px auto 0px"} className="MapImageContainer">
         {
           currentImage &&

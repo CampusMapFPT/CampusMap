@@ -46,7 +46,9 @@ const RoomList = () => {
 
   return (
     <>
-      <Flex justifyContent={"center"} position="relative" bottom={"20px"}>
+      <Flex justifyContent={"center"} position="relative" bottom={"20px"}
+      //className='bodyContent'
+      >
         <InputGroup sx={{ w: "293px", h: "50px", borderRadius: "20px" }}>
           <InputLeftElement pointerEvents="none">
             <SearchIcon color="black" />
@@ -59,14 +61,14 @@ const RoomList = () => {
             onChange={(e) => {
               SetSearchInput(e.target.value);
             }}
-            placeholder="Search room"
+            placeholder="Tìm phòng"
             boxShadow="0px 4px 4px 0px #00000040"
             borderRadius="20px"
           />
         </InputGroup>
       </Flex>
 
-      <Flex direction={"column"} p="0px 25px 0px 25px" gap={2} color="#04408C">
+      <Flex direction={"column"} p="0px 25px 0px 25px" gap={2} color="#04408C" className="bodyContent">
         {roomListFilter && roomListFilter.length > 0 &&
           roomListFilter.map((room) => {
             return (
@@ -89,7 +91,7 @@ const RoomList = () => {
                       <Text
                         lineHeight={"23px"}
                         fontSize={"17px"}
-                        fontFamily={"Balgin-Regular"}
+
                       >
                         {room.name}
                       </Text>
@@ -98,7 +100,7 @@ const RoomList = () => {
                     <Text
                       lineHeight={"20px"}
                       fontSize={"15px"}
-                      fontFamily={"Balgin-Light"}
+                    //fontFamily={"Balgin-Light"}
                     >
                       {room.secondName}
                     </Text>
@@ -109,7 +111,7 @@ const RoomList = () => {
                   textDecoration={"underline"}
                   lineHeight={"20px"}
                   fontSize={"15px"}
-                  fontFamily={"Balgin-Light"}
+                //fontFamily={"Balgin-Light"}
                 >
                   {room.activeTime}
                 </Text>

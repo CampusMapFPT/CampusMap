@@ -25,53 +25,53 @@ a {
 @font-face {
   font-family: PoppinsVN;
   font-weight: 400;
-  src: url("/public/fonts/PoppinsVN/PoppinsVN-400.woff2");
+  src: url("../public/fonts/PoppinVN/PoppinsVN-400.woff2");
 }
 
 @font-face {
   font-family: PoppinsVN;
   font-weight: 500;
-  src: url("/public/fonts/PoppinVn/PoppinsVN-500.woff2");
+  src: url("../public/fonts/PoppinVn/PoppinsVN-500.woff2");
 }
 
 @font-face {
   font-family: PoppinsVN;
   font-weight: 600;
-  src: url("/public/fonts/PoppinsVN/PoppinsVN-600-italic.woff2");
+  src: url("../public/fonts/PoppinVN/PoppinsVN-600-italic.woff2");
 }
 
 @font-face {
   font-family: PoppinsVN;
   font-weight: 600;
-  src: url("/public/fonts/PoppinsVN/PoppinsVN-600.woff2");
+  src: url("../public/fonts/PoppinVN/PoppinsVN-600.woff2");
 }
 
 @font-face {
   font-family: PoppinsVN;
   font-weight: 700;
-  src: url("/public/fonts/PoppinsVN/PoppinsVN-700.woff2");
+  src: url("../public/fonts/PoppinVN/PoppinsVN-700.woff2");
 }
 
 @font-face {
   font-family: Balgin-Light;
   font-weight: 400;
-  src: url("public/fonts/Balgin/BalginLight.ttf");
+  src: url("../public/fonts/Balgin/BalginLight.ttf");
 }
 
 @font-face {
   font-family: Balgin-Regular;
   font-weight: 400;
-  src: url("public/fonts/Balgin/BalginRegular.ttf");
+  src: url("../public/fonts/Balgin/BalginRegular.ttf");
 }
 
 @font-face {
   font-family: Balgin-SemiBold;
   font-weight: 400;
-  src: url("public/fonts/Balgin/BalginSemiBold.TTF");
+  src: url("../public/fonts/Balgin/BalginSemiBold.TTF");
 }
 
 @font-face {
   font-family: Balgin-Bold;
   font-weight: 400;
-  src: url("public/fonts/Balgin/BalginBold.TTF");
+  src: url("../public/fonts/Balgin/BalginBold.TTF");
 }

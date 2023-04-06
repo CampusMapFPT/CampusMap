@@ -9,14 +9,12 @@ function Index() {
   headContext.SetPageTitle('Campus Map - Nền tảng chỉ dẫn phòng học')
 
   return (
-    <>
-      <Box w={"mobile"} fontFamily="campus">
-        {/* <AuthCheck>
+    <Box w={"mobile"} fontFamily="campus" className="header-body">
+      {/* <AuthCheck>
         
       </AuthCheck> */}
-        <Home />
-      </Box>
-    </>
+      <Home />
+    </Box>
   );
 }
 

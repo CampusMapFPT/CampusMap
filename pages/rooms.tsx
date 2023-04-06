@@ -11,14 +11,12 @@ function RoomListPage() {
   headContext.SetPageTitle('Campus Map - Phòng học')
 
   return (
-    <>
-      <Box maxW={"mobile"} padding="0" fontFamily="campus">
-        {/* <AuthCheck> */}
-        <NavigationBar title={"Phòng học"} />
-        <RoomList />
-        {/* </AuthCheck> */}
-      </Box>
-    </>
+    <Box maxW={"mobile"} padding="0" fontFamily="campus" className="header-body">
+      {/* <AuthCheck> */}
+      <NavigationBar title={"Phòng học"} />
+      <RoomList />
+      {/* </AuthCheck> */}
+    </Box>
   );
 }
 

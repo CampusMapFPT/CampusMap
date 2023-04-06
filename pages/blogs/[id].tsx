@@ -12,7 +12,7 @@ function BlogDetailPage() {
   headContext.SetPageTitle('Campus Map - Blog')
   return (
     <>
-      <Box maxW={"mobile"} padding="0" fontFamily="campus">
+      <Box maxW={"mobile"} padding="0" fontFamily="campus" className="header-body">
         {/* <AuthCheck> */}
         <NavigationBar title={"Blogs"} />
         <BlogDetail />

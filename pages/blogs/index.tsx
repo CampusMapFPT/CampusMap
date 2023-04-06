@@ -13,7 +13,7 @@ function BlogPage() {
 
   return (
     <>
-      <Box maxW={"mobile"} padding="0" fontFamily="campus">
+      <Box maxW={"mobile"} padding="0" fontFamily="campus" className="header-body">
         <NavigationBar title={"Blogs"} />
         <Blog />
       </Box>

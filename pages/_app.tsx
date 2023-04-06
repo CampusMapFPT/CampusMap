@@ -4,13 +4,14 @@ import { GlobalContextProvider } from "contexts/GlobalContext";
 import Fonts from "fonts";
 import { useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
-import "../components/assets/css/font.css";
 import theme from "../theme";
-import "../components/direction/lineStyle.css";
 import { HeadContextProvider } from "contexts/HeadContext";
 import Head from "next/head";
 import useHeadContext from "hooks/useHeadContext";
 import Script from "next/script";
+import "../components/assets/css/app.css"
+import "../components/assets/css/font.css";
+import "../components/direction/lineStyle.css";
 
 const queryClient = new QueryClient();
 function MyApp({ Component, pageProps }: any) {
@@ -31,18 +32,17 @@ function MyApp({ Component, pageProps }: any) {
                 strategy="lazyOnload"
                 crossOrigin="anonymous"
               />
-              <Container maxW="420px" p="0px">
+              <Container maxW="420px" p="0px" className="box-container">
                 <Component {...pageProps} />
 
                 <Box
                   display={"flex"}
-                  height="62px"
+                  className='footer'
                   bgColor={"#3A88EC"}
                   zIndex={99}
+                  flexGrow={0}
                 />
               </Container>
-
-
             </QueryClientProvider>
           </ChakraProvider>
         </AuthContextProvider>
