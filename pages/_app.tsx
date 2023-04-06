@@ -33,14 +33,16 @@ function MyApp({ Component, pageProps }: any) {
               />
               <Container maxW="420px" p="0px">
                 <Component {...pageProps} />
+
+                <Box
+                  display={"flex"}
+                  height="62px"
+                  bgColor={"#3A88EC"}
+                  zIndex={99}
+                />
               </Container>
 
-              <Box
-                display={"flex"}
-                height="62px"
-                bgColor={"#3A88EC"}
-                zIndex={99}
-              />
+
             </QueryClientProvider>
           </ChakraProvider>
         </AuthContextProvider>
