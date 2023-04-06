@@ -11,7 +11,6 @@ import { HeadContextProvider } from "contexts/HeadContext";
 import Head from "next/head";
 import useHeadContext from "hooks/useHeadContext";
 import Script from "next/script";
-import { NextScript } from "next/document";
 
 const queryClient = new QueryClient();
 function MyApp({ Component, pageProps }: any) {
@@ -28,22 +27,20 @@ function MyApp({ Component, pageProps }: any) {
               </Head>
               <Script
                 async
-                src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${'ca-pub-3470415777558514'}`}
+                src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3470415777558514`}
                 strategy="lazyOnload"
                 crossOrigin="anonymous"
               />
               <Container maxW="420px" p="0px">
                 <Component {...pageProps} />
-                <NextScript />
-                <Box
-                  display={"flex"}
-                  height="62px"
-                  bgColor={"#3A88EC"}
-                  zIndex={99}
-                />
               </Container>
 
-
+              <Box
+                display={"flex"}
+                height="62px"
+                bgColor={"#3A88EC"}
+                zIndex={99}
+              />
             </QueryClientProvider>
           </ChakraProvider>
         </AuthContextProvider>
