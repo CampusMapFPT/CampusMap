@@ -11,7 +11,6 @@ import { HeadContextProvider } from "contexts/HeadContext";
 import Head from "next/head";
 import useHeadContext from "hooks/useHeadContext";
 import Script from "next/script";
-import { NextScript } from "next/document";
 
 const queryClient = new QueryClient();
 function MyApp({ Component, pageProps }: any) {
@@ -34,7 +33,7 @@ function MyApp({ Component, pageProps }: any) {
               />
               <Container maxW="420px" p="0px">
                 <Component {...pageProps} />
-                <NextScript />
+
                 <Box
                   display={"flex"}
                   height="62px"
