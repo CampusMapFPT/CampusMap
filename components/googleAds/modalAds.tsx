@@ -5,8 +5,6 @@ const ModalAds = () => {
     const { isOpen, onOpen, onClose } = useDisclosure({ defaultIsOpen: true });
     return (
         <>
-            <Button onClick={onOpen}>Open Modal</Button>
-
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
                 <ModalContent>
