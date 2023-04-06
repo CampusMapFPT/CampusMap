@@ -11,7 +11,7 @@ const Blog = () => {
 
   return (
     <>
-      <Flex direction={"column"} p="25px" gap={5}>
+      <Flex direction={"column"} p="25px" gap={5} className={'bodyContent'}>
         {blogList &&
           blogList.map((blog) => {
             return (
