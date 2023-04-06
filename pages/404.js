@@ -1,6 +1,6 @@
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import Link from "react-scroll/modules/components/Link";
+import useHeadContext from "hooks/useHeadContext";
 
 export default function Privacy() {
   const router = useRouter();
