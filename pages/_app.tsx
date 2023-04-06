@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }: any) {
               </Head>
               <Script
                 async
-                src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADS_CLIENT_ID}`}
+                src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${'ca-pub-3470415777558514'}`}
                 strategy="lazyOnload"
                 crossOrigin="anonymous"
               />
