@@ -15,7 +15,6 @@ import {
   useToast,
 } from "@chakra-ui/react";
 //images and icons
-import Logo from "public/assets/images/logo-w-slogan.png";
 import DemoMap from "public/assets/images/demomap.png";
 import EventIcon from "public/assets/images/event.svg";
 import FeedBackIcon from "public/assets/images/feedback.svg";
@@ -35,73 +34,10 @@ import { logOut } from "../../firebase/authentication";
 import { Router, useRouter } from "next/router";
 import { useEffect, useRef } from "react";
 import useGlobalContext from "hooks/useGlobalContext";
+import MainHeader from "components/sections/mainHeader";
+import ModalAds from "components/googleAds/modalAds";
 
-const MainHeader = () => {
-  //hooks
-  // const { user, loading } = useAuthContext();
-  const toast = useToast();
-  const router = useRouter();
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  //apis
-  //states
-  //variables
-  const handleSignout = async () => {
-    await logOut();
-    await router.push("/authentication");
-    toast({
-      title: `Has sign out`,
-      status: "success",
-      position: "top-right",
-      isClosable: true,
-      duration: 1000,
-    });
-  };
 
-  return (
-    <>
-      <Box bgColor={"#3A88EC"} height="169px" mb="1rem">
-
-        <Flex paddingTop='20px'
-          alignItems={"center"} justifyContent={"center"}>
-          <Image alt="fpt" src={Logo.src} width='70%' p='10px 0px' />
-        </Flex>
-        <Flex alignItems={"center"} justifyContent={"space-between"} p="20px">
-          <Box
-            as="button"
-            display={"flex"}
-            w={"149px"}
-            h="50px"
-            bgColor={"#FFDD69"}
-            justifyContent="center"
-            alignItems={"center"}
-            borderRadius="15px"
-            boxShadow={"0px 4px 4px 0px #00000040"}
-            onClick={() => router.push("/direction")}
-          >
-            <Text fontSize={"12px"}>Vị trí của bạn</Text>
-          </Box>
-          <Box px="11px">
-            <ArrowForwardIcon color="#FFDD69" />
-          </Box>
-
-          <Box
-            display={"flex"}
-            w={"149px"}
-            h="50px"
-            bgColor={"#FFDD69"}
-            justifyContent="center"
-            alignItems={"center"}
-            borderRadius="15px"
-            boxShadow={"0px 4px 4px 0px #00000040"}
-            onClick={() => router.push("/direction")}
-          >
-            <Text fontSize={"12px"}>Điểm đến</Text>
-          </Box>
-        </Flex>
-      </Box>
-    </>
-  );
-};
 
 const Home = () => {
   const router = useRouter();
@@ -172,6 +108,7 @@ const Home = () => {
 
     //variables
     <>
+      <ModalAds />
       <Box w={"100%"} justifyContent="center" zIndex={2} textColor="#04408C">
         <MainHeader />
 

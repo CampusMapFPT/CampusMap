@@ -9,7 +9,7 @@ const API_FEEDBACK = '/Feedback'
 const API_EVENT = API_ENV + '/Event'
 const API_FUTURE_EVENT = API_ENV + '/Event/future'
 const API_ONGOING_EVENT = API_ENV + '/Event/ongoing'
-
+const API_LATEST_EVENT = API_ENV + '/Event/latest'
 const API_BLOG = API_ENV + '/Blog'
 
 export {
@@ -19,6 +19,7 @@ export {
     API_EVENT,
     API_FUTURE_EVENT,
     API_ONGOING_EVENT,
+    API_LATEST_EVENT,
     API_BLOG,
     API_FEEDBACK,
 }

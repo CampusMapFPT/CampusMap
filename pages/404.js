@@ -4,6 +4,9 @@ import Link from "react-scroll/modules/components/Link";
 
 export default function Privacy() {
   const router = useRouter();
+  const headContext = useHeadContext();
+  headContext.SetPageTitle('Campus Map - Không tìm thấy trang')
+
   return (
     <Box w="100vw" h="100vh">
       <Flex

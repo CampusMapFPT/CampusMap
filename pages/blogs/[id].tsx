@@ -1,25 +1,25 @@
 import React from "react";
 import { Box, Container } from "@chakra-ui/react";
 import NavigationBar from "components/sections/navbar";
+
+import BlogDetail from "components/blog/detail";
 import AuthCheck from "components/authentication/AuthCheck";
-import RoomList from "components/room";
 import Head from "next/head";
 import useHeadContext from "hooks/useHeadContext";
 
-function RoomListPage() {
+function BlogDetailPage() {
   const headContext = useHeadContext();
-  headContext.SetPageTitle('Campus Map - Phòng học')
-
+  headContext.SetPageTitle('Campus Map - Blog')
   return (
     <>
       <Box maxW={"mobile"} padding="0" fontFamily="campus">
         {/* <AuthCheck> */}
-        <NavigationBar title={"Phòng học"} />
-        <RoomList />
+        <NavigationBar title={"Blogs"} />
+        <BlogDetail />
         {/* </AuthCheck> */}
       </Box>
     </>
   );
 }
 
-export default RoomListPage;
+export default BlogDetailPage;

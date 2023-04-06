@@ -7,29 +7,45 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import "../components/assets/css/font.css";
 import theme from "../theme";
 import "../components/direction/lineStyle.css";
+import { HeadContextProvider } from "contexts/HeadContext";
+import Head from "next/head";
+import useHeadContext from "hooks/useHeadContext";
+import Script from "next/script";
 
 const queryClient = new QueryClient();
 function MyApp({ Component, pageProps }: any) {
+  const headContext = useHeadContext();
   return (
-    <GlobalContextProvider>
-      <AuthContextProvider>
-        <ChakraProvider theme={theme}>
-          <Fonts />
-          <QueryClientProvider client={queryClient}>
-            <Container maxW="420px" p="0px">
-              <Component {...pageProps} />
-            </Container>
+    <HeadContextProvider>
+      <GlobalContextProvider>
+        <AuthContextProvider>
+          <ChakraProvider theme={theme}>
+            <Fonts />
+            <QueryClientProvider client={queryClient}>
+              <Head>
+                <title>{headContext.pageTitle}</title>
+                <Script
+                  async
+                  src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADS_CLIENT_ID}`}
+                  strategy="lazyOnload"
+                  crossOrigin="anonymous"
+                />
+              </Head>
+              <Container maxW="420px" p="0px">
+                <Component {...pageProps} />
+              </Container>
 
-            <Box
-              display={"flex"}
-              height="62px"
-              bgColor={"#3A88EC"}
-              zIndex={99}
-            />
-          </QueryClientProvider>
-        </ChakraProvider>
-      </AuthContextProvider>
-    </GlobalContextProvider>
+              <Box
+                display={"flex"}
+                height="62px"
+                bgColor={"#3A88EC"}
+                zIndex={99}
+              />
+            </QueryClientProvider>
+          </ChakraProvider>
+        </AuthContextProvider>
+      </GlobalContextProvider>
+    </HeadContextProvider>
   );
 }
 
