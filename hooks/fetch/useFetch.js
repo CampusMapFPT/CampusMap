@@ -29,10 +29,7 @@ const useFetch = (url) => {
             }
         }
 
-        setTimeout(() => {
-
-            fetchData();
-        }, 3000);
+        fetchData();
 
         return () => {
             ourRequest.cancel('Operation was canceled by user.')

@@ -17,7 +17,7 @@ const Blog = () => {
             return (
               <NextLink key={blog.title}
                 href={{
-                  pathname: `/blogs/detail/[id]`,
+                  pathname: `/blogs/[id]`,
                   query: { id: blog.id }
                 }} passHref>
                 <Link>
