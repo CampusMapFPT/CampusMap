@@ -136,6 +136,7 @@ const Home = () => {
                 <Flex
                   flexDirection="column"
                   alignItems={"center"}
+                  key={event.id}
                   onClick={() => router.push({
                     pathname: "/events/[id]",
                     query: {
