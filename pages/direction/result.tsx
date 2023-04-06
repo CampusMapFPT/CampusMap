@@ -1,25 +1,23 @@
 import { useRouter } from 'next/router'
 import { Box, Button, Flex, IconButton, Menu, MenuButton, Stack, Text } from "@chakra-ui/react";
 import Direction from "components/direction/directArea";
-import NavigationBar from "components/sections/navbar";
 import { Image } from "@chakra-ui/react";
-import Logo from "public/assets/images/logo-w-slogan.png";
-import useHeadContext from 'hooks/useHeadContext';
 import { ArrowBackIcon } from '@chakra-ui/icons';
 import LocationIcon from "../../components/assets/icon/location.png";
 import DestinationIcon from "../../components/assets/icon/destination.png";
+import Head from 'next/head';
 
 const DirectionResultPage = () => {
 
   const router = useRouter()
-  const headContext = useHeadContext();
-  headContext.SetPageTitle('Campus Map - Tìm kiếm đường đi')
-
   console.log("query", router.query);
   const { fromLocation, toLocation } = router.query
 
   return (
     <>
+      <Head>
+        <title>Campus Map - Tìm kiếm đường đi</title>
+      </Head>
       <Box maxW={"mobile"} padding="0" fontFamily="campus" className="header-body">
         {/* <Image src={GFloor.src} top="100px"/> */}
         <Flex
