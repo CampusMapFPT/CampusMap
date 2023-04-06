@@ -96,11 +96,11 @@ const SearchDirection = (props: any) => {
           >
             <Flex>
               <Image src={LocationIcon.src} display="block" p="4" />
-              <Box opacity={0.5} fontSize={15} p="1" alignSelf={"center"}>
-                {globalContext.directionFrom.name == "" || globalContext.directionFrom.name === undefined
-                  ? "Vị trí"
-                  : globalContext.directionFrom.name}
-              </Box>
+
+              {globalContext.directionFrom.name == "" || globalContext.directionFrom.name === undefined
+                ? <Box opacity={0.5} fontSize={15} p="1" alignSelf={"center"}>Vị trí</Box>
+                : <Box fontSize={15} p="1" alignSelf={"center"}>{globalContext.directionFrom.name}</Box>}
+
             </Flex>
           </MenuButton>
           <MenuList className="myMenuList">
@@ -151,11 +151,9 @@ const SearchDirection = (props: any) => {
           >
             <Flex>
               <Image src={DestinationIcon.src} display="block" p="4" />
-              <Box opacity={0.5} fontSize={15} p="1" alignSelf={"center"}>
-                {globalContext.directionTo.name == "" || globalContext.directionTo.name === undefined
-                  ? "Vị trí"
-                  : globalContext.directionTo.name}
-              </Box>
+              {globalContext.directionTo.name == "" || globalContext.directionTo.name === undefined
+                ? <Box opacity={0.5} fontSize={15} p="1" alignSelf={"center"}>Vị trí</Box>
+                : <Box fontSize={15} p="1" alignSelf={"center"}>{globalContext.directionTo.name}</Box>}
             </Flex>
           </MenuButton>
           <MenuList className="myMenuList">
@@ -218,7 +216,7 @@ const SearchDirection = (props: any) => {
 
         </Flex>
       </Stack>
-    </Box>
+    </Box >
   );
 };
 export default SearchDirection;

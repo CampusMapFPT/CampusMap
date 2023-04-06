@@ -11,15 +11,10 @@ function EventPage() {
     headContext.SetPageTitle('Campus Map - Sự kiện')
 
     return (
-        <>
-            <Box maxW={"mobile"} padding="0" fontFamily="campus">
-                {/* <AuthCheck>
-        
-      </AuthCheck> */}
-                <NavigationBar title={"Sự kiện"} />
-                <Event />
-            </Box>
-        </>
+        <Box maxW={"mobile"} padding="0" fontFamily="campus" className="header-body">
+            <NavigationBar title={"Sự kiện"} />
+            <Event />
+        </Box>
     );
 }
 

@@ -17,6 +17,7 @@ const NavigationBar = ({ title }: NavProps) => {
       alignItems={"center"}
       gap={3}
       pl="1rem"
+      className="header"
     >
       <IconButton
         onClick={() => router.back()}
@@ -36,8 +37,6 @@ const NavigationBar = ({ title }: NavProps) => {
           {title}
         </Text>
       }
-
-
     </Flex>
   );
 };

@@ -12,21 +12,6 @@
     overflow-y: auto;
 }
 
-.locationList::-webkit-scrollbar {
-    width: 10px;
-}
-
-.locationList::-webkit-scrollbar-track {
-    background-color: #EFEFEF;
-    border-radius: 20px;
-}
-
-.locationList::-webkit-scrollbar-thumb {
-    background-color: #3A88EC;
-    min-height: 40px;
-    border-radius: 20px;
-}
-
 .myMenuList {
     width: 100%;
     height: auto;

@@ -22,12 +22,14 @@ const Event = () => {
   console.log('eventList', eventList);
 
   return (
-    <>
+    <Box className="bodyContent">
       <Image
         alt={"event img"}
         height="254px"
+        width="100%"
         src={!isLoadingLatestEvent ? latestEvent.imageUrl : BackpackImg}
         zIndex={"1"}
+        objectFit="cover"
         onClick={() => router.push({
           pathname: "/events/{id}",
           query: {
@@ -51,7 +53,7 @@ const Event = () => {
         {isLoadingLatestEvent && <Flex>Loading...</Flex>}
         {latestEvent &&
           <>
-            <Text fontSize={"18px"} fontFamily="Balgin-Regular" fontWeight={500}>
+            <Text fontSize={"18px"} fontWeight={500}>
               {latestEvent.title}
             </Text>
             <Flex gap={3}>
@@ -74,7 +76,8 @@ const Event = () => {
             </Flex>
           </>
         }
-        <Flex alignItems={"center"} justifyContent="space-between">
+        <Flex alignItems={"center"} justifyContent="space-between"
+          position={'sticky'} top='0' background={'#fff'}>
           <Button
             w={selectingEvent == "ongoing" ? "190px" : "124px"}
             h={selectingEvent == "ongoing" ? "42px" : "36px"}
@@ -89,7 +92,6 @@ const Event = () => {
           >
             <Text
               color={"white"}
-              fontFamily={"Balgin-Bold"}
               fontSize={selectingEvent == "ongoing" ? "18px" : "14px"}
             >
               Đang diễn ra
@@ -109,7 +111,6 @@ const Event = () => {
           >
             <Text
               color={"white"}
-              fontFamily={"Balgin-Regular"}
               fontWeight={600}
               fontSize={selectingEvent == "future" ? "18px" : "14px"}
             >
@@ -122,15 +123,16 @@ const Event = () => {
             eventList.map(event => {
               return (
                 <Flex gap={2} key={event.id} pt={"1rem"} onClick={() => router.push({
-                  pathname: "/events/{id}",
+                  pathname: "/events/[id]",
                   query: {
                     id: event.id,
                   }
                 })}>
                   <Image
-                    w={"152px"}
-                    h="152px"
                     src={event.imageUrl}
+                    w="152px"
+                    h="152px"
+                    objectFit="cover"
                     alt="event banner"
                   />
                   <Flex flexDirection={"column"}>
@@ -142,7 +144,6 @@ const Event = () => {
                         <Box borderRadius={"100%"} bgColor="#04408C" w="3px" h="3px" />
                       </Flex>
                       <Text
-                        fontFamily={"Balgin-Light"}
                         color="#04408C"
                         fontSize={"14px"}
                       >
@@ -176,7 +177,7 @@ const Event = () => {
           }
         </Flex>
       </Flex>
-    </>
+    </Box>
   );
 };
 

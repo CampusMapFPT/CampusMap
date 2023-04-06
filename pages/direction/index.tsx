@@ -12,7 +12,7 @@ const DirectionPage = () => {
   const router = useRouter()
   return (
     <>
-      <Box maxW={"mobile"} padding="0" fontFamily="campus">
+      <Box maxW={"mobile"} padding="0" fontFamily="campus" className="header-body">
         <NavigationBar title={""} />
 
         <SearchDirection

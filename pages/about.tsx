@@ -11,12 +11,10 @@ function AboutPage() {
   headContext.SetPageTitle('Campus Map - Thông tin công ty')
 
   return (
-    <>
-      <Box maxW={"mobile"} padding="0" fontFamily="campus">
-        <NavigationBar title={"Thông tin công ty"} />
-        <AboutUs />
-      </Box>
-    </>
+    <Box maxW={"mobile"} padding="0" fontFamily="campus" className="header-body">
+      <NavigationBar title={"Thông tin công ty"} />
+      <AboutUs />
+    </Box>
   );
 }
 
