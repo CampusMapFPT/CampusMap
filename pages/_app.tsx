@@ -24,13 +24,13 @@ function MyApp({ Component, pageProps }: any) {
             <QueryClientProvider client={queryClient}>
               <Head>
                 <title>{headContext.pageTitle}</title>
-                <Script
-                  async
-                  src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADS_CLIENT_ID}`}
-                  strategy="lazyOnload"
-                  crossOrigin="anonymous"
-                />
               </Head>
+              <Script
+                async
+                src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADS_CLIENT_ID}`}
+                strategy="lazyOnload"
+                crossOrigin="anonymous"
+              />
               <Container maxW="420px" p="0px">
                 <Component {...pageProps} />
               </Container>
