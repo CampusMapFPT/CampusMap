@@ -36,11 +36,16 @@ const SearchDirection = (props: any) => {
   const { fromId: queryFromId, fromLocation: queryFromName, toId: queryToId, toLocation: queryToName } = props.locationQuery
   console.log(queryToName);
 
-  const [fromId, setFromId] = useState(queryFromId)
-  const [toId, setToId] = useState(queryToId)
-  const [fromName, setFromName] = useState(queryFromName)
-  const [toName, setToName] = useState(queryToName)
-
+  const [fromId, setFromId] = useState(0)
+  const [toId, setToId] = useState(0)
+  const [fromName, setFromName] = useState('')
+  const [toName, setToName] = useState('')
+  useEffect(() => {
+    setFromId(queryFromId)
+    setToId(queryToId)
+    setFromName(queryFromName)
+    setToName(queryToName)
+  }, [props.locationQuery])
   const { data: roomData, isLoading, isError } = useFetch(API_ROOM)
 
   const roomList = globalContext.roomList
@@ -201,7 +206,9 @@ const SearchDirection = (props: any) => {
           {fromId && toId &&
 
             <motion.div
-              className="box"
+              style={{
+                margin: "0 auto"
+              }}
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{
@@ -213,7 +220,6 @@ const SearchDirection = (props: any) => {
               <Button
                 w="175px"
                 h="45px"
-                margin="0 auto"
                 borderRadius="72px"
                 background="#04408C"
                 color="#fff"
