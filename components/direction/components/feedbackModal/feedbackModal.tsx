@@ -22,7 +22,6 @@ const FeedbackModal = () => {
     const [displayForm, setDisplayForm] = useState(false)
     const [sentFeedback, setSentFeedback] = useState(false)
 
-    const onSubmit = (formData: any) => console.log('formData', formData);
     const DisplayFeedbackForm = async () => {
         if (selectedFeedback === 1 && !displayForm) setDisplayForm(true)
         else {
@@ -78,7 +77,7 @@ const FeedbackModal = () => {
             >
                 Xong
             </Button>
-            <Modal isOpen={isOpen} onClose={onClose} size={'xs'}>
+            <Modal isOpen={isOpen} onClose={onClose} size={'xs'} isCentered>
                 <ModalOverlay />
                 <ModalContent >
                     <ModalHeader textAlign={'center'} whiteSpace='pre-line'>

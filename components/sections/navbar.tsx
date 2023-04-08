@@ -32,6 +32,7 @@ const NavigationBar = ({ title }: NavProps) => {
           height="42px"
           src={Logo.src}
           zIndex={"1"}
+          onClick={() => router.push('/')}
         />
         : <Text textColor={"white"} fontSize={"24px"} lineHeight="34px">
           {title}
