@@ -10,7 +10,6 @@ const useImage = (filename) => {
             try {
                 const response = await import(`../../public/assets/images/${filename}`) // change relative path to suit your needs
                 setImage(response.default)
-                console.log('response image', response);
             } catch (err) {
                 setError(err)
             } finally {

@@ -8,9 +8,8 @@ function RoomListPage() {
 
   return (
     <>
-
       <Head>
-        <title>Campus Map - Phòng học</title>
+        <title>Phòng học - Campus Map</title>
       </Head>
       <Box maxW={"mobile"} padding="0" fontFamily="campus" className="header-body">
         {/* <AuthCheck> */}

@@ -1,16 +1,8 @@
 import {
   Box,
   Button,
-  Flex,
   ListItem,
-  Menu,
-  MenuButton,
-  MenuDivider,
-  MenuGroup,
-  MenuItem,
-  MenuList,
   OrderedList,
-  Stack,
   Image
 } from "@chakra-ui/react";
 import {
@@ -21,14 +13,15 @@ import React, {
   useState,
   useEffect,
 } from "react"
-import { MovingStudent } from './movingStudent'
+import { MovingStudent } from './components/movingStudent'
 import { IconButton, Text } from "@chakra-ui/react";
-import useFetch from '../../hooks/fetch/useFetch'
+import useFetch from '../../hooks/fetchAPI/useFetch'
 import useGlobalContext from "hooks/useGlobalContext";
-import { MovingLine } from "./movingLine";
+import { MovingLine } from "./components/movingLine";
 import { API_ROOM_DIRECTION } from "constants/api";
+import { motion } from "framer-motion";
+import FeedbackModal from "./components/feedbackModal/feedbackModal";
 
-const imageDimension = { x: 2698, y: 1783 }
 
 let groupByValue = (array: any, key: any) => Object.values(
   array.reduce((accumulate: any, currentItem: any) => {
@@ -52,11 +45,17 @@ const Direction = (props: any) => {
 
   const directionGuidesData = directionData.result || []
 
-  const directionLocations = groupByValue(directionGuidesData, 'floor')
-  console.log('directionLocation', directionLocations);
-  console.log('globalContext', globalContext);
+  let directionLocations = groupByValue(directionGuidesData, 'floor')
+
+  const firstLocation = directionGuidesData[0]
+  const firstLocationFloor = (firstLocation === undefined) ? 0 : firstLocation.floor
+  const lastLocation = directionGuidesData[directionGuidesData.length - 1]
+  const lastLocationFloor = (lastLocation === undefined) ? 0 : lastLocation.floor
+
+  directionLocations = (firstLocationFloor > lastLocationFloor) ? directionLocations.reverse() : directionLocations
 
   const currentLocations = directionLocations[currentIndex]
+  console.log(directionGuidesData);
 
   useEffect(() => {
     if (currentLocations !== null
@@ -130,6 +129,22 @@ const Direction = (props: any) => {
               })
             }
           </OrderedList>
+          {currentIndex === directionLocations.length - 1 &&
+            <motion.div
+              className="box"
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01]
+              }}
+            >
+              <FeedbackModal />
+            </motion.div>
+          }
+
+
         </Box>
       </Box>
     </Box >

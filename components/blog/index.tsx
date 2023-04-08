@@ -1,13 +1,12 @@
 import { Box, Flex, Link, Text } from "@chakra-ui/react";
 import NavigationBar from "components/sections/navbar";
 import { API_BLOG } from "constants/api";
-import useFetch from "hooks/fetch/useFetch";
+import useFetch from "hooks/fetchAPI/useFetch";
 import NextLink from "next/link";
 
 const Blog = () => {
   const { data: blogData, isLoading, isError } = useFetch(API_BLOG)
   const blogList = blogData.result
-  console.log(blogList);
 
   return (
     <>

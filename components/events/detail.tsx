@@ -1,6 +1,6 @@
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import { API_EVENT } from "constants/api";
-import useFetch from "hooks/fetch/useFetch";
+import useFetch from "hooks/fetchAPI/useFetch";
 import useGlobalContext from "hooks/useGlobalContext";
 import { useRouter } from "next/router";
 import AstronautImg from "public/assets/images/astronaut.png";

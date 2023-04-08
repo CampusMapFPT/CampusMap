@@ -8,7 +8,7 @@ function Index() {
   return (
     <>
       <Head>
-        <title>Campus Map - Nền tảng chỉ dẫn phòng học</title>
+        <title>Nền tảng chỉ dẫn phòng học - Campus Map</title>
       </Head>
       <Box w={"mobile"} fontFamily="campus" className="header-body">
         {/* <AuthCheck>

@@ -20,24 +20,17 @@ import EventIcon from "public/assets/images/event.svg";
 import FeedBackIcon from "public/assets/images/feedback.svg";
 import RoomListIcon from "public/assets/images/roomlist.svg";
 import AboutIcon from "public/assets/images/aboutus.svg";
-import EventBanner1 from "public/assets/images/event1.png";
-import EventBanner2 from "public/assets/images/event2.png";
-import DscBigImg from "public/assets/images/dscbig.png";
-import Astronaut from "public/assets/images/astronaut.png";
-import RingImg from "public/assets/images/ringbell.png";
-import UserImg from "public/assets/images/user.png";
 //components
 //hooks
-import GoogleMapReact from "google-map-react";
 import ScrollToTop from "components/sections/ScrollToTop";
 import { logOut } from "../../firebase/authentication";
 import { Router, useRouter } from "next/router";
-import { useEffect, useRef } from "react";
 import useGlobalContext from "hooks/useGlobalContext";
 import MainHeader from "components/sections/mainHeader";
 import ModalAds from "components/googleAds/modalAds";
-import useFetch from "hooks/fetch/useFetch";
+import useFetch from "hooks/fetchAPI/useFetch";
 import { API_ONGOING_EVENT } from "constants/api";
+import CarouselMultiItems from "components/carousel/CarouselBasic";
 
 
 
@@ -47,7 +40,6 @@ const Home = () => {
   const { data: ongoingEventData, isLoading: isLoadingOngoingEvent, isError: isErrorOngoingEvent } = useFetch(API_ONGOING_EVENT)
   const ongoingEventList = ongoingEventData.result
   let latestEvents = (ongoingEventList) ? ongoingEventList.slice(0, 2) : []
-  console.log('latestEvents', latestEvents);
 
   const IconButtons = [
     {
@@ -72,11 +64,21 @@ const Home = () => {
     },
   ];
 
+  const CarouselImageLink = [
+    'https://firebasestorage.googleapis.com/v0/b/campus-map-f1a9f.appspot.com/o/carouselImage%2Ffpt-1.jpg?alt=media&token=e1e69bfa-ed6a-4a82-9ff5-6bc7fbd1f001',
+    'https://firebasestorage.googleapis.com/v0/b/campus-map-f1a9f.appspot.com/o/carouselImage%2Ffpt-2.jpg?alt=media&token=2392e06f-760b-4abb-adc9-380e76a5957c',
+    'https://firebasestorage.googleapis.com/v0/b/campus-map-f1a9f.appspot.com/o/carouselImage%2Ffpt-3.jpg?alt=media&token=5b499a97-b737-40fa-8747-819dd69d6b19',
+    'https://firebasestorage.googleapis.com/v0/b/campus-map-f1a9f.appspot.com/o/carouselImage%2Ffpt-4.jpg?alt=media&token=c0e0fc51-878e-4559-9f0a-0f1f6cc72c9e',
+    'https://firebasestorage.googleapis.com/v0/b/campus-map-f1a9f.appspot.com/o/carouselImage%2Ffpt-5.jpg?alt=media&token=c9cb6a0a-16a0-4c4a-b552-db6e7b405fd1',
+    'https://firebasestorage.googleapis.com/v0/b/campus-map-f1a9f.appspot.com/o/carouselImage%2Ffpt-6.jpg?alt=media&token=c3b937ec-c710-42ec-8fb2-2cf450d77737',
+    'https://firebasestorage.googleapis.com/v0/b/campus-map-f1a9f.appspot.com/o/carouselImage%2Ffpt-7.jpg?alt=media&token=b5901745-8654-4c83-a79b-3b4b894369aa'
+  ]
+
   return (
     <>
       {/* <ModalAds /> */}
       <MainHeader />
-      <Box w={"100%"} justifyContent="center" zIndex={2} textColor="#04408C" className="bodyContent">
+      <Box w={"100%"} justifyContent="center" zIndex={2} textColor="#04408C" className="bodyContent" pt={'15px'}>
 
 
         <Flex justifyContent={"space-between"} px="30px">
@@ -104,10 +106,9 @@ const Home = () => {
               </Flex>
             );
           })}
-
-
         </Flex>
 
+        <CarouselMultiItems imageLinks={CarouselImageLink} />
         {/* <Image py="24px" h={"217px"} w="375px" alt="map" src={DemoMap.src} /> */}
         <Flex justifyContent={"space-between"} px="20px" pt="10px">
           <Text textColor="#04408C" fontSize={"16px"} fontWeight="600">
@@ -149,6 +150,7 @@ const Home = () => {
                     h="152px"
                     alt={event.header}
                     src={event.imageUrl}
+                    borderRadius={'15px'}
                     objectFit="cover"
                   />
                   <Text fontSize={"10px"} textTransform="uppercase">

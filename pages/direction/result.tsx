@@ -10,13 +10,12 @@ import Head from 'next/head';
 const DirectionResultPage = () => {
 
   const router = useRouter()
-  console.log("query", router.query);
   const { fromLocation, toLocation } = router.query
 
   return (
     <>
       <Head>
-        <title>Campus Map - Tìm kiếm đường đi</title>
+        <title>Tìm kiếm đường đi - Campus Map</title>
       </Head>
       <Box maxW={"mobile"} padding="0" fontFamily="campus" className="header-body">
         {/* <Image src={GFloor.src} top="100px"/> */}

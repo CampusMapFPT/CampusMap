@@ -42,7 +42,6 @@ function Authenticate() {
   const LoginWithGoogle = () => {
     signInWithGoogle()
       .then((result) => {
-        console.log("result", result);
         const user = result.user;
         if (user) {
           try {
@@ -68,7 +67,6 @@ function Authenticate() {
         }
       })
       .catch((error) => {
-        console.log(error);
         toast({
           title: "Login failed",
           status: "error",

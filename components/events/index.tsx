@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import useGlobalContext from "hooks/useGlobalContext";
 import { API_EVENT, API_FUTURE_EVENT, API_LATEST_EVENT, API_ONGOING_EVENT } from "constants/api";
-import useFetch from "hooks/fetch/useFetch";
+import useFetch from "hooks/fetchAPI/useFetch";
 const Event = () => {
 
   const { data: futureEventData, isLoading: isLoadingFutureEvent, isError: isErrorFutureEvent } = useFetch(API_FUTURE_EVENT)
@@ -19,7 +19,6 @@ const Event = () => {
   const [selectingEvent, SetSelectingEvent] = useState("ongoing");
 
   let eventList = (selectingEvent == "ongoing") ? ongoingEventList : futureEventList
-  console.log('eventList', eventList);
 
   return (
     <Box className="bodyContent">
@@ -77,7 +76,7 @@ const Event = () => {
           </>
         }
         <Flex alignItems={"center"} justifyContent="space-between"
-          position={'sticky'} top='0' background={'#fff'}>
+          position={'sticky'} top='0' background={'#fff'} my="3px" py='15px'>
           <Button
             w={selectingEvent == "ongoing" ? "190px" : "124px"}
             h={selectingEvent == "ongoing" ? "42px" : "36px"}
@@ -122,7 +121,7 @@ const Event = () => {
           {eventList &&
             eventList.map(event => {
               return (
-                <Flex gap={2} key={event.id} pt={"1rem"} onClick={() => router.push({
+                <Flex py={'10px'} key={event.id} onClick={() => router.push({
                   pathname: "/events/[id]",
                   query: {
                     id: event.id,
@@ -130,10 +129,13 @@ const Event = () => {
                 })}>
                   <Image
                     src={event.imageUrl}
-                    w="152px"
+                    minWidth={'152px'}
                     h="152px"
+                    display='block'
+                    borderRadius={'15px'}
                     objectFit="cover"
                     alt="event banner"
+                    mr='10px'
                   />
                   <Flex flexDirection={"column"}>
                     <Text pb={2} fontSize={"15px"}>
@@ -161,7 +163,7 @@ const Event = () => {
                           />
                         </Flex>
                         <Text
-                          fontFamily={"Balgin-Light"}
+                          //fontFamily={"Balgin-Light"}
                           color="#04408C"
                           fontSize={"14px"}
                         >
