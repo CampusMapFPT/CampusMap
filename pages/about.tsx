@@ -9,7 +9,7 @@ function AboutPage() {
   return (
     <>
       <Head>
-        <title>Campus Map - Thông tin công ty</title>
+        <title>Thông tin công ty - Campus Map</title>
       </Head>
       <Box maxW={"mobile"} padding="0" fontFamily="campus" className="header-body">
         <NavigationBar title={"Thông tin công ty"} />

@@ -8,7 +8,7 @@ export default function Privacy() {
   return (
     <>
       <Head>
-        <title>Campus Map - Không tìm thấy trang</title>
+        <title>Không tìm thấy trang - Campus Map</title>
       </Head>
       <Box w="100vw" h="100vh">
         <Flex

@@ -16,23 +16,30 @@ import React, {
   useCallback,
   useEffect,
 } from "react"
-import { createRoot } from "react-dom/client"
-import MenuItemInput from './menuItemInput'
+import MenuItemInput from './components/menuItemInput'
 import { Image } from "@chakra-ui/react";
 import LocationIcon from "../assets/icon/location.png";
 import DestinationIcon from "../assets/icon/destination.png";
-import GFloor from "../assets/image/gfloor.png";
 import useGlobalContext from "hooks/useGlobalContext";
 import { useRouter } from "next/router";
-import useFetch from '../../hooks/fetch/useFetch'
+import useFetch from '../../hooks/fetchAPI/useFetch'
 import { removeVI, DefaultOption } from 'jsrmvi';
 import { API_ROOM } from '../../constants/api'
+import { motion } from "framer-motion";
 
 const SearchDirection = (props: any) => {
   const router = useRouter();
   const globalContext = useGlobalContext();
   const [fromInput, setFromInput] = useState("")
   const [toInput, setToInput] = useState("")
+
+  const { fromId: queryFromId, fromLocation: queryFromName, toId: queryToId, toLocation: queryToName } = props.locationQuery
+  console.log(queryToName);
+
+  const [fromId, setFromId] = useState(queryFromId)
+  const [toId, setToId] = useState(queryToId)
+  const [fromName, setFromName] = useState(queryFromName)
+  const [toName, setToName] = useState(queryToName)
 
   const { data: roomData, isLoading, isError } = useFetch(API_ROOM)
 
@@ -41,8 +48,6 @@ const SearchDirection = (props: any) => {
     if (roomData)
       globalContext.SetRoomList(roomData.result)
   }, [roomData])
-  console.log('search direction - roomlist', roomList);
-  console.log('search direction - roomData', roomData);
 
   let roomListFrom, roomListTo
 
@@ -78,7 +83,6 @@ const SearchDirection = (props: any) => {
     []
   )
 
-  console.log(props);
 
   return (
     <Box className="map">
@@ -97,9 +101,9 @@ const SearchDirection = (props: any) => {
             <Flex>
               <Image src={LocationIcon.src} display="block" p="4" />
 
-              {globalContext.directionFrom.name == "" || globalContext.directionFrom.name === undefined
+              {fromName == "" || fromName === undefined
                 ? <Box opacity={0.5} fontSize={15} p="1" alignSelf={"center"}>Vị trí</Box>
-                : <Box fontSize={15} p="1" alignSelf={"center"}>{globalContext.directionFrom.name}</Box>}
+                : <Box fontSize={15} p="1" alignSelf={"center"}>{fromName}</Box>}
 
             </Flex>
           </MenuButton>
@@ -127,7 +131,8 @@ const SearchDirection = (props: any) => {
                       <MenuItem
                         key={room.id}
                         onClick={() => {
-                          globalContext.SetDirectionFrom(room)
+                          setFromId(room.id)
+                          setFromName(room.name)
                         }}
                       >
                         {room.name}
@@ -151,9 +156,9 @@ const SearchDirection = (props: any) => {
           >
             <Flex>
               <Image src={DestinationIcon.src} display="block" p="4" />
-              {globalContext.directionTo.name == "" || globalContext.directionTo.name === undefined
+              {toName === "" || toName === undefined
                 ? <Box opacity={0.5} fontSize={15} p="1" alignSelf={"center"}>Vị trí</Box>
-                : <Box fontSize={15} p="1" alignSelf={"center"}>{globalContext.directionTo.name}</Box>}
+                : <Box fontSize={15} p="1" alignSelf={"center"}>{toName}</Box>}
             </Flex>
           </MenuButton>
           <MenuList className="myMenuList">
@@ -180,7 +185,8 @@ const SearchDirection = (props: any) => {
                       <MenuItem
                         key={room.id}
                         onClick={() => {
-                          globalContext.SetDirectionTo(room);
+                          setToId(room.id)
+                          setToName(room.name)
                         }}
                       >
                         {room.name}
@@ -192,26 +198,38 @@ const SearchDirection = (props: any) => {
           </MenuList>
         </Menu>
         <Flex pt={"2rem"} w="100%" minH="3rem">
-          {Object.keys(globalContext.directionFrom).length > 0 && Object.keys(globalContext.directionTo).length > 0 &&
-            <Button
-              w="175px"
-              h="45px"
-              margin="0 auto"
-              borderRadius="72px"
-              background="#04408C"
-              color="#fff"
-              onClick={() => router.push({
-                pathname: "/direction/result",
-                query: {
-                  fromId: globalContext.directionFrom.id,
-                  fromLocation: globalContext.directionFrom.name,
-                  toId: globalContext.directionTo.id,
-                  toLocation: globalContext.directionTo.name,
-                }
-              })}
+          {fromId && toId &&
+
+            <motion.div
+              className="box"
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01]
+              }}
             >
-              Dẫn đường
-            </Button>
+              <Button
+                w="175px"
+                h="45px"
+                margin="0 auto"
+                borderRadius="72px"
+                background="#04408C"
+                color="#fff"
+                onClick={() => router.push({
+                  pathname: "/direction/result",
+                  query: {
+                    fromId: fromId,
+                    fromLocation: fromName,
+                    toId: toId,
+                    toLocation: toName,
+                  }
+                })}
+              >
+                Dẫn đường
+              </Button>
+            </motion.div>
           }
 
         </Flex>

@@ -6,10 +6,11 @@ import { useRouter } from "next/router";
 
 const DirectionPage = () => {
   const router = useRouter()
+
   return (
     <>
       <Head>
-        <title>Campus Map - Tìm kiếm đường đi</title>
+        <title>Tìm kiếm đường đi - Campus Map</title>
       </Head>
       <Box maxW={"mobile"} padding="0" fontFamily="campus" className="header-body">
         <NavigationBar title={""} />

@@ -14,7 +14,7 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 import { API_ROOM } from "constants/api";
-import useFetch from "hooks/fetch/useFetch";
+import useFetch from "hooks/fetchAPI/useFetch";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { removeVI, DefaultOption } from 'jsrmvi';
@@ -31,8 +31,6 @@ const RoomList = () => {
       globalContext.SetRoomList(roomData.result)
   }, [roomData])
 
-  console.log('search direction - roomlist', roomList);
-  console.log('search direction - roomData', roomData);
 
   let roomListFilter;
 

@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import StudentIcon from "../assets/image/student.png";
+import StudentIcon from "../../assets/image/student.png";
 
-
+const calculateDistance = (point1: any, point2: any) => {
+    return Math.sqrt(Math.pow((point2.xRenderValue * 1.0 - point1.xRenderValue * 1.0), 2)
+        + Math.pow((point2.yRenderValue * 1.0 - point1.yRenderValue * 1.0), 2))
+}
 
 export const MovingStudent = (props: any) => {
     const [locationIndex, setLocationIndex] = useState(0);
@@ -15,6 +18,9 @@ export const MovingStudent = (props: any) => {
             timer = setTimeout(() => {
                 setLocationIndex(locationIndex + 1);
             }, 1500);
+        const pointDistance = (locationIndex < itemList.length - 1) ? calculateDistance(itemList[locationIndex].location, itemList[locationIndex + 1].location) : 0
+        console.log(pointDistance * 1.0 / 10);
+        setDuration(pointDistance * 1.0 / 10)
     }, [locationIndex]);
 
     useEffect(() => {
@@ -25,6 +31,8 @@ export const MovingStudent = (props: any) => {
         }, 1);
 
     }, [props.locations])
+
+
 
     return (
         <motion.img

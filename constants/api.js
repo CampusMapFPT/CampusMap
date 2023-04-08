@@ -4,7 +4,7 @@ const API_ENV = 'https://campusmapapi.azurewebsites.net/api';
 const API_ROOM = API_ENV + '/Room'
 const API_ROOM_DIRECTION = API_ENV + '/Room/direction'
 
-const API_FEEDBACK = '/Feedback'
+const API_FEEDBACK = API_ENV + '/Feedback'
 
 const API_EVENT = API_ENV + '/Event'
 const API_FUTURE_EVENT = API_ENV + '/Event/future'

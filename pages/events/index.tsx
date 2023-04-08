@@ -9,7 +9,7 @@ function EventPage() {
     return (
         <>
             <Head>
-                <title>Campus Map - Sự kiện</title>
+                <title>Sự kiện - Campus Map</title>
             </Head>
             <Box maxW={"mobile"} padding="0" fontFamily="campus" className="header-body">
                 <NavigationBar title={"Sự kiện"} />

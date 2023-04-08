@@ -9,7 +9,7 @@ function BlogPage() {
   return (
     <>
       <Head>
-        <title>Campus Map - Blog</title>
+        <title>Blog - Campus Map</title>
       </Head>
       <Box maxW={"mobile"} padding="0" fontFamily="campus" className="header-body">
         <NavigationBar title={"Blogs"} />
