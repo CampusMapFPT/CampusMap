@@ -46,6 +46,11 @@ const FeedbackModal = () => {
                 }
             )
                 .then((response) => {
+                    response.headers = {
+                        "Access-Control-Allow-Origin": "*",
+                        "Access-Control-Allow-Headers": "Content-Type",
+                        "Access-Control-Allow-Methods": "GET, POST, OPTION",
+                    }
                     console.log(response);
                 }, (error) => {
                     console.log(error);
