@@ -1,4 +1,10 @@
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
+
 const nextConfig = {
+  plugins: [
+    new BundleAnalyzerPlugin()
+  ],
   reactStrictMode: true,
   distDir: "build",
   typescript: {
@@ -8,7 +14,6 @@ const nextConfig = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
-  experimental: { appDir: true },
   env: {
     NEXT_PUBLIC_BASE_URL: "",
     NEXT_PUBLIC_FIREBASE_API_KEY: "AIzaSyB-A-7ajjyuCE04qlV0hF_c_u9jMQZft2s",
@@ -21,6 +26,6 @@ const nextConfig = {
     NEXT_PUBLIC_API_KEY: "AIzaSyAvutpAgOE9qDyDk1S97wrHYOg_tE6gFW0",
   },
   trailingSlash: true,
-};
+}
 
 module.exports = nextConfig;

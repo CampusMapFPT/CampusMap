@@ -21,6 +21,7 @@ const FeedbackModal = () => {
     const [feedbackContent, setFeedbackContent] = useState('')
     const [displayForm, setDisplayForm] = useState(false)
     const [sentFeedback, setSentFeedback] = useState(false)
+    console.log(`${router.asPath}-${router.pathname}`);
 
     const DisplayFeedbackForm = async () => {
         if (selectedFeedback === 1 && !displayForm) setDisplayForm(true)

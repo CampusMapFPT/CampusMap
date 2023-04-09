@@ -76,7 +76,7 @@ const Home = () => {
 
   return (
     <>
-      {/* <ModalAds /> */}
+      <ModalAds />
       <MainHeader />
       <Box w={"100%"} justifyContent="center" zIndex={2} textColor="#04408C" className="bodyContent" pt={'15px'}>
 
