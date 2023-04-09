@@ -30,7 +30,9 @@ const FeedbackModal = () => {
 
             const feedbackResponse = {
                 ratings: selectedFeedback,
-                content: feedbackContent,
+                content:
+                    `(${router.asPath})
+                    ${feedbackContent}`,
                 createDate: new Date()
             }
 
