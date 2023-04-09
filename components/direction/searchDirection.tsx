@@ -58,20 +58,24 @@ const SearchDirection = (props: any) => {
 
   if (roomList !== null && roomList !== undefined) {
     roomListFrom = fromInput === ""
-      ? roomList
+      ? roomList.filter((room) => room.id !== toId)
       : roomList.filter((room) =>
-        removeVI(room.name)
+        (removeVI(room.name)
           .includes(removeVI(fromInput))
-        || removeVI(room.secondName)
-          .includes(removeVI(fromInput)))
+          || removeVI(room.secondName)
+            .includes(removeVI(fromInput)))
+
+        && room.id !== toId)
 
     roomListTo = toInput === ""
-      ? roomList
+      ? roomList.filter((room) => room.id !== fromId)
       : roomList.filter((room) =>
-        removeVI(room.name)
+        (removeVI(room.name)
           .includes(removeVI(toInput))
-        || removeVI(room.secondName)
-          .includes(removeVI(toInput)))
+          || removeVI(room.secondName)
+            .includes(removeVI(toInput)))
+
+        && room.id !== fromId)
   }
 
 
