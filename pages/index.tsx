@@ -15,6 +15,13 @@ function Index() {
         
       </AuthCheck> */}
         <Home />
+        <Box
+          display={"flex"}
+          className='footer'
+          bgColor={"#3A88EC"}
+          zIndex={99}
+          flexGrow={0}
+        />
       </Box>
     </>
 

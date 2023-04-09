@@ -42,13 +42,6 @@ function MyApp({ Component, pageProps }: any) {
             <Container maxW="420px" p="0px" className="box-container">
               <Component {...pageProps} />
 
-              <Box
-                display={"flex"}
-                className='footer'
-                bgColor={"#3A88EC"}
-                zIndex={99}
-                flexGrow={0}
-              />
             </Container>
           </QueryClientProvider>
         </ChakraProvider>

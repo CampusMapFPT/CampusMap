@@ -9,7 +9,7 @@ const MainHeader = () => {
 
 
     return (
-        <Box bgColor={"#3A88EC"} height="169px" className="header">
+        <Box bgColor={"#3A88EC"} height="169px" className="header" >
 
             <Flex paddingTop='20px'
                 alignItems={"center"} justifyContent={"center"}>
