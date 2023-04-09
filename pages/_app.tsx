@@ -24,6 +24,21 @@ function MyApp({ Component, pageProps }: any) {
               strategy="lazyOnload"
               crossOrigin="anonymous"
             />
+            <Script async src="https://www.googletagmanager.com/gtag/js?id=G-ZWLWWMMGEE"></Script>
+            <Script
+              id='google-analytics'
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', 'G-ZWLWWMMGEE', {
+                    page_path: window.location.pathname,
+                  });
+                `,
+              }}
+            />
             <Container maxW="420px" p="0px" className="box-container">
               <Component {...pageProps} />
 
