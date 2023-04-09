@@ -34,7 +34,6 @@ const SearchDirection = (props: any) => {
   const [toInput, setToInput] = useState("")
 
   const { fromId: queryFromId, fromLocation: queryFromName, toId: queryToId, toLocation: queryToName } = props.locationQuery
-  console.log(queryToName);
 
   const [fromId, setFromId] = useState(0)
   const [toId, setToId] = useState(0)
@@ -47,6 +46,7 @@ const SearchDirection = (props: any) => {
     setToName(queryToName)
   }, [props.locationQuery])
   const { data: roomData, isLoading, isError } = useFetch(API_ROOM)
+  console.log(roomData);
 
   const roomList = globalContext.roomList
   useEffect(() => {
@@ -61,12 +61,16 @@ const SearchDirection = (props: any) => {
       ? roomList
       : roomList.filter((room) =>
         removeVI(room.name)
+          .includes(removeVI(fromInput))
+        || removeVI(room.secondName)
           .includes(removeVI(fromInput)))
 
     roomListTo = toInput === ""
       ? roomList
       : roomList.filter((room) =>
         removeVI(room.name)
+          .includes(removeVI(toInput))
+        || removeVI(room.secondName)
           .includes(removeVI(toInput)))
   }
 
@@ -137,10 +141,10 @@ const SearchDirection = (props: any) => {
                         key={room.id}
                         onClick={() => {
                           setFromId(room.id)
-                          setFromName(room.name)
+                          room.secondName ? setFromName(room.secondName) : setFromName(room.name)
                         }}
                       >
-                        {room.name}
+                        {room.secondName ? room.secondName : room.name}
                       </MenuItem>
                     )
                   })}
@@ -186,15 +190,17 @@ const SearchDirection = (props: any) => {
                   <MenuItem>Loading</MenuItem>}
                 {!isLoading && roomListTo && roomListTo.length > 0 &&
                   roomListTo.map(room => {
+                    console.log(room);
+
                     return (
                       <MenuItem
                         key={room.id}
                         onClick={() => {
                           setToId(room.id)
-                          setToName(room.name)
+                          room.secondName ? setToName(room.secondName) : setToName(room.name)
                         }}
                       >
-                        {room.name}
+                        {room.secondName !== null ? room.secondName : room.name}
                       </MenuItem>
                     )
                   })}

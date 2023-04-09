@@ -19,6 +19,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { removeVI, DefaultOption } from 'jsrmvi';
 import useGlobalContext from "hooks/useGlobalContext";
+import FooterAds from "components/googleAds/footerAds";
 const RoomList = () => {
   const router = useRouter();
   const globalContext = useGlobalContext()
@@ -117,6 +118,7 @@ const RoomList = () => {
             );
           })}
       </Flex>
+      <FooterAds />
     </>
   );
 };

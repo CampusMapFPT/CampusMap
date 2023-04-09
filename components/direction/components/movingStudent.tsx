@@ -14,13 +14,14 @@ export const MovingStudent = (props: any) => {
     const itemList = props.locations;
     let timer;
     useEffect(() => {
-        if (locationIndex < itemList.length - 1)
+        if (locationIndex < itemList.length - 1) {
+            const pointDistance = (locationIndex < itemList.length - 1) ? calculateDistance(itemList[locationIndex].location, itemList[locationIndex + 1].location) : 0
+            console.log(pointDistance * 1.0 / 10);
+            setDuration(pointDistance * 1.0 / 10)
             timer = setTimeout(() => {
                 setLocationIndex(locationIndex + 1);
-            }, 1500);
-        const pointDistance = (locationIndex < itemList.length - 1) ? calculateDistance(itemList[locationIndex].location, itemList[locationIndex + 1].location) : 0
-        console.log(pointDistance * 1.0 / 10);
-        setDuration(pointDistance * 1.0 / 10)
+            }, duration * 1000);
+        }
     }, [locationIndex]);
 
     useEffect(() => {

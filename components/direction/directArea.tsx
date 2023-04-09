@@ -70,7 +70,7 @@ const Direction = (props: any) => {
   loadImage(`tang${currentFloor}.png`)
 
   return (
-    <Box className="map">
+    <Box className="map bodyContent" overflowY={'auto'}>
 
       <Box margin={"20px auto 0px"} className="MapImageContainer">
         {

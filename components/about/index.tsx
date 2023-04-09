@@ -10,7 +10,7 @@ import {
   Textarea,
   UnorderedList,
 } from "@chakra-ui/react";
-import FptImg from "public/assets/images/fptcolor.png";
+import Logo from "public/assets/images/logo-w-slogan(blue).png";
 
 import { useState } from "react";
 import { useRouter } from "next/router";
@@ -29,41 +29,11 @@ const AboutUs = () => {
     >
       <Image
         alt={"event img"}
-        width={"94px"}
-        height="42px"
-        src={FptImg.src}
+        width={"80%"}
+        src={Logo.src}
         zIndex={"1"}
       />
       <Flex flexDirection={"column"} alignItems="center">
-        <Text fontWeight={600} fontSize="30px">
-          Campus Map
-        </Text>
-        {/* <Text
-          pl={"2.5rem"}
-          alignSelf={"flex-start"}
-          fontWeight={600}
-          fontSize={"20px"}
-        >
-          Feedback
-        </Text>
-        <Textarea
-          w="313px"
-          h="193px"
-          placeholder="Write your feedback"
-          size="xl"
-        ></Textarea>
-        <Button
-          mt={5}
-          alignSelf={"center"}
-          w="114px"
-          h="38px"
-          bgColor={"#04408C"}
-          borderRadius="72px"
-        >
-          <Text fontWeight={600} fontSize="24px" textColor={"white"}>
-            Submit
-          </Text>
-        </Button> */}
         <Flex flexDirection={"column"} alignItems="left" gap={5} p={"1.5rem"}>
           <Text lineHeight={"18px"} fontSize={"13px"}>
             Sản phẩm được phát triển và vận hành bởi:
@@ -113,7 +83,7 @@ const AboutUs = () => {
                 Fanpage: facebook.com/campusmap.fpt
               </ListItem>
               <ListItem>
-                Điện thoại: 0788925011
+                Điện thoại: 0788 925 011
               </ListItem>
             </UnorderedList>
           </Text>

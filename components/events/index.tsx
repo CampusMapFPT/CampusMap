@@ -30,7 +30,7 @@ const Event = () => {
         zIndex={"1"}
         objectFit="cover"
         onClick={() => router.push({
-          pathname: "/events/{id}",
+          pathname: "/events/[id]",
           query: {
             id: latestEvent.id,
           }
