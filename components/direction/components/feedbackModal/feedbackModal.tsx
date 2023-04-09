@@ -45,7 +45,7 @@ const FeedbackModal = () => {
             await axios.post(
                 API_FEEDBACK,
                 feedbackResponse,
-                { headers }
+                //{ headers }
             )
                 .then((response) => {
                     console.log(response);
