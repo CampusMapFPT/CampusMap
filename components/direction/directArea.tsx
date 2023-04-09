@@ -55,7 +55,7 @@ const Direction = (props: any) => {
   directionLocations = (firstLocationFloor > lastLocationFloor) ? directionLocations.reverse() : directionLocations
 
   const currentLocations = directionLocations[currentIndex]
-  console.log(directionGuidesData);
+
 
   useEffect(() => {
     if (currentLocations !== null

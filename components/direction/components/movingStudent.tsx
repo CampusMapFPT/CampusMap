@@ -16,7 +16,7 @@ export const MovingStudent = (props: any) => {
     useEffect(() => {
         if (locationIndex < itemList.length - 1) {
             const pointDistance = (locationIndex < itemList.length - 1) ? calculateDistance(itemList[locationIndex].location, itemList[locationIndex + 1].location) : 0
-            console.log(pointDistance * 1.0 / 10);
+
             setDuration(pointDistance * 1.0 / 10)
             timer = setTimeout(() => {
                 setLocationIndex(locationIndex + 1);

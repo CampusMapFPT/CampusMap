@@ -46,7 +46,7 @@ const SearchDirection = (props: any) => {
     setToName(queryToName)
   }, [props.locationQuery])
   const { data: roomData, isLoading, isError } = useFetch(API_ROOM)
-  console.log(roomData);
+
 
   const roomList = globalContext.roomList
   useEffect(() => {
@@ -190,8 +190,6 @@ const SearchDirection = (props: any) => {
                   <MenuItem>Loading</MenuItem>}
                 {!isLoading && roomListTo && roomListTo.length > 0 &&
                   roomListTo.map(room => {
-                    console.log(room);
-
                     return (
                       <MenuItem
                         key={room.id}

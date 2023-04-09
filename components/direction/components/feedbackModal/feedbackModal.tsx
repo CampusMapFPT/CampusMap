@@ -41,7 +41,7 @@ const FeedbackModal = () => {
                 feedbackResponse,
                 {
                     headers: {
-                        'access-control-allow-origin': '*',
+                        'Access-Control-Allow-Origin': '*',
                     }
                 }
             )
