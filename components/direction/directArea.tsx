@@ -109,18 +109,22 @@ const Direction = (props: any) => {
         mt={6}
         borderTopColor="#BAD8FF"
         className="instruction-container">
-        <IconButton
-          className="nextFloorBtn"
-          aria-label='Next Floor'
-          variant='ghost'
-          onClick={() => { if (currentIndex < directionLocations.length - 1) setCurrentIndex(currentIndex + 1) }}
-          icon={<ChevronRightIcon />} />
-        <IconButton
-          className="prevFloorBtn"
-          aria-label='Previous Floor'
-          variant='ghost'
-          onClick={() => { if (currentIndex > 0) setCurrentIndex(currentIndex - 1) }}
-          icon={<ChevronLeftIcon />} />
+        {(currentIndex < directionLocations.length - 1) &&
+          <IconButton
+            className="nextFloorBtn"
+            aria-label='Next Floor'
+            variant='ghost'
+            onClick={() => setCurrentIndex(currentIndex + 1)}
+            icon={<ChevronRightIcon />} />
+        }
+        {(currentIndex > 0) &&
+          <IconButton
+            className="prevFloorBtn"
+            aria-label='Previous Floor'
+            variant='ghost'
+            onClick={() => setCurrentIndex(currentIndex - 1)}
+            icon={<ChevronLeftIcon />} />
+        }
         <Box fontSize="4xl" margin={"auto 0"} textAlign="center">
           Hướng dẫn
         </Box>
