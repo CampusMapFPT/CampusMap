@@ -33,13 +33,17 @@ const FeedbackModal = () => {
                 createDate: new Date()
             }
 
-            const headers = {
-                'access-control-allow-origin': '*',
-            };
+            // const headers = {
+            //     
+            // };
             await axios.post(
                 API_FEEDBACK,
                 feedbackResponse,
-                { headers }
+                {
+                    headers: {
+                        'access-control-allow-origin': '*',
+                    }
+                }
             )
                 .then((response) => {
                     console.log(response);
