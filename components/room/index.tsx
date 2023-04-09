@@ -40,6 +40,8 @@ const RoomList = () => {
       ? roomList
       : roomList.filter((room) =>
         removeVI(room.name)
+          .includes(removeVI(searchInput))
+        || removeVI(room.secondName)
           .includes(removeVI(searchInput)))
   }
 
