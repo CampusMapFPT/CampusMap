@@ -78,7 +78,7 @@ const Home = () => {
     <>
       <ModalAds />
       <MainHeader />
-      <Box w={"100%"} justifyContent="center" zIndex={2} textColor="#04408C" className="bodyContent" pt={'15px'}>
+      <Box w={"100%"} justifyContent="center" zIndex={2} textColor="#04408C" className="bodyContent" pt={'15px'} pb='30px'>
 
 
         <Flex justifyContent={"space-between"} px="30px">

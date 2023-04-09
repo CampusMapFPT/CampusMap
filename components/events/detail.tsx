@@ -60,7 +60,7 @@ const EventDetail = () => {
               </Text>
             </Flex>
 
-            <Text fontFamily={"Arial"} overflow="auto" whiteSpace={'pre-line'}>
+            <Text overflow="auto" whiteSpace={'pre-line'}>
               {currentEvent.header} <Box py={2} /> {currentEvent.content}
             </Text>
           </Flex>

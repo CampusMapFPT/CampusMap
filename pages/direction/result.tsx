@@ -6,6 +6,7 @@ import { ArrowBackIcon } from '@chakra-ui/icons';
 import LocationIcon from "../../components/assets/icon/location.png";
 import DestinationIcon from "../../components/assets/icon/destination.png";
 import Head from 'next/head';
+import FooterAds from 'components/googleAds/footerAds';
 
 const DirectionResultPage = () => {
 
@@ -77,6 +78,7 @@ const DirectionResultPage = () => {
         <Direction
           locationQuery={router.query}
         />
+        <FooterAds />
       </Box>
     </>
   );

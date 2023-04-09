@@ -3,6 +3,7 @@ import { Box, Container, Flex } from "@chakra-ui/react";
 import NavigationBar from "components/sections/navbar";
 import EventDetail from "../../components/events/detail";
 import Head from "next/head";
+import FooterAds from "components/googleAds/footerAds";
 
 function EventPage() {
     return (
@@ -14,6 +15,7 @@ function EventPage() {
                 {/* <AuthCheck> */}
                 <NavigationBar title={"Events"} />
                 <EventDetail />
+                <FooterAds />
                 {/* </AuthCheck> */}
             </Box>
         </>

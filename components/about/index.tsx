@@ -15,12 +15,14 @@ import Logo from "public/assets/images/logo-w-slogan(blue).png";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import useGlobalContext from "hooks/useGlobalContext";
+import FooterAds from "components/googleAds/footerAds";
 const AboutUs = () => {
   const router = useRouter();
   const globalContext = useGlobalContext();
 
   return (
     <Flex
+      className="bodyContent"
       textColor={"#04408C"}
       h="512px"
       flexDirection="column"

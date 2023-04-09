@@ -3,6 +3,7 @@ import { Box, Container } from "@chakra-ui/react";
 import NavigationBar from "components/sections/navbar";
 import AboutUs from "components/about/index";
 import Head from "next/head";
+import FooterAds from "components/googleAds/footerAds";
 
 function AboutPage() {
 
@@ -14,6 +15,7 @@ function AboutPage() {
       <Box maxW={"mobile"} padding="0" fontFamily="campus" className="header-body">
         <NavigationBar title={"Thông tin công ty"} />
         <AboutUs />
+        <FooterAds />
       </Box>
     </>
 

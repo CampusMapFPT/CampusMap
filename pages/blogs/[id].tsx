@@ -4,6 +4,7 @@ import NavigationBar from "components/sections/navbar";
 
 import BlogDetail from "components/blog/detail";
 import Head from "next/head";
+import FooterAds from "components/googleAds/footerAds";
 
 function BlogDetailPage() {
   return (
@@ -15,6 +16,7 @@ function BlogDetailPage() {
         {/* <AuthCheck> */}
         <NavigationBar title={"Blogs"} />
         <BlogDetail />
+        <FooterAds />
         {/* </AuthCheck> */}
       </Box>
     </>

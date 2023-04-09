@@ -1,5 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import SearchDirection from "components/direction/searchDirection";
+import FooterAds from "components/googleAds/footerAds";
 import NavigationBar from "components/sections/navbar";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -18,6 +19,7 @@ const DirectionPage = () => {
         <SearchDirection
           locationQuery={router.query}
         />
+        <FooterAds />
       </Box>
     </>
   );
