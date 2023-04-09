@@ -40,38 +40,34 @@ const DirectionResultPage = () => {
           </Flex>
 
           <Stack px={2} m={3} gap={1}>
-            <Menu>
-              <MenuButton
-                as={Button}
-                bgColor={"#FFDD69"}
-                height={"50px"}
-                borderRadius={15}
-                textAlign={"left"}
-              >
-                <Flex>
-                  <Image src={LocationIcon.src} display="block" p="4" />
-                  <Box fontSize={15} p="1" alignSelf={"center"}>
-                    {fromLocation}
-                  </Box>
-                </Flex>
-              </MenuButton>
-            </Menu>
-            <Menu>
-              <MenuButton
-                as={Button}
-                bgColor={"#FFDD69"}
-                height={"50px"}
-                borderRadius={15}
-                textAlign={"left"}
-              >
-                <Flex>
-                  <Image src={DestinationIcon.src} display="block" p="4" />
-                  <Box fontSize={15} p="1" alignSelf={"center"}>
-                    {toLocation}
-                  </Box>
-                </Flex>
-              </MenuButton>
-            </Menu>
+            <Box
+              as="button"
+              display={"flex"}
+              h="50px"
+              bgColor={"#FFDD69"}
+              //justifyContent="center"
+              alignItems={"center"}
+              textAlign={"left"}
+              borderRadius="15px"
+              boxShadow={"0px 4px 4px 0px #00000040"}
+            >
+              <Image src={LocationIcon.src} display="block" p="25px" />
+              {fromLocation}
+            </Box>
+            <Box
+              as="button"
+              display={"flex"}
+              h="50px"
+              bgColor={"#FFDD69"}
+              //justifyContent="center"
+              alignItems={"center"}
+              textAlign={"left"}
+              borderRadius="15px"
+              boxShadow={"0px 4px 4px 0px #00000040"}
+            >
+              <Image src={LocationIcon.src} display="block" p="25px" />
+              {toLocation}
+            </Box>
           </Stack>
         </Flex>
 

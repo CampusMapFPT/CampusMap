@@ -23,13 +23,23 @@ import { motion } from "framer-motion";
 import FeedbackModal from "./components/feedbackModal/feedbackModal";
 
 
-let groupByValue = (array: any, key: any) => Object.values(
-  array.reduce((accumulate: any, currentItem: any) => {
-    if (!accumulate[currentItem[key]]) accumulate[currentItem[key]] = []
-    accumulate[currentItem[key]].push(currentItem)
-    return accumulate
-  }, {})
-)
+const groupByFloor = (directionGuidesData: any) => {
+  let directionGuideByFloor: any[] = []
+  directionGuideByFloor[0] = []
+  let sortIndex = 0
+  let currentIndex = 0;
+
+  while (currentIndex < directionGuidesData.length - 1) {
+    directionGuideByFloor[sortIndex].push(directionGuidesData[currentIndex])
+    if (directionGuidesData[currentIndex].floor != directionGuidesData[currentIndex + 1].floor) {
+      sortIndex++
+      directionGuideByFloor[sortIndex] = []
+    }
+    currentIndex++
+  }
+  directionGuideByFloor[sortIndex].push(directionGuidesData[currentIndex])
+  return directionGuideByFloor
+}
 
 const Direction = (props: any) => {
   const globalContext = useGlobalContext();
@@ -45,21 +55,22 @@ const Direction = (props: any) => {
 
   const directionGuidesData = directionData.result || []
 
-  let directionLocations = groupByValue(directionGuidesData, 'floor')
-
+  let directionLocations = groupByFloor(directionGuidesData)
   const firstLocation = directionGuidesData[0]
   const firstLocationFloor = (firstLocation === undefined) ? 0 : firstLocation.floor
   const lastLocation = directionGuidesData[directionGuidesData.length - 1]
   const lastLocationFloor = (lastLocation === undefined) ? 0 : lastLocation.floor
 
-  directionLocations = (firstLocationFloor > lastLocationFloor) ? directionLocations.reverse() : directionLocations
-
-  const currentLocations = directionLocations[currentIndex]
-
+  let currentLocations = directionLocations[currentIndex]
+  // useEffect(() => {
+  //   if (directionGuidesData.length > 0)
+  //     currentLocations = directionLocations[currentIndex]
+  // }, [directionGuidesData])
 
   useEffect(() => {
     if (currentLocations !== null
-      && currentLocations !== undefined)
+      && currentLocations !== undefined
+      && currentLocations[0] !== undefined)
       setCurrentFloor(currentLocations[0].floor)
   }, [currentLocations])
   const loadImage = (imageName: any) => {
@@ -80,7 +91,7 @@ const Direction = (props: any) => {
             alt={`Tang${currentFloor}`}
             className='MapImage' />
         }
-        {currentLocations && currentLocations.length > 0 &&
+        {currentLocations && currentLocations.length > 0 && currentLocations[0] !== undefined &&
           <>
             <MovingStudent
               locations={currentLocations}
@@ -117,7 +128,7 @@ const Direction = (props: any) => {
           {isLoadingDirection && <Text px={8}>Đang tải...</Text>}
           <OrderedList >
             {
-              currentLocations && currentLocations.length > 0 &&
+              currentLocations && currentLocations.length > 0 && currentLocations[0] !== undefined &&
               currentLocations.map((step: any) => {
                 return (
                   <>
