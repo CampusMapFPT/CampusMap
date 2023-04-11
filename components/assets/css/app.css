@@ -41,3 +41,15 @@
     min-height: 40px;
     border-radius: 20px;
 }
+
+.floorScrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.floorScrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}

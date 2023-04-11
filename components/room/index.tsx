@@ -1,6 +1,7 @@
 import { SearchIcon } from "@chakra-ui/icons";
 import {
   Box,
+  Button,
   Flex,
   Icon,
   Image,
@@ -24,8 +25,9 @@ const RoomList = () => {
   const router = useRouter();
   const globalContext = useGlobalContext()
   const [searchInput, SetSearchInput] = useState("");
+  const [floorFilter, setFloorFilter] = useState(-1);
   const { data: roomData, isLoading, isError } = useFetch(API_ROOM)
-
+  const floorList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
   const roomList = globalContext.roomList
   useEffect(() => {
     if (roomData)
@@ -36,6 +38,7 @@ const RoomList = () => {
   let roomListFilter;
 
   if (roomList !== null && roomList !== undefined) {
+    // Filter by search input
     roomListFilter = searchInput === ""
       ? roomList
       : roomList.filter((room) =>
@@ -43,6 +46,11 @@ const RoomList = () => {
           .includes(removeVI(searchInput))
         || removeVI(room.secondName)
           .includes(removeVI(searchInput)))
+    console.log(floorFilter);
+    // Filter by floor input
+    roomListFilter = (floorFilter !== -1) ?
+      roomListFilter.filter(room => room.location.floor === floorFilter)
+      : roomListFilter
   }
 
   return (
@@ -69,7 +77,32 @@ const RoomList = () => {
         </InputGroup>
       </Flex>
 
-      <Flex direction={"column"} p="0px 25px 0px 25px" gap={2} color="#04408C" className="bodyContent">
+      <Flex
+        flexDir={'row'}
+        className='floorScrollbar'
+        overflowX='auto'
+        width='100%'
+        flex='0 0 auto'
+        pl='25px'
+        justifyContent={'start'}>
+        {
+          floorList.map((floor) => {
+            return (
+              <Flex
+                key={floor}
+                padding={'5px'} mx='2px' mb='10px'
+                width='60px' height='20px' fontSize='13px'
+                justifyContent='center' alignItems='center'
+                borderRadius="15px" background="#3A88EC" color="#fff"
+                onClick={() => (floorFilter === floor) ? setFloorFilter(-1) : setFloorFilter(floor)}
+                flex='0 0 auto'
+              >Tầng {floor === 0 ? 'G' : floor}</Flex>
+            )
+          })
+        }
+
+      </Flex>
+      <Flex direction={"column"} p="0px 25px 0px 25px" gap={2} color="#04408C" className="bodyContent" mr='10px'>
         {roomListFilter && roomListFilter.length > 0 &&
           roomListFilter.map((room) => {
             return (
