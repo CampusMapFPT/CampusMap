@@ -46,7 +46,7 @@ const RoomList = () => {
           .includes(removeVI(searchInput))
         || removeVI(room.secondName)
           .includes(removeVI(searchInput)))
-    console.log(floorFilter);
+
     // Filter by floor input
     roomListFilter = (floorFilter !== -1) ?
       roomListFilter.filter(room => room.location.floor === floorFilter)
@@ -93,7 +93,8 @@ const RoomList = () => {
                 padding={'5px'} mx='2px' mb='10px'
                 width='60px' height='20px' fontSize='13px'
                 justifyContent='center' alignItems='center'
-                borderRadius="15px" background="#3A88EC" color="#fff"
+                borderRadius="15px" background={(floorFilter === floor) ? "#FFDD69" : "#3A88EC"}
+                color={(floorFilter === floor) ? "#000" : "#fff"}
                 onClick={() => (floorFilter === floor) ? setFloorFilter(-1) : setFloorFilter(floor)}
                 flex='0 0 auto'
               >Tầng {floor === 0 ? 'G' : floor}</Flex>
