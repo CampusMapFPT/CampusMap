@@ -39,23 +39,23 @@ const EventDetail = () => {
             bgColor={"white"}
             zIndex={"2"}
           >
-            <Text fontSize={"18px"} fontWeight={600}>
+            <Text fontSize={"18px"} fontWeight={800}>
               {currentEvent.title}
             </Text>
-            <Text color="#04408C" fontSize={"14px"}>
+            <Text color="#04408C" fontSize={"16px"} fontWeight={'bold'}>
               {currentEvent.unit}
             </Text>
             <Flex gap={3}>
               <Image alt="clock" src={ClockImg.src} w="22px" h="22px" />
 
-              <Text color="#04408C" fontSize={"14px"}>
+              <Text color="#04408C" fontSize={"14px"} fontStyle='italic'>
                 {currentEvent.time}
               </Text>
             </Flex>
             <Flex gap={3}>
               <Image alt="location" src={LocationImg.src} w="22px" h="22px" />
 
-              <Text color="#04408C" fontSize={"14px"} fontWeight={500}>
+              <Text color="#04408C" fontSize={"14px"} fontStyle='italic'>
                 {currentEvent.location}
               </Text>
             </Flex>

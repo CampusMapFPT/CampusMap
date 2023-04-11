@@ -3,7 +3,8 @@ import {
   Button,
   ListItem,
   OrderedList,
-  Image
+  Image,
+  Flex
 } from "@chakra-ui/react";
 import {
   ChevronRightIcon,
@@ -109,22 +110,6 @@ const Direction = (props: any) => {
         mt={6}
         borderTopColor="#BAD8FF"
         className="instruction-container">
-        {(currentIndex < directionLocations.length - 1) &&
-          <IconButton
-            className="nextFloorBtn"
-            aria-label='Next Floor'
-            variant='ghost'
-            onClick={() => setCurrentIndex(currentIndex + 1)}
-            icon={<ChevronRightIcon />} />
-        }
-        {(currentIndex > 0) &&
-          <IconButton
-            className="prevFloorBtn"
-            aria-label='Previous Floor'
-            variant='ghost'
-            onClick={() => setCurrentIndex(currentIndex - 1)}
-            icon={<ChevronLeftIcon />} />
-        }
         <Box fontSize="4xl" margin={"auto 0"} textAlign="center">
           Hướng dẫn
         </Box>
@@ -144,19 +129,62 @@ const Direction = (props: any) => {
               })
             }
           </OrderedList>
-          {currentIndex === directionLocations.length - 1 &&
-            <motion.div
-              className="box"
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 0.8,
-                delay: 0.5,
-                ease: [0, 0.71, 0.2, 1.01]
-              }}
+
+          {
+            currentIndex === 0
+            && currentIndex === directionLocations.length - 1
+            &&
+            <FeedbackModal />
+          }
+          {
+            currentIndex === 0
+            && currentIndex < directionLocations.length - 1
+            && directionLocations.length > 1
+            &&
+            <Button
+              w="175px" h="45px"
+              display="block" margin="10px auto"
+              borderRadius="72px" background="#04408C" color="#fff"
+              onClick={() => setCurrentIndex(currentIndex + 1)}
             >
+              Tiếp theo
+            </Button>
+          }
+          {currentIndex > 0 && currentIndex < directionLocations.length - 1 &&
+            <Flex>
+              <Button
+                w="175px" h="45px"
+                display="block" margin="10px auto"
+                borderRadius="72px" color="#000"
+                onClick={() => setCurrentIndex(currentIndex - 1)}
+              >
+                Quay lại
+              </Button>
+              <Button
+                w="175px" h="45px"
+                display="block" margin="10px auto"
+                borderRadius="72px" background="#04408C" color="#fff"
+                onClick={() => setCurrentIndex(currentIndex + 1)}
+              >
+                Tiếp theo
+              </Button>
+            </Flex>
+
+          }
+          {
+            currentIndex > 0 &&
+            currentIndex === directionLocations.length - 1 &&
+            <Flex>
+              <Button
+                w="175px" h="45px"
+                display="block" margin="10px auto"
+                borderRadius="72px" color="#000"
+                onClick={() => setCurrentIndex(currentIndex - 1)}
+              >
+                Quay lại
+              </Button>
               <FeedbackModal />
-            </motion.div>
+            </Flex>
           }
 
 
