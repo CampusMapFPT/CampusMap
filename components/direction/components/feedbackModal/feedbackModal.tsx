@@ -14,6 +14,9 @@ import { useForm } from "react-hook-form";
 import { API_FEEDBACK } from "constants/api"
 import axios from "axios"
 import { useRouter } from "next/router"
+const HAPPY_ICON = 3;
+const NEUTRAL_ICON = 2;
+const SAD_ICON = 1;
 const FeedbackModal = () => {
     const router = useRouter()
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -23,10 +26,8 @@ const FeedbackModal = () => {
     const [sentFeedback, setSentFeedback] = useState(false)
 
     const DisplayFeedbackForm = async () => {
-        if (selectedFeedback === 1 && !displayForm) setDisplayForm(true)
+        if (selectedFeedback === SAD_ICON && !displayForm) setDisplayForm(true)
         else {
-            if (sentFeedback) return
-
             const feedbackResponse = {
                 ratings: selectedFeedback,
                 content:
@@ -35,28 +36,29 @@ const FeedbackModal = () => {
                 createDate: new Date()
             }
 
-            // const headers = {
-            //     
-            // };
-            await axios.post(
-                API_FEEDBACK,
-                feedbackResponse,
-                {
-                    headers: {
-                        'Access-Control-Allow-Origin': '*',
-                    }
-                }
-            )
-                .then((response) => {
-                    response.headers = {
-                        "Access-Control-Allow-Origin": "*",
-                        "Access-Control-Allow-Headers": "Content-Type",
-                        "Access-Control-Allow-Methods": "GET, POST, OPTION",
-                    }
+            PostToApi(feedbackResponse)
 
-                })
-            setSentFeedback(true)
         }
+    }
+
+    const PostToApi = async (data: any) => {
+        await axios.post(
+            API_FEEDBACK,
+            data,
+            {
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                }
+            }
+        ).then((response) => {
+            response.headers = {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Headers": "Content-Type",
+                "Access-Control-Allow-Methods": "GET, POST, OPTION",
+            }
+
+        })
+        setSentFeedback(true)
     }
 
     const CloseForm = (e: any) => {
@@ -107,7 +109,7 @@ const FeedbackModal = () => {
                                 <Image
                                     display={selectedFeedback !== 2 ? "block" : "none"}
                                     src={NeutralIcon.src}
-                                    onClick={() => setSelectedFeedback(2)}
+                                    onClick={() => PostToApi({ ratings: 2, content: router.asPath, createDate: new Date() })}
                                     width='30%' height='30%' />
                                 <Image
                                     display={selectedFeedback === 2 ? "block" : "none"}
@@ -117,7 +119,7 @@ const FeedbackModal = () => {
                                 <Image
                                     display={selectedFeedback !== 3 ? "block" : "none"}
                                     src={HappyIcon.src}
-                                    onClick={() => setSelectedFeedback(3)}
+                                    onClick={() => PostToApi({ ratings: 3, content: router.asPath, createDate: new Date() })}
                                     width='30%' height='30%' />
                                 <Image
                                     display={selectedFeedback === 3 ? "block" : "none"}
@@ -135,19 +137,15 @@ const FeedbackModal = () => {
                     <ModalFooter className="modal-footer">
 
                         {!sentFeedback &&
-                            <>
-                                <Text textDecor={'underline'} onClick={CloseForm}>Bỏ qua</Text>
-                                <Button
-                                    h="30px" w="80px"
-                                    margin="10px auto"
-                                    borderRadius="72px"
-                                    background="#04408C" color="#fff"
-                                    onClick={DisplayFeedbackForm}
-                                    type="submit">
-                                    Gửi
-                                </Button>
-                                <Box w={'3rem'}></Box>
-                            </>
+                            <Button
+                                h="30px" w="80px"
+                                margin="10px auto"
+                                borderRadius="72px"
+                                background="#04408C" color="#fff"
+                                onClick={DisplayFeedbackForm}
+                                type="submit">
+                                Gửi
+                            </Button>
                         }
                         {sentFeedback &&
                             <Button
