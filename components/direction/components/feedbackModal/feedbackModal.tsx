@@ -9,7 +9,7 @@ import NeutralIcon from "../../../../public/assets/images/feedbackIcon/neutral-0
 import SelectedNeutralIcon from "../../../../public/assets/images/feedbackIcon/neutral-color-01.png"
 import SadIcon from "../../../../public/assets/images/feedbackIcon/sad-01.png"
 import SelectedSadIcon from "../../../../public/assets/images/feedbackIcon/sad-color-01.png"
-import { useForm } from "react-hook-form";
+import { DateTime } from "luxon";
 
 import { API_FEEDBACK } from "constants/api"
 import axios from "axios"
@@ -25,19 +25,27 @@ const FeedbackModal = () => {
     const [displayForm, setDisplayForm] = useState(false)
     const [sentFeedback, setSentFeedback] = useState(false)
 
-    const DisplayFeedbackForm = async () => {
-        if (selectedFeedback === SAD_ICON && !displayForm) setDisplayForm(true)
+    const DisplayFeedbackForm = async (feedback: any) => {
+        if (feedback === SAD_ICON && !displayForm) {
+            setTimeout(() => {
+                setDisplayForm(true)
+            }, 2000);
+        }
         else {
             const feedbackResponse = {
-                ratings: selectedFeedback,
+                ratings: feedback,
                 content:
                     `(${router.asPath})
                     ${feedbackContent}`,
-                createDate: new Date()
+                createDate: DateTime.now().setLocale('vi').toISO()
             }
 
-            PostToApi(feedbackResponse)
-
+            if (feedback === SAD_ICON) PostToApi(feedbackResponse)
+            else {
+                setTimeout(() => {
+                    PostToApi(feedbackResponse)
+                }, 2000);
+            }
         }
     }
 
@@ -97,32 +105,41 @@ const FeedbackModal = () => {
                             <Box flexDirection={'row'} justifyContent='space-around' w={'100%'}
                                 display={displayForm ? 'none' : 'flex'} >
                                 <Image
-                                    display={selectedFeedback !== 1 ? "block" : "none"}
+                                    display={selectedFeedback !== SAD_ICON ? "block" : "none"}
                                     src={SadIcon.src}
-                                    onClick={() => setSelectedFeedback(1)}
+                                    onClick={() => {
+                                        setSelectedFeedback(SAD_ICON)
+                                        DisplayFeedbackForm(SAD_ICON)
+                                    }}
                                     width='30%' height='30%' />
                                 <Image
-                                    display={selectedFeedback === 1 ? "block" : "none"}
+                                    display={selectedFeedback === SAD_ICON ? "block" : "none"}
                                     src={SelectedSadIcon.src}
                                     width='30%' height='30%' />
 
                                 <Image
-                                    display={selectedFeedback !== 2 ? "block" : "none"}
+                                    display={selectedFeedback !== NEUTRAL_ICON ? "block" : "none"}
                                     src={NeutralIcon.src}
-                                    onClick={() => PostToApi({ ratings: 2, content: router.asPath, createDate: new Date() })}
+                                    onClick={() => {
+                                        setSelectedFeedback(NEUTRAL_ICON)
+                                        DisplayFeedbackForm(NEUTRAL_ICON)
+                                    }}
                                     width='30%' height='30%' />
                                 <Image
-                                    display={selectedFeedback === 2 ? "block" : "none"}
+                                    display={selectedFeedback === NEUTRAL_ICON ? "block" : "none"}
                                     src={SelectedNeutralIcon.src}
                                     width='30%' height='30%' />
 
                                 <Image
-                                    display={selectedFeedback !== 3 ? "block" : "none"}
+                                    display={selectedFeedback !== HAPPY_ICON ? "block" : "none"}
                                     src={HappyIcon.src}
-                                    onClick={() => PostToApi({ ratings: 3, content: router.asPath, createDate: new Date() })}
+                                    onClick={() => {
+                                        setSelectedFeedback(HAPPY_ICON)
+                                        DisplayFeedbackForm(HAPPY_ICON)
+                                    }}
                                     width='30%' height='30%' />
                                 <Image
-                                    display={selectedFeedback === 3 ? "block" : "none"}
+                                    display={selectedFeedback === HAPPY_ICON ? "block" : "none"}
                                     src={SelectedHappyIcon.src}
                                     width='30%' height='30%' />
                             </Box>
@@ -135,14 +152,13 @@ const FeedbackModal = () => {
                     }
 
                     <ModalFooter className="modal-footer">
-
-                        {!sentFeedback &&
-                            <Button
+                        {displayForm && !sentFeedback &&
+                            < Button
                                 h="30px" w="80px"
                                 margin="10px auto"
                                 borderRadius="72px"
                                 background="#04408C" color="#fff"
-                                onClick={DisplayFeedbackForm}
+                                onClick={() => DisplayFeedbackForm(SAD_ICON)}
                                 type="submit">
                                 Gửi
                             </Button>

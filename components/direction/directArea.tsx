@@ -6,21 +6,16 @@ import {
   Image,
   Flex
 } from "@chakra-ui/react";
-import {
-  ChevronRightIcon,
-  ChevronLeftIcon,
-} from "@chakra-ui/icons";
 import React, {
   useState,
   useEffect,
 } from "react"
 import { MovingStudent } from './components/movingStudent'
-import { IconButton, Text } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 import useFetch from '../../hooks/fetchAPI/useFetch'
 import useGlobalContext from "hooks/useGlobalContext";
 import { MovingLine } from "./components/movingLine";
 import { API_ROOM_DIRECTION } from "constants/api";
-import { motion } from "framer-motion";
 import FeedbackModal from "./components/feedbackModal/feedbackModal";
 
 

@@ -15,6 +15,7 @@ import React, {
   useState,
   useCallback,
   useEffect,
+  ChangeEvent,
 } from "react"
 import MenuItemInput from './components/menuItemInput'
 import { Image } from "@chakra-ui/react";
@@ -26,6 +27,7 @@ import useFetch from '../../hooks/fetchAPI/useFetch'
 import { removeVI, DefaultOption } from 'jsrmvi';
 import { API_ROOM } from '../../constants/api'
 import { motion } from "framer-motion";
+import SuggestedPlace from "components/home/suggestedPlace";
 
 const SearchDirection = (props: any) => {
   const router = useRouter();
@@ -58,8 +60,8 @@ const SearchDirection = (props: any) => {
 
   if (roomList !== null && roomList !== undefined) {
     roomListFrom = fromInput === ""
-      ? roomList.filter((room) => room.id !== toId)
-      : roomList.filter((room) =>
+      ? roomList.filter((room: any) => room.id !== toId)
+      : roomList.filter((room: any) =>
         (removeVI(room.name)
           .includes(removeVI(fromInput))
           || removeVI(room.secondName)
@@ -68,8 +70,8 @@ const SearchDirection = (props: any) => {
         && room.id !== toId)
 
     roomListTo = toInput === ""
-      ? roomList.filter((room) => room.id !== fromId)
-      : roomList.filter((room) =>
+      ? roomList.filter((room: any) => room.id !== fromId)
+      : roomList.filter((room: any) =>
         (removeVI(room.name)
           .includes(removeVI(toInput))
           || removeVI(room.secondName)
@@ -139,7 +141,7 @@ const SearchDirection = (props: any) => {
                 {isLoading &&
                   <MenuItem disabled>Loading</MenuItem>}
                 {!isLoading && roomListFrom && roomListFrom.length > 0 &&
-                  roomListFrom.map(room => {
+                  roomListFrom.map((room: any) => {
                     return (
                       <MenuItem
                         key={room.id}
@@ -193,7 +195,7 @@ const SearchDirection = (props: any) => {
                 {isLoading &&
                   <MenuItem>Loading</MenuItem>}
                 {!isLoading && roomListTo && roomListTo.length > 0 &&
-                  roomListTo.map(room => {
+                  roomListTo.map((room: any) => {
                     return (
                       <MenuItem
                         key={room.id}
@@ -210,6 +212,8 @@ const SearchDirection = (props: any) => {
             </MenuGroup>
           </MenuList>
         </Menu>
+        <SuggestedPlace />
+
         <Flex pt={"2rem"} w="100%" minH="3rem">
           {fromId && toId &&
 

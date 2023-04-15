@@ -39,6 +39,7 @@
 ::-webkit-scrollbar-thumb {
     background-color: #3A88EC;
     min-height: 40px;
+    max-height: 70px;
     border-radius: 20px;
 }
 

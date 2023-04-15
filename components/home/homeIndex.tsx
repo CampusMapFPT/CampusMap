@@ -31,6 +31,7 @@ import ModalAds from "components/googleAds/modalAds";
 import useFetch from "hooks/fetchAPI/useFetch";
 import { API_ONGOING_EVENT } from "constants/api";
 import CarouselMultiItems from "components/carousel/CarouselBasic";
+import SuggestedPlace from "./suggestedPlace";
 
 
 
@@ -76,8 +77,9 @@ const Home = () => {
 
   return (
     <>
-      <ModalAds />
+      {/* <ModalAds /> */}
       <MainHeader />
+      <Box pl='15px'><SuggestedPlace /></Box>
       <Box w={"100%"} justifyContent="center" zIndex={2} textColor="#04408C" className="bodyContent" pt={'15px'} pb='30px'>
 
 

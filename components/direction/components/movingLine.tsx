@@ -33,6 +33,7 @@ export const MovingLine = (props: any) => {
             animate="visible"
             preserveAspectRatio="none">
             <motion.path
+                id={'path'}
                 d={pathList}
                 stroke="#0099ff"
                 variants={draw}
