@@ -24,6 +24,7 @@ const suggestedLocation = [
     },
 ]
 const SuggestedPlace = () => {
+
     const router = useRouter()
     return (
         <Flex
@@ -50,7 +51,7 @@ const SuggestedPlace = () => {
                         justifyContent='center' alignItems='center'
                         borderRadius="15px" background={"#3A88EC"}
                         color={"#fff"}
-                        onClick={() => router.push(location.url)}
+                        onClick={() => (router.asPath.includes('/direction')) ? router.replace(location.url) : router.push(location.url)}
                         flex='0 0 auto'
                     >{location.name}</Flex>
                 )
