@@ -44,7 +44,7 @@ const FeedbackModal = () => {
             else {
                 setTimeout(() => {
                     PostToApi(feedbackResponse)
-                }, 2000);
+                }, 500);
             }
         }
     }
