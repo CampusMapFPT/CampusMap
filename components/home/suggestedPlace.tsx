@@ -7,12 +7,16 @@ const suggestedLocation = [
         url: `/direction/?toId=1&toLocation=Passio`
     },
     {
-        name: 'Sảnh trống đồng',
-        url: `/direction/?toId=15&toLocation=Sảnh+trống+đồng`
-    },
-    {
         name: '7-Eleven',
         url: `/direction/?toId=23&toLocation=7-Eleven`
+    },
+    {
+        name: 'Laha Café',
+        url: `/direction/?toId=91&toLocation=Laha+Cafe`
+    },
+    {
+        name: 'Sảnh trống đồng',
+        url: `/direction/?toId=15&toLocation=Sảnh+trống+đồng`
     },
     {
         name: 'Thư viện',
@@ -22,22 +26,18 @@ const suggestedLocation = [
         name: 'Phòng Công tác Sinh viên',
         url: `/direction/?toId=64&toLocation=Phòng+Công+tác+Sinh+viên`
     },
-    {
-        name: 'Laha Café',
-        url: `/direction/?toId=91&toLocation=Laha+Cafe`
-    },
-    {
-        name: 'Hội trường A',
-        url: `/direction/?toId=128&toLocation=Hội+trường+A`
-    },
-    {
-        name: 'Hội trường B',
-        url: `/direction/?toId=121&toLocation=Hội+trường+B`
-    },
-    {
-        name: 'Hội trường C',
-        url: `/direction/?toId=115&toLocation=Hội+trường+C`
-    },
+    // {
+    //     name: 'Hội trường A',
+    //     url: `/direction/?toId=128&toLocation=Hội+trường+A`
+    // },
+    // {
+    //     name: 'Hội trường B',
+    //     url: `/direction/?toId=121&toLocation=Hội+trường+B`
+    // },
+    // {
+    //     name: 'Hội trường C',
+    //     url: `/direction/?toId=115&toLocation=Hội+trường+C`
+    // },
 ]
 const SuggestedPlace = () => {
 
