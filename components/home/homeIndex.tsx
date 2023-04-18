@@ -66,13 +66,45 @@ const Home = () => {
   ];
 
   const CarouselImageLink = [
-    'https://firebasestorage.googleapis.com/v0/b/campus-map-f1a9f.appspot.com/o/carouselImage%2Ffpt-1.jpg?alt=media&token=e1e69bfa-ed6a-4a82-9ff5-6bc7fbd1f001',
-    'https://firebasestorage.googleapis.com/v0/b/campus-map-f1a9f.appspot.com/o/carouselImage%2Ffpt-2.jpg?alt=media&token=2392e06f-760b-4abb-adc9-380e76a5957c',
-    'https://firebasestorage.googleapis.com/v0/b/campus-map-f1a9f.appspot.com/o/carouselImage%2Ffpt-3.jpg?alt=media&token=5b499a97-b737-40fa-8747-819dd69d6b19',
-    'https://firebasestorage.googleapis.com/v0/b/campus-map-f1a9f.appspot.com/o/carouselImage%2Ffpt-4.jpg?alt=media&token=c0e0fc51-878e-4559-9f0a-0f1f6cc72c9e',
-    'https://firebasestorage.googleapis.com/v0/b/campus-map-f1a9f.appspot.com/o/carouselImage%2Ffpt-5.jpg?alt=media&token=c9cb6a0a-16a0-4c4a-b552-db6e7b405fd1',
-    'https://firebasestorage.googleapis.com/v0/b/campus-map-f1a9f.appspot.com/o/carouselImage%2Ffpt-6.jpg?alt=media&token=c3b937ec-c710-42ec-8fb2-2cf450d77737',
-    'https://firebasestorage.googleapis.com/v0/b/campus-map-f1a9f.appspot.com/o/carouselImage%2Ffpt-7.jpg?alt=media&token=b5901745-8654-4c83-a79b-3b4b894369aa'
+    {
+      imageLink: 'https://firebasestorage.googleapis.com/v0/b/campus-map-f1a9f.appspot.com/o/carouselImage%2Fads%20(1).jpg?alt=media&token=c0f7c13d-9c69-45e1-a4e5-eab8a725bbd5',
+      adsUrl: 'https://rentracks.vn/tzU5rK'
+    },
+    {
+      imageLink: 'https://firebasestorage.googleapis.com/v0/b/campus-map-f1a9f.appspot.com/o/carouselImage%2Fads%20(2).jpg?alt=media&token=687c410c-5554-4a77-9832-12591ec30e5f',
+      adsUrl: 'https://rentracks.vn/eEMkGt'
+    },
+    {
+      imageLink: 'https://firebasestorage.googleapis.com/v0/b/campus-map-f1a9f.appspot.com/o/carouselImage%2Fads%20(3).jpg?alt=media&token=6a7ae161-2a87-4391-b133-2c10d6acc8a2',
+      adsUrl: 'https://rentracks.vn/iE8EPK'
+    },
+    {
+      imageLink: 'https://firebasestorage.googleapis.com/v0/b/campus-map-f1a9f.appspot.com/o/carouselImage%2Fads%20(4).jpg?alt=media&token=ad41f8b2-0c54-4104-8c3c-8206f04b2163',
+      adsUrl: 'https://rentracks.vn/ed8GUV'
+    },
+    {
+      imageLink: 'https://firebasestorage.googleapis.com/v0/b/campus-map-f1a9f.appspot.com/o/carouselImage%2Fads%20(5).jpg?alt=media&token=d0a30820-a5cf-4b82-9dc2-4dcaf6fa09f5',
+      adsUrl: 'https://rentracks.vn/W0Bimc'
+    },
+    {
+      imageLink: 'https://firebasestorage.googleapis.com/v0/b/campus-map-f1a9f.appspot.com/o/carouselImage%2Fads%20(6).jpg?alt=media&token=48cb2aac-2a2c-46d4-8190-49619ea13d52',
+      adsUrl: 'https://rentracks.vn/rHa5WV'
+    },
+    {
+      imageLink: 'https://firebasestorage.googleapis.com/v0/b/campus-map-f1a9f.appspot.com/o/carouselImage%2Fads%20(7).jpg?alt=media&token=6924fd4c-b54d-4c8e-8d29-d66be58086de',
+      adsUrl: 'https://rentracks.vn/1oFjbH'
+    },
+    {
+      imageLink: 'https://firebasestorage.googleapis.com/v0/b/campus-map-f1a9f.appspot.com/o/carouselImage%2Fads%20(9).jpg?alt=media&token=dc2a7146-122e-4f7c-adce-bc76ebbbab1a',
+      adsUrl: 'https://rentracks.vn/nIeso6'
+    }, {
+      imageLink: 'https://firebasestorage.googleapis.com/v0/b/campus-map-f1a9f.appspot.com/o/carouselImage%2Fads%20(10).jpg?alt=media&token=41212b98-045a-4638-b4cf-b36a58e8d723',
+      adsUrl: 'https://rentracks.vn/gEKiML'
+    },
+    {
+      imageLink: 'https://firebasestorage.googleapis.com/v0/b/campus-map-f1a9f.appspot.com/o/carouselImage%2Fads%20(11).jpg?alt=media&token=f971c71f-9729-4eeb-bcbb-717c5fc160fb',
+      adsUrl: 'https://rentracks.vn/Rvb4xC'
+    },
   ]
 
   return (
@@ -110,7 +142,9 @@ const Home = () => {
           })}
         </Flex>
 
-        <CarouselMultiItems imageLinks={CarouselImageLink} />
+        <Box width={'fill'} m='0 6%'>
+          <CarouselMultiItems adsImage={CarouselImageLink} />
+        </Box>
         {/* <Image py="24px" h={"217px"} w="375px" alt="map" src={DemoMap.src} /> */}
         <Flex justifyContent={"space-between"} px="20px" pt="10px">
           <Text textColor="#04408C" fontSize={"16px"} fontWeight="600">

@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { Box, IconButton, useBreakpointValue } from '@chakra-ui/react';
+import { Box, IconButton, Image, useBreakpointValue } from '@chakra-ui/react';
 // Here we have used react-icons package for the icons
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
 // And react-slick as our Carousel Lib
 import Slider from 'react-slick';
+import { useRouter } from 'next/router';
 
 export default function Carousel(props) {
-  const imageLinks = props.imageLinks
+  const router = useRouter()
+  const imageLinks = props.adsImage
   // As we have used custom buttons, we need a reference variable to
   // change the state
   const [slider, setSlider] = useState(null);
@@ -18,13 +20,14 @@ export default function Carousel(props) {
 
   // These are the images used in the slide
   const settings = {
-    dots: true,
+    dots: false,
     arrows: false,
     fade: true,
     infinite: true,
     autoplay: true,
     speed: 500,
     autoplaySpeed: 5000,
+    pauseOnHover: false,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
@@ -32,9 +35,9 @@ export default function Carousel(props) {
   return (
     <Box
       my={'10px'}
-      position={'relative'}
-      height={'200px'}
+      height={'fit-content'}
       width={'full'}
+      position={'relative'}
       overflow={'hidden'}>
       {/* CSS files for react-slick */}
       <link
@@ -51,18 +54,16 @@ export default function Carousel(props) {
 
       {/* Slider */}
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
-        {imageLinks.map((url, index) => (
-          <Box
-            key={index}
-            height={'200px'}
-            position="relative"
-            backgroundPosition="center"
-            backgroundRepeat="no-repeat"
-            backgroundSize="cover"
-            backgroundImage={`url(${url})`}
-          />
+        {imageLinks.map((adsImage, index) => (
+          <a key={index} target="_blank" href={adsImage.adsUrl} rel="noopener noreferrer">
+            <Image
+              src={adsImage.imageLink}
+              width='100%'
+              layout='fill'
+            />
+          </a>
         ))}
       </Slider>
-    </Box>
+    </Box >
   );
 }
