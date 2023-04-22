@@ -9,18 +9,16 @@ const calculateDistance = (point1: any, point2: any) => {
 
 export const MovingStudent = (props: any) => {
     const [locationIndex, setLocationIndex] = useState(0);
-    const [duration, setDuration] = useState(1.5);
+    const [duration, setDuration] = useState(0.5);
+
 
     const itemList = props.locations;
-    let timer;
+
     useEffect(() => {
         if (locationIndex < itemList.length - 1) {
-            const pointDistance = (locationIndex < itemList.length - 1) ? calculateDistance(itemList[locationIndex].location, itemList[locationIndex + 1].location) : 0
-
-            setDuration(pointDistance * 1.0 / 10)
-            timer = setTimeout(() => {
+            setTimeout(() => {
                 setLocationIndex(locationIndex + 1);
-            }, duration * 1000);
+            }, 500);
         }
     }, [locationIndex]);
 
@@ -28,7 +26,7 @@ export const MovingStudent = (props: any) => {
         setDuration(0)
         setLocationIndex(0)
         setTimeout(() => {
-            setDuration(1.5)
+            setDuration(0.5)
         }, 1);
 
     }, [props.locations])
