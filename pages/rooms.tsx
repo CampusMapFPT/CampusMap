@@ -3,6 +3,7 @@ import { Box, Container } from "@chakra-ui/react";
 import NavigationBar from "components/sections/navbar";
 import RoomList from "components/room";
 import Head from "next/head";
+import FooterAds from "components/googleAds/footerAds";
 
 function RoomListPage() {
 
