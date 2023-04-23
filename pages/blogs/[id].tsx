@@ -17,8 +17,8 @@ function BlogDetailPage() {
         <NavigationBar title={"Blogs"} />
         <BlogDetail />
         {/* </AuthCheck> */}
+        <FooterAds />
       </Box>
-      <FooterAds />
     </>
   );
 }
