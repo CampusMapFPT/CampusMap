@@ -15,8 +15,8 @@ function BlogPage() {
       <Box maxW={"mobile"} padding="0" fontFamily="campus" className="header-body">
         <NavigationBar title={"Blogs"} />
         <Blog />
-        <FooterAds />
       </Box>
+      <FooterAds />
     </>
 
   );

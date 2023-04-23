@@ -15,8 +15,8 @@ function EventPage() {
             <Box maxW={"mobile"} padding="0" fontFamily="campus" className="header-body">
                 <NavigationBar title={"Sự kiện"} />
                 <Event />
-                <FooterAds />
             </Box>
+            <FooterAds />
         </>
     );
 }

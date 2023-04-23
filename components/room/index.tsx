@@ -154,7 +154,6 @@ const RoomList = () => {
             );
           })}
       </Flex>
-      <FooterAds />
     </>
   );
 };

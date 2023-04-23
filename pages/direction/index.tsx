@@ -19,8 +19,8 @@ const DirectionPage = () => {
         <SearchDirection
           locationQuery={router.query}
         />
-        <FooterAds />
       </Box>
+      <FooterAds />
     </>
   );
 };

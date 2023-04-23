@@ -257,8 +257,8 @@ const DirectionResultPage = () => {
         <Direction
           locationQuery={router.query}
         />
-        <FooterAds />
       </Box>
+      <FooterAds />
     </>
   );
 };

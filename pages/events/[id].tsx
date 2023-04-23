@@ -15,9 +15,9 @@ function EventPage() {
                 {/* <AuthCheck> */}
                 <NavigationBar title={"Events"} />
                 <EventDetail />
-                <FooterAds />
                 {/* </AuthCheck> */}
             </Box>
+            <FooterAds />
         </>
     );
 }

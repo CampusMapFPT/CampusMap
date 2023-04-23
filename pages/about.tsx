@@ -15,8 +15,8 @@ function AboutPage() {
       <Box maxW={"mobile"} padding="0" fontFamily="campus" className="header-body">
         <NavigationBar title={"Thông tin công ty"} />
         <AboutUs />
-        <FooterAds />
       </Box>
+      <FooterAds />
     </>
 
   );

@@ -17,6 +17,7 @@ function RoomListPage() {
         <RoomList />
         {/* </AuthCheck> */}
       </Box>
+      <FooterAds />
     </>
 
   );
