@@ -1,6 +1,7 @@
 
 const API_ENV = 'https://campusmapapi.azurewebsites.net/api';
 
+
 const API_ROOM = API_ENV + '/Room'
 const API_ROOM_DIRECTION = API_ENV + '/Room/direction'
 
