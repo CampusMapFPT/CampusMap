@@ -1,5 +1,5 @@
 
-const API_ENV = 'https://campusmapapi.azurewebsites.net/api';
+const API_ENV = 'https://campusmapapi.somee.com/api';
 
 
 const API_ROOM = API_ENV + '/Room'
